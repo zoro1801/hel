@@ -96,6 +96,14 @@
 
     <button onclick="copyText(text10)">P8 Agglomerative Clustering/Hierarchical Clustering</button>
 
+    <button onclick="copyText(text11)">Assignment 1 Confusion Matrix Multi Class Classification</button>
+
+    <button onclick="copyText(text12)">Assignment 2 Multi Class Classification Using KNN</button>
+
+    <button onclick="copyText(text13)">Assignment 3 Multi Label Classification</button>
+
+    <button onclick="copyText(text14)">Assignment 4 Income Happiness Linear Regression</button>
+
     <p id="copiedMsg"></p>
 
     <script>
@@ -481,6 +489,139 @@ if linkage == 'ward' and g is not None:
 else:
     print("Completeness Score is not applicable for the selected linkage method.")
 
+    `;
+    var text11 =`
+    import numpy as np
+from sklearn.metrics import confusion_matrix, classification_report
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+actual = np.array(['Apple', 'Orange', 'Banana', 'Apple', 'Orange', 'Apple', 'Orange', 'Banana', 'Banana', 'Apple'])
+predicted = np.array(['Apple', 'Orange', 'Orange', 'Apple', 'Orange', 'Apple', 'Orange', 'Banana', 'Banana', 'Orange'])
+
+cm = confusion_matrix(actual,predicted)
+
+sns.heatmap(cm,annot=True,fmt='g',xticklabels=['Apple', 'Orange', 'Banana'],yticklabels=['Apple', 'Orange', 'Banana'])
+plt.ylabel('Prediction', fontsize=13)
+plt.xlabel('Actual', fontsize=13)
+plt.title('Confusion Matrix', fontsize=17)
+plt.show()
+
+print(classification_report(actual, predicted))
+    `;
+    var text12 =`
+    # Import necessary libraries
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
+# Load the Iris dataset
+iris = load_iris()
+X = iris.data  # Features
+y = iris.target  # Target variable (labels)
+#Apply Standard Scaler on feature
+scaler = StandardScaler()
+x_scaled = scaler.fit_transform(x)
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(x_scaled, y, test_size=0.2, random_state=42)
+
+# Initialize the k-NN classifier (with k=3)
+knn_classifier = KNeighborsClassifier(n_neighbors=3)
+
+# Train the classifier on the training data
+knn_classifier.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = knn_classifier.predict(X_test)
+
+#Evaluate the accuracy of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+
+    `;
+    var text13 =`
+    from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.multioutput import MultiOutputClassifier
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, classification_report
+
+documents = [
+    "This study investigates the impact of diet on health outcomes.",
+    "New advancements in medical technology revolutionize healthcare.",
+    "A review of recent breakthroughs in cancer treatment research.",
+    "The role of genetics in determining susceptibility to diseases.",
+    "Understanding the connection between mental health and physical well-being."
+]
+
+# Multi-label classification labels
+labels = {
+    'Healthcare': [1, 0],
+    'Medical Research': [0, 1]
+}
+
+# Repeat documents and labels to create 100 samples
+documents *= 20  # Repeat each document 20 times to get 100 documents
+
+# Repeat labels accordingly
+y = [labels['Healthcare'], labels['Healthcare'], labels['Medical Research'],labels ['Medical Research'], [1, 1]] * 20
+
+# Print length to verify (Optional)
+print("Number of documents:", len(documents))
+print("Number of labels:", len(y))
+
+# Splitting the dataset into training and testing sets
+x_train, x_test, y_train, y_test = train_test_split(documents, y, test_size=0.2, random_state=42)
+
+# Vectorizing the text data
+tfidf_vectorizer = TfidfVectorizer()nnnn
+x_train_tfidf = tfidf_vectorizer.fit_transform(x_train)
+x_test_tfidf = tfidf_vectorizer.transform(x_test)
+
+# Multi-output classifier with Naive Bayes
+classifier = MultiOutputClassifier(MultinomialNB())
+
+# Training the classifier
+classifier.fit(x_train_tfidf, y_train)
+
+# Predictions
+predictions = classifier.predict(x_test_tfidf)
+
+    `;
+    var text14 =`
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error,accuracy_score
+
+# Load the data
+data = pd.read_csv('Form Responses.csv')  # Replace 'responses.csv' with the path to your CSV file
+print("Data loaded successfully.")
+data.head()
+
+data.dropna(inplace=True)
+
+X = data[['Salary']].values
+y = data['Satisfaction'].values
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train the model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+print("Mean Squared Error:", mse)
+
+    
     `;
         function copyText(text) {
 
