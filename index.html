@@ -810,13 +810,8 @@ print("Mean Squared Error:", mse)
             });
 
         }
-
-        // Get the password input and submit button
         const passwordInput = document.getElementById('password-input');
         const submitBtn = document.getElementById('submit-btn');
-        inputField.addEventListener("keydown", function(event) {
-        if (event.keyCode == 13){
-            //event.preventDefault()
         submitBtn.addEventListener('click', function() {
             const password = passwordInput.value.trim();
             if (password === 'gaandmaara') {
@@ -826,9 +821,7 @@ print("Mean Squared Error:", mse)
                 alert('Incorrect password. Please try again.');
                 passwordInput.value = '';
             }
-        })
-        };
-    }
+        });
     </script>
 
 
