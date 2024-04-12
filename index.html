@@ -141,7 +141,8 @@
 
             <button class="button button-icon button-primary" onclick="copyText(text5)">
                 <i class="fas fa-line-chart"></i>
-                <span>P4 Linear Regression</span>
+                <span>P4 Linear Regression </span>
+                <img src="https://raw.githubusercontent.com/zoro1801/dante/main/Screenshot%202024-04-12%20210931.png" alt="">
             </button>
 
             <button class="button button-icon button-secondary" onclick="copyText(text6)">
@@ -231,13 +232,17 @@ pred = knn_cls.predict(X_Test)
 #Evaluate the model accuracy
 
 acc = accuracy_score(Y_Test,pred)
-print("Accuracy :",acc)
+print(f"Accuracy :{acc:.2f")
 
 # Plotting the scatter graph
 plt.scatter(X_Test[:, 0], X_Test[:, 1], c=Y_Test, cmap='viridis')
 plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
 plt.show()
+
+The k-Nearest Neighbors (KNN) algorithm is a simple and effective classification algorithm used in supervised learning. It's a non-parametric and lazy learning algorithm, meaning it doesn't make any assumptions about the underlying data distribution and it doesn't learn a model during training. Instead, it memorizes the entire training dataset and makes predictions based on the similarity of new data points to the training data.
+
+
 `;
 
         var text2 = `
@@ -268,109 +273,102 @@ cluster_labels = Km.labels_
 plt.scatter(X[:, 0], X[:, 1], c=cluster_labels, cmap='viridis')
 plt.title("Scatter Plot of Iris Dataset using K-Means Clustering\n")
 plt.show()
+
+
+KMeans is a popular unsupervised machine learning algorithm used for clustering data into groups. The goal of KMeans is to partition a dataset into K distinct, non-overlapping subsets (clusters) where each data point belongs to the cluster with the nearest mean (centroid).
+
+The algorithm iteratively assigns each data point to the nearest centroid and then recalculates the centroids based on the mean of the points assigned to each cluster. This process continues until the centroids no longer change significantly or a specified number of iterations is reached.
+
+KMeans is commonly used in various applications such as customer segmentation, image compression, and anomaly detection. It is relatively fast and scalable, making it suitable for large datasets. However, it requires specifying the number of clusters (K) in advance, and its performance can be sensitive to the initialization of centroids.
 `;
 
         var text3 = `
 
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
+        from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
-print("KFMSCIT007 - Dhanraj Chinta")
 
 # Load the Iris dataset
-iris = load_iris()
-# Extract features (X) and target (y) from the dataset
-X = iris.data
-y = iris.target
+df = load_iris()
+
+# Split the dataset into features (x) and target (y)
+x = df.data
+y = df.target
 
 # Split the data into training and testing sets
-# X_train, X_test: input data for training and testing
-# y_train, y_test: corresponding target labels for training and testing
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
-# Initialize Gaussian Naive Bayes model
-GNB = GaussianNB()
+# Initialize and train the Gaussian Naive Bayes classifier
+gnb = GaussianNB()
+gnb.fit(x_train, y_train)
 
-# Train the model using the training data
-GNB.fit(X_train, y_train)
+# Example user input
+user_input = [[5, 3, 5, 8]]
 
-# Predict using the trained model on the test data
-y_pred = GNB.predict(X_test)
+# Predict the species with the user input
+predicted_index = gnb.predict(user_input)
+predicted_species = df.target_names[predicted_index][0]
 
-# Predict the species with user input
-user_input = [[5.9, 3.0, 5.1, 1.8]]  # Example user input
-predicted_index = GNB.predict(user_input)
-predicted_species = iris.target_names[predicted_index]
-print("Predicted species for user input:", predicted_species)
+# Make predictions on the test set
+pred = gnb.predict(x_test)
 
-# Confusion Matrix
-print("Confusion Matrix:")
-print(confusion_matrix(y_test, y_pred))
-# Accuracy Score
-accuracy = accuracy_score(y_test, y_pred)
-print("Accuracy Score:", accuracy)
-# Classification Report
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
+# Calculate accuracy score, confusion matrix, and classification report
+accuracy = accuracy_score(y_test, pred)
+conf_matrix = confusion_matrix(y_test, pred)
+class_report = classification_report(y_test, pred)
+
+# Print the results
+print(f'User Input Predicted Species: {predicted_species}')
+print(f'Accuracy Score: {accuracy:.2f}')
+print(f'Confusion Matrix:\n{conf_matrix}')
+print(f'Classification Report:\n{class_report}')
+
+
+Naive Bayes is a simple yet powerful algorithm used for classification tasks in machine learning. It's based on Bayes' theorem, which describes the probability of an event, based on prior knowledge of conditions that might be related to the event. Naive Bayes assumes that the features in the dataset are independent of each other, which is a naive assumption but often holds true in practice.
+
+Gaussian Naive Bayes is a variant of the Naive Bayes algorithm that assumes that the features follow a Gaussian (normal) distribution. It's suitable for continuous data, where each feature is assumed to be normally distributed. In Gaussian Naive Bayes, the likelihood of the features is assumed to be Gaussian, and the parameters of the Gaussian distribution (mean and variance) are estimated from the training data.
+
+In summary, Gaussian Naive Bayes is specifically designed for datasets with continuous features, assuming that each class is associated with a Gaussian distribution of feature values. It's widely used in classification tasks, especially when dealing with real-valued features.
 `;
 
         var text4 = `
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
 
 # Generate synthetic data
 np.random.seed(0)
-X = np.linspace(0, 5, 100).reshape(-1, 1)
-Y = 2 * np.sin(X) + np.random.normal(0, 0.5, size=X.shape)
+X = np.linspace(0, 5, 20)  # 20 evenly spaced points between 0 and 5
+y = 2 * X + 1 + np.random.randn(20)  # Linear relationship with noise
 
-# Split data into training and testing sets
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
+# Fit polynomial regression models of different degrees
+degrees = [1, 5, 10]  # degrees of the polynomial models
+colors = ['blue', 'red', 'green']  # colors for plotting
 
-# Define a function to fit polynomial regression models of varying degrees
-def fit_polynomial(X_train, Y_train, X_test, Y_test, degree):
-    poly = PolynomialFeatures(degree=degree)
-    X_train_poly = poly.fit_transform(X_train)
-    X_test_poly = poly.transform(X_test)
+plt.scatter(X, y, color='black', label='Data Points')
 
-    model = LinearRegression()
-    model.fit(X_train_poly, Y_train)
+for degree, color in zip(degrees, colors):
+    # Fit polynomial
+    coef = np.polyfit(X, y, degree)
+    poly = np.poly1d(coef)
 
-    train_rmse = np.sqrt(mean_squared_error(Y_train, model.predict(X_train_poly)))
-    test_rmse = np.sqrt(mean_squared_error(Y_test, model.predict(X_test_poly)))
+    # Generate points for plotting
+    x_values = np.linspace(0, 5, 100)
+    y_values = poly(x_values)
 
-    return model, train_rmse, test_rmse
+    # Plotting
+    plt.plot(x_values, y_values, label=f'Degree {degree}', color=color)
 
-# Fit polynomial regression models of varying degrees
-degrees = [1, 3, 10]
-models = []
-train_rmse_values = []
-test_rmse_values = []
-
-for degree in degrees:
-    model, train_rmse, test_rmse = fit_polynomial(X_train, Y_train, X_test, Y_test, degree)
-    models.append(model)
-    train_rmse_values.append(train_rmse)
-    test_rmse_values.append(test_rmse)
-
-# Plot the results
-plt.figure(figsize=(10, 6))
-plt.scatter(X_train, Y_train, color='blue', label='Training Data')
-plt.scatter(X_test, Y_test, color='green', label='Testing Data')x_values = np.linspace(0, 5, 100).reshape(-1, 1)
-for i, model in enumerate(models):
-    y_values = model.predict(PolynomialFeatures(degree=degrees[i]).fit_transform(x_values))
-    plt.plot(x_values, y_values, label=f'Degree {degrees[i]}')
-
-plt.title('Polynomial Regression with Different Degrees\n')
 plt.xlabel('X')
-plt.ylabel('Y')
+plt.ylabel('y')
+plt.title('Polynomial Regression Example')
 plt.legend()
+plt.grid(True)
 plt.show()
+
+
+Overfitting occurs when a machine learning model learns the training data too well, capturing noise or random fluctuations in the data rather than the underlying patterns or relationships. This leads to poor generalization performance on unseen data, as the model becomes too specific to the training set.
 `;
 
         var text5 = `
@@ -412,6 +410,27 @@ plt.title('Linear Regression: Salary Prediction\n')
 plt.legend()
 plt.show()
 
+
+Linear regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables. It assumes a linear relationship between the independent variables (features) and the dependent variable (target). The goal of linear regression is to find the best-fitting straight line that describes the relationship between the variables. This line is represented by the equation:
+
+\[ y = mx + b \]
+
+where:
+- \( y \) is the dependent variable (target),
+- \( x \) is the independent variable (feature),
+- \( m \) is the slope of the line, and
+- \( b \) is the y-intercept.
+
+Mean squared error (MSE) is a common metric used to evaluate the performance of regression models, including linear regression. It measures the average squared difference between the actual values (observed) and the predicted values (estimated) by the model. The formula for MSE is:
+
+
+
+where:
+- \( n \) is the number of observations,
+- \( y_i \) is the actual value of the dependent variable for observation \( i \),
+- \( \hat{y}_i \) is the predicted value of the dependent variable for observation \( i \), and
+- \( \sum \) denotes summation over all observations.
+
 `;
 
         var text6 = `
@@ -452,6 +471,17 @@ print("Precision:", precision)
 print("Recall:", recall)
 print("F1 Score:", f1)
 
+
+Support Vector Machine (SVM):
+
+SVM is a supervised learning algorithm used mainly for classification tasks but can also be used for regression tasks.
+It works by finding the hyperplane that best separates different classes in the feature space. The goal is to maximize the margin between the hyperplane and the nearest data points (support vectors).
+SVM can handle both linear and non-linear data by using different kernel functions such as linear, polynomial, radial basis function (RBF), etc.
+Support Vector Classifier (SVC):
+
+SVC is a specific implementation of SVM for classification tasks. It is essentially an SVM that is specifically used for classification.
+In scikit-learn, the SVC class is used for implementing SVM-based classification models.
+SVC aims to find the hyperplane that best separates different classes in the feature space.
 `;
 
         var text7 = `
@@ -479,6 +509,7 @@ plt.legend()
 plt.show()
 
 
+K-Means is a popular unsupervised machine learning algorithm used for clustering data into groups or clusters based on similarities in the feature space. The algorithm aims to partition the data into a predefined number of clusters, where each data point belongs to the cluster with the nearest mean (centroid).
 `;
 
         var text8 = `
@@ -508,6 +539,8 @@ plt.title('Dhanraj Chinta - KFMSCIT007\nKMeans Clustering (k=' + str(k) + ')')
 plt.legend()
 plt.show()
 
+
+K-Means is a popular unsupervised machine learning algorithm used for clustering data into groups or clusters based on similarities in the feature space. The algorithm aims to partition the data into a predefined number of clusters, where each data point belongs to the cluster with the nearest mean (centroid).
 `;
 
         var text9 = `
