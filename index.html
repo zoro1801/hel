@@ -94,11 +94,14 @@
 
     <button onclick="copyText(text9)">P7 Decision Tree</button>
 
+    <button onclick="copyText(text10)">P8 Agglomerative Clustering/Hierarchical Clustering</button>
+
     <p id="copiedMsg"></p>
 
     <script>
 
-        var text1 = `#import Necessary libraries
+        var text1 = `
+#import Necessary libraries
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -144,7 +147,8 @@ plt.ylabel('Feature 2')
 plt.show()
 `;
 
-        var text2 = `# Import necessary libraries
+        var text2 = `
+# Import necessary libraries
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -450,6 +454,34 @@ plt.title("Decision Tree Visualization \n")
 plt.show()
     `;
 
+    var text10 =`
+import numpy as np
+from sklearn.cluster import AgglomerativeClustering
+from sklearn.metrics import silhouette_score, completeness_score
+
+# Sample dataset
+data = np.array([[1, 1], [5, 5], [8, 8], [1, 0], [5, 4], [8, 1]])
+
+# Parameters
+n_clusters = 2
+linkage = 'ward'  # Method for calculating linkage
+# Perform agglomerative clustering
+model = AgglomerativeClustering(n_clusters=n_clusters, linkage=linkage)
+cluster_labels = model.fit_predict(data)
+
+# Calculate silhouette score
+silhouette = silhouette_score(data, cluster_labels)
+print("Silhouette Score:", silhouette)
+
+# Calculate completeness score if applicable
+g = None  # Ground truth labels, if available
+if linkage == 'ward' and g is not None:
+    completeness = completeness_score(g, cluster_labels)
+    print("Completeness Score:", completeness)
+else:
+    print("Completeness Score is not applicable for the selected linkage method.")
+
+    `;
         function copyText(text) {
 
             navigator.clipboard.writeText(text).then(function () {
