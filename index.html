@@ -13,99 +13,150 @@
     <title>Copy Text Buttons</title>
 
     <style>
-
-        button {
-
-            margin: 5px;
-
-        }
-
-
-
         body {
-
-            background-color: #f0f0f0;
-
-            /* Light gray background */
-
-            font-family: Arial, sans-serif;
-
-            text-align: center;
-
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-content: center;
+            flex-wrap: wrap;
+        }
 
-
-        button {
-
-            margin: 10px;
-
-            padding: 10px;
-
+        .button {
             font-size: 16px;
-
-            background-color: #ddd;
-
-            /* Light gray button background */
-
-            border: 1px solid #aaa;
-
-            /* Dark gray border */
-
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
             cursor: pointer;
-
+            transition: all 0.3s ease;
+            outline: none;
         }
 
-
-
-        button:hover {
-
-            background-color: #ccc;
-
-            /* Slightly darker background on hover */
-
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        .button-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button-icon i {
+            margin-bottom: 6px;
+            font-size: 24px;
+        }
+
+        .button-primary {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .button-secondary {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .button-warning {
+            background-color: #f39c12;
+            color: #fff;
+        }
+
+        .button-info {
+            background-color: #2ecc71;
+            color: #fff;
+        }
     </style>
-
 </head>
 
-
-
 <body>
+    <div>
+        <div class="container">
+            <button class="button button-icon button-primary" onclick="copyText(text1)">
+                <i class="fas fa-chart-line"></i>
+                <span>P1(A) KNN</span>
+            </button>
 
+            <button class="button button-icon button-secondary" onclick="copyText(text2)">
+                <i class="fas fa-chart-bar"></i>
+                <span>P1(B) KMeans</span>
+            </button>
 
+            <button class="button button-icon button-warning" onclick="copyText(text3)">
+                <i class="fas fa-chart-pie"></i>
+                <span>P2 Naive Bayes(Gaussian)</span>
+            </button>
 
-    <button onclick="copyText(text1)"">P1(A) KNN</button>
+            <button class="button button-icon button-info" onclick="copyText(text4)">
+                <i class="fas fa-chart-area"></i>
+                <span>P3 OverFitting</span>
+            </button>
 
-  <button onclick=" copyText(text2)">P1(B) KMeans</button>
+            <button class="button button-icon button-primary" onclick="copyText(text5)">
+                <i class="fas fa-line-chart"></i>
+                <span>P4 Linear Regression</span>
+            </button>
 
-    <button onclick="copyText(text3)">P2 Naive Bayes(Gaussian)</button>
+            <button class="button button-icon button-secondary" onclick="copyText(text6)">
+                <i class="fas fa-bar-chart"></i>
+                <span>P5 SVC/SVM</span>
+            </button>
 
-    <button onclick="copyText(text4)">P3 OverFitting</button>
+            <button class="button button-icon button-warning" onclick="copyText(text7)">
+                <i class="fas fa-pie-chart"></i>
+                <span>P6(A) Kmeans Random Sample Data</span>
+            </button>
 
-    <button onclick="copyText(text5)">P4 Linear Regression</button>
+            <button class="button button-icon button-info" onclick="copyText(text8)">
+                <i class="fas fa-chart-line"></i>
+                <span>P6(B) Kmeans Income & Spending Data</span>
+            </button>
 
-    <button onclick="copyText(text6)">P5 SVC/SVM</button>
+            <button class="button button-icon button-primary" onclick="copyText(text9)">
+                <i class="fas fa-chart-bar"></i>
+                <span>P7 Decision Tree</span>
+            </button>
 
-    <button onclick="copyText(text7)">P6(A) Kmeans Random Sample Data</button>
+            <button class="button button-icon button-secondary" onclick="copyText(text10)">
+                <i class="fas fa-chart-pie"></i>
+                <span>P8 Agglomerative Clustering/Hierarchical Clustering</span>
+            </button>
 
-    <button onclick="copyText(text8)">P6(B) Kmeans Income & Spending Data</button>
+            <button class="button button-icon button-warning" onclick="copyText(text11)">
+                <i class="fas fa-chart-area"></i>
+                <span>Assignment 1 Confusion Matrix Multi Class Classification</span>
+            </button>
 
-    <button onclick="copyText(text9)">P7 Decision Tree</button>
+            <button class="button button-icon button-info" onclick="copyText(text12)">
+                <i class="fas fa-line-chart"></i>
+                <span>Assignment 2 Multi Class Classification Using KNN</span>
+            </button>
 
-    <button onclick="copyText(text10)">P8 Agglomerative Clustering/Hierarchical Clustering</button>
+            <button class="button button-icon button-primary" onclick="copyText(text13)">
+                <i class="fas fa-bar-chart"></i>
+                <span>Assignment 3 Multi Label Classification</span>
+            </button>
 
-    <button onclick="copyText(text11)">Assignment 1 Confusion Matrix Multi Class Classification</button>
-
-    <button onclick="copyText(text12)">Assignment 2 Multi Class Classification Using KNN</button>
-
-    <button onclick="copyText(text13)">Assignment 3 Multi Label Classification</button>
-
-    <button onclick="copyText(text14)">Assignment 4 Income Happiness Linear Regression</button>
-
-    <p id="copiedMsg"></p>
-
+            <button class="button button-icon button-secondary" onclick="copyText(text14)">
+                <i class="fas fa-pie-chart"></i>
+                <span>Assignment 4 Income Happiness Linear Regression</span>
+            </button>
+        </div>
+        <p id="copiedMsg" style="display: block;"></p>
+    </div>
     <script>
 
         var text1 = `
@@ -425,7 +476,7 @@ plt.show()
 
 `;
 
-    var text9 = `
+        var text9 = `
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -462,7 +513,7 @@ plt.title("Decision Tree Visualization \n")
 plt.show()
     `;
 
-    var text10 =`
+        var text10 = `
 import numpy as np
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.metrics import silhouette_score, completeness_score
@@ -490,7 +541,7 @@ else:
     print("Completeness Score is not applicable for the selected linkage method.")
 
     `;
-    var text11 =`
+        var text11 = `
     import numpy as np
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
@@ -509,7 +560,7 @@ plt.show()
 
 print(classification_report(actual, predicted))
     `;
-    var text12 =`
+        var text12 = `
     # Import necessary libraries
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -542,7 +593,7 @@ print(f'Accuracy: {accuracy:.2f}')
 
 
     `;
-    var text13 =`
+        var text13 = `
     from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.multioutput import MultiOutputClassifier
@@ -591,7 +642,7 @@ classifier.fit(x_train_tfidf, y_train)
 predictions = classifier.predict(x_test_tfidf)
 
     `;
-    var text14 =`
+        var text14 = `
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
