@@ -14,7 +14,6 @@
 
     <style>
         body {
-            display:none;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f9f9f9;
             margin: 0;
@@ -115,7 +114,7 @@
         <input type="password" id="password-input" placeholder="Password">
         <button id="submit-btn">Submit</button>
     </div>
-    <div>
+    <div id="main">
         <div class="container">
             <button class="button button-icon button-primary" onclick="copyText(text1)">
                 <i class="fas fa-chart-line"></i>
@@ -731,8 +730,7 @@ print("Mean Squared Error:", mse)
 
             // Check if the password is correct
             if (password === 'your_password_here') {
-                // If password is correct, display the body
-                document.body.style.display = 'block';
+                document.getElementById('main').style.display = 'block';
                 // Remove the password form
                 document.getElementById('password-form').style.display = 'none';
             } else {
