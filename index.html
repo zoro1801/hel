@@ -722,28 +722,19 @@ print("Mean Squared Error:", mse)
 
         }
 
-        // Get the password input and submit button
-        const passwordInput = document.getElementById('dhan1801');
+        const passwordInput = document.getElementById('password-input');
         const submitBtn = document.getElementById('submit-btn');
 
-        // Add event listener to the submit button
         submitBtn.addEventListener('click', function() {
-            // Get the entered password
             const password = passwordInput.value.trim();
-
-            // Check if the password is correct
-            if (password === 'your_password_here') {
+            if (password === 'dhan1801') {
                 document.getElementById('main').style.display = 'block';
-                // Remove the password form
                 document.getElementById('password-form').style.display = 'none';
             } else {
-                // If password is incorrect, show an alert
                 alert('Incorrect password. Please try again.');
-                // Clear the password input
                 passwordInput.value = '';
             }
-        });
-
+        }); 
     </script>
 
 
