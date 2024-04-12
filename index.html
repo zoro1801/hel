@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Copy Text Buttons</title>
+
+    <style>
+
+        button {
+
+            margin: 5px;
+
+        }
+
+
+
+        body {
+
+            background-color: #f0f0f0;
+
+            /* Light gray background */
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+        }
+
+
+
+        button {
+
+            margin: 10px;
+
+            padding: 10px;
+
+            font-size: 16px;
+
+            background-color: #ddd;
+
+            /* Light gray button background */
+
+            border: 1px solid #aaa;
+
+            /* Dark gray border */
+
+            cursor: pointer;
+
+        }
+
+
+
+        button:hover {
+
+            background-color: #ccc;
+
+            /* Slightly darker background on hover */
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+
+    <button onclick="copyText(text1)"">Matrix Operation</button>
+
+  <button onclick=" copyText(text2)">Probability Distributions </button>
+
+    <button onclick="copyText(text3)">Measures of Central Tendency </button>
+
+    <button onclick="copyText(text4)">Data Cleaning and Manipulation</button>
+
+    <button onclick="copyText(text5)">Hypothesis Testing </button>
+
+    <button onclick="copyText(text6)">Machine Learning</button>
+
+    <button onclick="copyText(text7)">Correlation and Regression Analysis</button>
+
+    <button onclick="copyText(text8)">Univariate and Bivariate Data Analysis</button>
+
+    <button onclick="copyText(text9)">Data Storage Tools</button>
+
+    <p id="copiedMsg"></p>
+
+    <script>
+
+        var text1 = `import numpy as np
+
+from numpy.linalg import inv
+
+from numpy.linalg import det
+
+
+
+#creating Single dimensional array
+
+v1= np.array([1,2,3])
+
+v2= np.array([4,5,6])
+
+print("v1",v1)
+
+print("v2",v2)
+
+
+
+#addition of the matrices (i.e v1 & v2)
+
+r1= v1+v2
+
+print("Addition :",r1)
+
+
+
+#subtraction
+
+r1= v1-v2
+
+print("Subtraction :",r1)
+
+
+
+# Multiplication
+
+r1= np.dot(v1,v2)
+
+print("Multipliation :",r1)
+
+
+
+#Two Dimensional matrix(2x2)
+
+m1 = np.array([[1,2],[3,4]])
+
+print("m1 \n",m1)
+
+m2 = np.array([[5,6],[7,8]])
+
+print("\nm2 \n",m2)
+
+
+
+#Addition
+
+r2= m1+m2
+
+print("Addition :\n",r2)
+
+
+
+#Subtraction
+
+r2= m1-m2
+
+print("Subtraction :\n",r2)
+
+
+
+#Multiplication
+
+r2= np.dot(m1,m2)
+
+print("Multiplication:\n",r2)
+
+
+
+#Transpose
+
+T1=m1.transpose()
+
+print("Transpose:\n",T1)
+
+
+
+#Inverse
+
+iv= inv(m1)
+
+print("Inversion:\n",iv)
+
+
+
+#Determinant
+
+de= det(m1)
+
+print("Determinant: ",de)
+
+    `;
+
+        var text2 = `import numpy as np
+
+import matplotlib.pyplot as plt
+
+
+
+# set a random seed number for reproduce
+
+a = np.random.seed(0)
+
+
+
+# generate random sample from a normal distribution
+
+mean= 0
+
+std_dev= 1
+
+num_sample =100
+
+normal_sample = np.random.normal(mean, std_dev, num_sample)
+
+
+
+# generate a random sample from a uniform distribution
+
+low=0
+
+high = 1
+
+uniform_sample = np.random.uniform(low, high, num_sample)
+
+
+
+# Create subplots with two columns
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# Histogram for Normal Distribution
+
+axes[0].hist(normal_sample, bins=20, color='red')
+
+axes[0].set_title("Normal Distribution")
+
+
+
+# Histogram for Uniform Distribution
+
+axes[1].hist(uniform_sample, bins=20, color='red')
+
+axes[1].set_title("Uniform Distribution")
+
+
+
+plt.show()`;
+
+        var text3 = `
+
+    import numpy as np
+
+import statistics as st
+
+import pandas as pd
+
+
+
+print("Calculate mean median using numpy, statistics libraries")
+
+da = [1,2,3,4,5]
+
+m1 = sum(da)/len(da)
+
+print("mean - ",m1)
+
+
+
+data = np.array ([1,2,3,4,5])
+
+m1= np.mean(data)
+
+print ("mean - ",m1)
+
+
+
+data = np.array ([1,2,3,4,5])
+
+m1= np.median(data)
+
+print ("median - ",m1)
+
+
+
+data = [1,2,3,4,5]
+
+m2 = st.mean(data)
+
+print("mean - ",m2)
+
+
+
+data = [1,2,3,4,5]
+
+m2 = st.median(data)
+
+print("median - ",m2)
+
+
+
+d= [1,2,2,3,3,3,4,4,4,4]
+
+m2= st.mode(d)
+
+print("mode - ",m2)
+
+
+
+"""#How to calculate mean median mode for dataset using python"""
+
+
+
+data = pd.read_csv("Employee.csv")
+
+print("file read successffully")
+
+print("\nHead")
+
+print(data.head)
+
+print("\nDescribe")
+
+print(data.describe())
+
+print("\n mean, median, mode for each column")
+
+print(data.mean())
+
+print(data.median())
+
+print(data.mode())
+
+
+
+"""#How to calculate dispersion measure for data using python"""
+
+
+
+print("calculate dispersion measure for data using python")
+
+import numpy as np
+
+
+
+#sample data
+
+data1 = np.array([10,12,15,18,20])
+
+data2 = np.array([5,8,9,12,14])
+
+#df.[colunm name]#csv file
+
+#data(["column name"])
+
+range_data1 = np.ptp(data1) # predefined function which gives range(highest and lowest)
+
+range_data2 = np.ptp(data2) # predefined function which gives range(highest and lowest)
+
+print("Range")
+
+print(range_data1)
+
+print(range_data2)
+
+print("---------------------")
+
+print("Standard deviation")
+
+std1 = np.std(data1)
+
+std2 = np.std(data2)
+
+print(std1)
+
+print(std2)
+
+print("---------------------")
+
+print("variance")
+
+var1= np.var(data1)
+
+var2= np.var(data2)
+
+print(var1)
+
+print(var2)
+
+print("---------------------")
+
+print("Co-varience")
+
+c1= np.cov(data1 , data2) [0,1]
+
+print(c1)
+
+c2= np.cov(data1 , data1) [0,1]
+
+print(c2)
+
+print("---------------------")
+
+print("Co-varience matrix")
+
+d5= np.array([data1, data2])
+
+d6= np.cov(d5)
+
+print(d6)
+
+
+
+"""#How to calculate dispersion measure for dataset using python"""
+
+
+
+# variance, standard deviation
+
+data= pd.read_csv("Employee.csv");
+
+#calculate the variance
+
+print("\nvariance")
+
+print(data.var()) #for variance
+
+print("\nstandard deviation")
+
+print(data.std()) #standard deviation`;
+
+        var text4 = `
+
+    import pandas as pd
+
+import numpy as np
+
+from scipy import stats
+
+from scipy.stats import zscore
+
+import warnings
+
+# Filter out future warnings
+
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+
+
+# Create a DataFrame from the dictionary
+
+df = pd.read_csv("/content/WIPRO.NS.csv")
+
+df.head(5)
+
+
+
+#finding the shape of the dataframe and number of null values in it
+
+og_shape = df.shape
+
+print("shape = ",og_shape)
+
+df.isnull().sum()
+
+
+
+# Replace null values with the mean of each column
+
+m = df.mean()
+
+print("Mean\n",m)
+
+df.fillna(m, inplace=True)
+
+df.isnull().sum()
+
+
+
+# Identify and remove outliers using Z-score
+
+z_scores = zscore(df[['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']])
+
+df_no_outliers = df[(z_scores < 3).all(axis=1)]
+
+
+
+# Display the modified number of rows
+
+removed_rows = og_shape[0] - df_no_outliers.shape[0]
+
+print(og_shape)
+
+print(df_no_outliers.shape)
+
+print("number of rows removed: ",removed_rows)`;
+
+        var text5 = `
+
+    from scipy.stats  import ttest_1samp
+
+import numpy as np
+
+
+
+age = [45,89,23,46,12,69,45,24,34,67]
+
+print ("age",age)
+
+m1 = np.mean(age) #calculating mean
+
+print("Mean of age",m1)
+
+
+
+T_test ,P_value = ttest_1samp(age,30) #finding Ttest & pvalue
+
+print(P_value)
+
+
+
+if P_value < 0.05:
+
+  print("we reject the hypothesis")
+
+else:
+
+  print("we accept the hypothesis")
+
+
+
+
+
+"""Hypothesis Testing Two data set"""
+
+
+
+from scipy.stats  import ttest_ind
+
+import numpy as np
+
+
+
+subjectA = [10,14,15,18,16,15,17,18,10,19]
+
+subjectB = [17,14,15,18,16,14,13,11,17,19]
+
+
+
+t_test , p_value = ttest_ind(subjectA,subjectB)
+
+print(p_value)
+
+
+
+alpha = 0.05
+
+if p_value < alpha:
+
+  print("there is a signaficant difference between them accept ")
+
+else:
+
+  print("there is no signaficant difference between them reject")`;
+
+        var text6 = `
+
+    import pandas as pd
+
+from sklearn.model_selection import train_test_split
+
+from sklearn.linear_model import LogisticRegression
+
+from sklearn.metrics import accuracy_score
+
+import warnings
+
+
+
+data = pd.read_csv("/content/Iris.csv")
+
+data.head(5)
+
+
+
+#split the data
+
+X = data[['SepalLengthCm','SepalWidthCm','PetalLengthCm','PetalWidthCm']]
+
+Y = data[['Species']]
+
+X_Train,X_Test,Y_Train,Y_Test = train_test_split(X,Y,test_size = 0.3)
+
+
+
+#fitting the training data into the model
+
+model = LogisticRegression()
+
+model.fit(X_Train,Y_Train)
+
+
+
+#predicting finding the accuracy of the prediction
+
+pred = model.predict(X_Test)
+
+accuracy = accuracy_score(Y_Test,pred)
+
+print(accuracy)`;
+
+        var text7 = `
+
+    import pandas as pd
+
+import numpy as np
+
+from scipy import stats
+
+
+
+df = pd.read_csv("/content/sample.csv")
+
+#select the variable
+
+x = df['TCS']
+
+y = df['Wipro']
+
+df.head(5)
+
+
+
+#calculate the Correlation coefficient
+
+c = stats.pearsonr(x,y)[0]
+
+print(c)
+
+
+
+#printing the strength of the correlation
+
+if (c > 0.7):
+
+  print('strong positive correlation')
+
+elif(c > 0.4):
+
+  print("moderate correlation")
+
+elif(c > 0):
+
+  print("weak positive correlation")
+
+elif(c < 0 and c >= -0.4):
+
+  print("moderate negative")
+
+elif (c > -0.7):
+
+  print('strong negative correlation')
+
+
+
+#simple linear regression
+
+m = stats.linregress(x,y)
+
+print("Slope: {:.2f}".format(m.slope))
+
+print("Intercept: {:.2f}".format(m.intercept))
+
+print("R-value (Correlation Coefficient): {:.2f}".format(m.rvalue))
+
+
+
+#extract linear regression coefficient
+
+s = m.slope
+
+print(s)
+
+i = m.intercept
+
+print(i)
+
+
+
+pred_y = s * x + i
+
+r_squared = m.rvalue
+
+print(r_squared)
+
+
+
+"""# *Group 2*"""
+
+
+
+# for same sector companies
+
+from scipy.stats import stats
+
+from scipy import stats as st
+
+import pandas as pd
+
+import warnings
+
+# Suppress warnings
+
+warnings.filterwarnings("ignore")
+
+com1= pd.read_csv("INFY.NS.csv")
+
+com2= pd.read_csv("TCS.NS.csv")
+
+# -----------------------correlation--------------------------
+
+c = st.pearsonr(com1['Close'],com2['Close'])[0]
+
+print(c)
+
+if (c > 0.7):
+
+print('strong positive correlation')
+
+elif(c > 0.4):
+
+print("moderate correlation")
+
+elif(c > 0):
+
+print("weak positive correlation")
+
+elif(c < 0 and c >= -0.4):
+
+print("moderate negative")
+
+elif (c > -0.7):
+
+print('strong negative correlation')
+
+#---------------------------------simple linear regression------------------------------
+
+m = stats.linregress(com1['Close'],com2['Close'])
+
+print("simple linear regression",m)
+
+#-------------------------------extract linear regression coefficient--------------------------------------------------
+
+s = m.slope
+
+print("slope",s)
+
+i = m.intercept
+
+print("extract linear regression coefficient",i)
+
+pred_y = s*com1['Close']+i
+
+r_squared = m.rvalue
+
+print("rsquare",r_squared)
+
+# for different sector companies
+
+import pandas as pd
+
+from scipy.stats import stats
+
+Com1=pd.read_csv("MANKIND.NS.csv")
+
+Com2=pd.read_csv("INFY.NS.csv")
+
+t_test,p_value=stats.ttest_ind(Com1['Close'],Com2['Close'])
+
+print(p_value)
+
+if p_value < 0.05:
+
+print("fits in portfolio")
+
+else:
+
+print("does not fit in portfolio")
+
+# -----------------------corelation--------------------------
+
+c = st.pearsonr(com1['Close'],com2['Close'])[0]
+
+print(c)
+
+if (c > 0.7):
+
+print('strong positive correlation')
+
+elif(c > 0.4):
+
+print("moderate correlation")
+
+elif(c > 0):
+
+print("weak positive correlation")
+
+elif(c < 0 and c >= -0.4):
+
+print("moderate negative")
+
+elif (c > -0.7):
+
+print('strong negative correlation')
+
+#---------------------------------simple linear regression------------------------------
+
+m = stats.linregress(com1['Close'],com2['Close'])
+
+print("simple linear regression",m)
+
+#-------------------------------extract linear regression coefficient--------------------------------------------------
+
+s = m.slope
+
+print("slope",s)
+
+i = m.intercept
+
+print("extract linear regression coefficient",i)
+
+pred_y = s*com1['Close']+i
+
+r_squared = m.rvalue
+
+print("rsquare",r_squared)
+
+`;
+
+        var text8 = `
+
+    import numpy as np
+
+import matplotlib.pyplot as plt
+
+from statistics import mean,median,mode
+
+
+
+#creating a dataset
+
+examScore = [35,28,32,45,22,18,42,36,26,50] #5th 20-> 22 2nd 28 ->18
+
+
+
+#calculate mean median mode
+
+avg1 = mean(examScore)
+
+med = median(examScore)
+
+Mode = mode(examScore)
+
+print(avg1)
+
+print(med)
+
+print(Mode)
+
+
+
+#create a histogram to visualise marks
+
+plt.hist(examScore,bins = 10,edgecolor = 'k',alpha = 0.6)
+
+plt.xlabel("Exam Score")
+
+plt.ylabel("Frequency")
+
+plt.title("Histogram of Exam Score")
+
+plt.show()
+
+
+
+#working with Bi-Variant
+
+import pandas as pd
+
+#create a bi-variant data set
+
+data = pd.DataFrame({"Height":[165,165,70,180,185],"Weight":[60,65,70,75,65]})
+
+#print the data set
+
+data.info()
+
+data.shape
+
+data.head()
+
+data.describe()
+
+
+
+#create Scatter plot
+
+plt.scatter(data["Height"],data["Weight"])
+
+#add label to the axis
+
+plt.xlabel("Height")
+
+plt.ylabel("Weight")
+
+plt.title("Scatter Plot of Height And Weight")
+
+plt.show()
+
+
+
+#Working with iris data set using univariant
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+#load the Data set
+
+df = pd.read_csv("/content/Iris.csv")
+
+print(df)
+
+df.describe()
+
+
+
+#display uni variant data using histogram
+
+sns.set(style="whitegrid")
+
+plt.figure(figsize=(12,6))
+
+#sepal length
+
+plt.subplot(1,2,1)
+
+sns.histplot(df['SepalLengthCm'],color = "darkorange")
+
+plt.title("Sepal Length")
+
+# sapel width
+
+plt.subplot(2,2,2)
+
+sns.histplot(df["SepalWidthCm"],color='darkorange')
+
+plt.title("sapel width")
+
+# petal length
+
+plt.subplot(2,2,3)
+
+sns.histplot(df["PetalLengthCm"],color='darkorange')
+
+plt.title("petal length")
+
+plt.show()
+
+
+
+#using histogram to display univariate for categorial Variable
+
+sns.histplot(x = 'SepalLengthCm',data = df,hue = df['Species'])
+
+
+
+#vertical Histogram
+
+sns.histplot(df,y = "SepalLengthCm",color = 'magenta')
+
+
+
+sns.boxplot(df["SepalLengthCm"],color = 'green')
+
+plt.show
+
+df["SepalLengthCm"].describe()
+
+
+
+# count plot is used for distribution of categorial variable
+
+sns.countplot(df,x='Species')
+
+plt.show()
+
+
+
+sns.barplot(df, x="Species", y="SepalLengthCm")
+
+plt.show()`;
+
+    var text9 = `
+
+    Cassandra Storage Tool
+
+    START
+
+    
+
+    Java v1.8/8 - Java -version 
+
+    Python v2.7 - Python –version 
+
+    cassandra v3.11 - Cassandra -v 
+
+    
+
+    In a Command Prompt -> 'Cassandra -f' //to start the Cassandra
+
+
+
+    
+
+    In another Command Promt -> cqlsh -> Clck ENTER
+
+    CREATE KEYSPACE <YourDBName> WITH replication = {'class': 'SimpleStrategy','replication_factor':1} //To create Keyspace -> Clck ENTER
+
+    USE <YourDBName> -> Clck ENTER
+
+
+
+    CREATE TABLE student(
+
+    student_id int PRIMARY KEY, 
+
+    student_name text,  
+
+    student_phone varint );
+
+
+
+    //Insert 
+
+    //Enter Several Data using this Syntax
+
+    INSERT INTO <tablename> (<column1 name>, <column2 name>....)VALUES (<value1>, <value2>....) 
+
+
+
+    //SELECT
+
+    SELECT FROM <tablename> // All rows and columns
+
+    SELECT FROM <table name> WHERE <condition>; // only rows and columns that meet the condition e.g ... WHERE student_id = 2
+
+
+
+    //Update
+
+    UPDATE <tablename>SET <column1 name> = <new value>,<column2 name> = <value>....WHERE student_id = 2
+
+
+
+    //Delete
+
+    DELETE FROM <identifier> WHERE <condition>; 
+
+
+
+    END
+
+
+
+    Spark
+
+    START
+
+    JSON File
+
+    {"name":"", "age":, "Birthday Month": ""}
+
+    {"name":"", "age":, "Birthday Month": ""}
+
+    Command to start: spark-shell
+
+    
+
+    Commands:
+
+    val x = spark.read.json("Path/filename.json")
+
+
+
+x.show()
+
+
+
+x.filter($”age<21”).show()
+
+
+
+x.filter(col("Birthday Month").contains("October")).show()
+
+
+
+tempdataframe.createOrReplaceTempView("sample")
+
+
+
+spark.sql("select * from sample where age > 20").show()
+
+
+
+
+
+
+
+EXTRA 
+
+val a spark.read.options (Map("inferSchema"->"true", "header"->"true")).csv("C:/Users/Hp/Downloads/sql.csv")
+
+
+
+a.show()
+
+
+
+a.filter($"Rollno"<20).show()
+
+END
+
+    `;
+
+        function copyText(text) {
+
+            navigator.clipboard.writeText(text).then(function () {
+
+                document.getElementById('copiedMsg').innerHTML = "Text Copied"
+
+            }).catch(function (err) {
+
+                console.error('Unable to copy text', err);
+
+            });
+
+        }
+
+    </script>
+
+
+
+</body>
+
+
+
+</html>
