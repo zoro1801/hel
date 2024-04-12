@@ -14,6 +14,7 @@
 
     <style>
         body {
+            display:none;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f9f9f9;
             margin: 0;
@@ -22,6 +23,32 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+        }
+                #password-form {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #password-input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        #submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
         .container {
@@ -83,6 +110,11 @@
 </head>
 
 <body>
+    <div id="password-form">
+        <h2>Please enter the password</h2>
+        <input type="password" id="password-input" placeholder="Password">
+        <button id="submit-btn">Submit</button>
+    </div>
     <div>
         <div class="container">
             <button class="button button-icon button-primary" onclick="copyText(text1)">
@@ -687,6 +719,29 @@ print("Mean Squared Error:", mse)
             });
 
         }
+
+        // Get the password input and submit button
+        const passwordInput = document.getElementById('dhan1801');
+        const submitBtn = document.getElementById('submit-btn');
+
+        // Add event listener to the submit button
+        submitBtn.addEventListener('click', function() {
+            // Get the entered password
+            const password = passwordInput.value.trim();
+
+            // Check if the password is correct
+            if (password === 'your_password_here') {
+                // If password is correct, display the body
+                document.body.style.display = 'block';
+                // Remove the password form
+                document.getElementById('password-form').style.display = 'none';
+            } else {
+                // If password is incorrect, show an alert
+                alert('Incorrect password. Please try again.');
+                // Clear the password input
+                passwordInput.value = '';
+            }
+        });
 
     </script>
 
