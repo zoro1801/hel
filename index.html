@@ -578,6 +578,19 @@ plt.figure(figsize=(12, 8))
 plot_tree(model, filled=True, feature_names=X.columns, class_names=y.unique().astype(str))
 plt.title("Decision Tree Visualization \n")
 plt.show()
+
+A decision tree is a popular supervised machine learning algorithm used for both classification and regression tasks. It's a tree-like structure where each internal node represents a "decision" based on a feature attribute, each branch represents the outcome of that decision, and each leaf node represents the final prediction or classification.
+
+In a decision tree:
+
+Root Node: The top node of the tree, representing the entire dataset. It contains the feature that best splits the data into distinct classes or categories.
+
+Internal Nodes: These nodes represent a decision based on a feature attribute. They split the dataset into smaller subsets.
+
+Branches: Branches emanating from each internal node represent the outcome of the decision. Each branch leads to a child node based on the feature's value.
+
+Leaf Nodes: These are the terminal nodes of the tree. They represent the final outcome or prediction. For classification tasks, each leaf node corresponds to a class label. For regression tasks, leaf nodes contain continuous values.
+
     `;
 
         var text10 = `
@@ -607,9 +620,14 @@ if linkage == 'ward' and g is not None:
 else:
     print("Completeness Score is not applicable for the selected linkage method.")
 
+
+
+Agglomerative clustering is a hierarchical clustering technique used in unsupervised machine learning to group similar data points into clusters. In this approach, each data point initially represents a single cluster, and the algorithm progressively merges clusters based on their similarity until all data points belong to a single cluster or a stopping criterion is met.
+
+The basic idea behind agglomerative clustering is to iteratively merge the two closest clusters into a single cluster until a desired number of clusters or a specified linkage criterion is achieved. The "linkage criterion" determines how the distance between clusters is measured and influences the merging process.
     `;
         var text11 = `
-    import numpy as np
+import numpy as np
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -626,9 +644,25 @@ plt.title('Confusion Matrix', fontsize=17)
 plt.show()
 
 print(classification_report(actual, predicted))
+
+A confusion matrix is a performance measurement tool used in classification problems to evaluate the accuracy of a machine learning model. It is a table that describes the performance of a classification model on a set of test data for which the true values are known.
+
+In a confusion matrix:
+
+Each row represents the actual class labels.
+Each column represents the predicted class labels.
+The four main components of a confusion matrix are:
+
+True Positives (TP): The cases where the model correctly predicted the positive class.
+
+True Negatives (TN): The cases where the model correctly predicted the negative class.
+
+False Positives (FP): The cases where the model incorrectly predicted the positive class (it predicted positive when the actual class is negative).
+
+False Negatives (FN): The cases where the model incorrectly predicted the negative class (it predicted negative when the actual class is positive).
     `;
         var text12 = `
-    # Import necessary libraries
+# Import necessary libraries
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -658,6 +692,17 @@ y_pred = knn_classifier.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Accuracy: {accuracy:.2f}')
 
+Multi-class classification is a type of supervised learning task in machine learning where the goal is to classify input data points into one of multiple predefined classes or categories. In multi-class classification:
+
+Input Data: Each data point consists of a set of features or attributes. These features are used to make predictions about the class labels.
+
+Output Classes: There are more than two possible classes or categories that the input data can belong to. For example, in a multi-class classification problem for handwritten digit recognition, the classes would be the digits 0 through 9.
+
+Prediction: The model predicts the class label or category that best represents the input data point.
+
+Evaluation: The performance of the model is typically evaluated using metrics such as accuracy, precision, recall, and F1-score.
+
+Examples of multi-class classification tasks include handwritten digit recognition (predicting digits from 0 to 9), sentiment analysis with multiple sentiment categories, and classifying different types of animals.
 
     `;
         var text13 = `
@@ -708,6 +753,17 @@ classifier.fit(x_train_tfidf, y_train)
 # Predictions
 predictions = classifier.predict(x_test_tfidf)
 
+
+
+Multi-label classification is a supervised learning problem where each instance (or data point) can be assigned multiple labels or categories simultaneously. In contrast to multi-class classification, where each instance belongs to exactly one class, multi-label classification allows for more complex scenarios where instances may have multiple class labels associated with them.
+
+Key characteristics of multi-label classification:
+
+Multiple Labels: Each instance can be associated with one or more labels from a set of predefined labels.
+
+Label Dependencies: There can be dependencies or correlations between different labels. For example, in a document classification task, a document may belong to multiple categories simultaneously, such as "sports", "politics", and "entertainment".
+
+Output Representation: The output of a multi-label classification model is typically a binary vector where each element represents whether or not the corresponding label is present for a given instance.
     `;
         var text14 = `
 import pandas as pd
