@@ -129,14 +129,10 @@
     <div id="main">
 
         <div class="container">
-            
-            <button class="button button-icon button-primary">
-                <i class="fas fa-chart-line"></i>
-                <a href="Encryptor.html"></a><span>P1(A) KNN</span>
-            </button>
+                <a href="https://zoro1801.github.io/dante/Encryptor.html"></a><span>Encrypter</span>
             <button class="button button-icon button-primary" onclick="copyText(text1)">
                 <i class="fas fa-chart-line"></i>
-                <span>P1(A) KNN</span>
+                <span>P1(A) Linear Regression</span>
             </button>
             <button class="button button-icon button-secondary" onclick="copyText(text2)">
                 <i class="fas fa-chart-bar"></i>
@@ -210,50 +206,9 @@
     <script>
 
         var text1 = `
-#import Necessary libraries
-import numpy as np
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import  accuracy_score
-import matplotlib.pyplot as plt
 
-#Load the data
 
-iris = load_iris()
 
-iris.data.shape
-
-#Split the dataset into features and target
-
-X,Y = iris.data,iris.target
-
-#Split the dataset into training and testing set
-
-X_Train,X_Test,Y_Train,Y_Test = train_test_split(X,Y,test_size= 0.33,random_state=99)
-
-#initialize a KNearest Classifier
-
-knn_cls = KNeighborsClassifier(n_neighbors = 4)
-
-#Train the model on the training data
-
-knn_cls.fit(X_Train,Y_Train)
-
-#Make prediction on test data
-
-pred = knn_cls.predict(X_Test)
-
-#Evaluate the model accuracy
-
-acc = accuracy_score(Y_Test,pred)
-print(f"Accuracy :{acc:.2f")
-
-# Plotting the scatter graph
-plt.scatter(X_Test[:, 0], X_Test[:, 1], c=Y_Test, cmap='viridis')
-plt.xlabel('Feature 1')
-plt.ylabel('Feature 2')
-plt.show()
 
 The k-Nearest Neighbors (KNN) algorithm is a simple and effective classification algorithm used in supervised learning. It's a non-parametric and lazy learning algorithm, meaning it doesn't make any assumptions about the underlying data distribution and it doesn't learn a model during training. Instead, it memorizes the entire training dataset and makes predictions based on the similarity of new data points to the training data.
 
