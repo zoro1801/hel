@@ -12,6 +12,10 @@
 
     <title>Hel's Domain</title>
 
+    <script src="https://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.1.0/jsencrypt.min.js"></script>
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,10 +27,12 @@
             align-items: center;
             height: 100vh;
         }
-        #main{
-            display:none;
+
+        #main {
+            display: none;
         }
-                #password-form {
+
+        #password-form {
             margin: 0 auto;
             width: 300px;
             padding: 20px;
@@ -34,6 +40,7 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         #password-input {
             width: 100%;
             margin-bottom: 10px;
@@ -43,6 +50,7 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
+
         #submit-btn {
             width: 100%;
             padding: 10px;
@@ -117,13 +125,19 @@
         <input type="password" id="password-input" placeholder="Password">
         <button id="submit-btn">Submit</button>
     </div>
+
     <div id="main">
+
         <div class="container">
+            
+            <button class="button button-icon button-primary">
+                <i class="fas fa-chart-line"></i>
+                <a href="Encryptor.html"></a><span>P1(A) KNN</span>
+            </button>
             <button class="button button-icon button-primary" onclick="copyText(text1)">
                 <i class="fas fa-chart-line"></i>
                 <span>P1(A) KNN</span>
             </button>
-
             <button class="button button-icon button-secondary" onclick="copyText(text2)">
                 <i class="fas fa-chart-bar"></i>
                 <span>P1(B) KMeans</span>
@@ -142,7 +156,8 @@
             <button class="button button-icon button-primary" onclick="copyText(text5)">
                 <i class="fas fa-line-chart"></i>
                 <span>P4 Linear Regression </span>
-                <img src="https://raw.githubusercontent.com/zoro1801/dante/main/Screenshot%202024-04-12%20210931.png" alt="">
+                <img src="https://raw.githubusercontent.com/zoro1801/dante/main/Screenshot%202024-04-12%20210931.png"
+                    alt="">
             </button>
 
             <button class="button button-icon button-secondary" onclick="copyText(text6)">
@@ -766,40 +781,63 @@ Label Dependencies: There can be dependencies or correlations between different 
 Output Representation: The output of a multi-label classification model is typically a binary vector where each element represents whether or not the corresponding label is present for a given instance.
     `;
         var text14 = `
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error,accuracy_score
+lpsruw sdqgdv dv sg
+iurp vnohduq.prgho_vhohfwlrq lpsruw wudlq_whvw_vsolw
+iurp vnohduq.olqhdu_prgho lpsruw OlqhduUhjuhvvlrq
+iurp vnohduq.phwulfv lpsruw phdq_vtxduhg_huuru,dffxudfb_vfruh
 
-# Load the data
-data = pd.read_csv('Form Responses.csv')  # Replace 'responses.csv' with the path to your CSV file
-print("Data loaded successfully.")
-data.head()
+# Ordg wkh gdwd
+gdwd = sg.uhdg_fvy('Irup Uhvsrqvhv.fvy')  # Uhsodfh 'uhvsrqvhv.fvy' zlwk wkh sdwk wr brxu FVY iloh
+sulqw("Gdwd ordghg vxffhvvixoob.")
+gdwd.khdg()
 
-data.dropna(inplace=True)
+gdwd.gursqd(lqsodfh=Wuxh)
 
-X = data[['Salary']].values
-y = data['Satisfaction'].values
+A = gdwd[['Vdodub']].ydoxhv
+b = gdwd['Vdwlvidfwlrq'].ydoxhv
 
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Vsolw wkh gdwd lqwr wudlqlqj dqg whvwlqj vhwv
+A_wudlq, A_whvw, b_wudlq, b_whvw = wudlq_whvw_vsolw(A, b, whvw_vlch=0.2, udqgrp_vwdwh=42)
 
-# Train the model
-model = LinearRegression()
-model.fit(X_train, y_train)
+# Wudlq wkh prgho
+prgho = OlqhduUhjuhvvlrq()
+prgho.ilw(A_wudlq, b_wudlq)
 
-# Make predictions
-y_pred = model.predict(X_test)
+# Pdnh suhglfwlrqv
+b_suhg = prgho.suhglfw(A_whvw)
 
-# Evaluate the model
-mse = mean_squared_error(y_test, y_pred)
-print("Mean Squared Error:", mse)
+# Hydoxdwh wkh prgho
+pvh = phdq_vtxduhg_huuru(b_whvw, b_suhg)
+sulqw("Phdq Vtxduhg Huuru:", pvh)
 
     
     `;
-        function copyText(text) {
 
-            navigator.clipboard.writeText(text).then(function () {
+function caesarCipherEncrypt(text, shift) {
+  let encryptedText = "";
+  for (let i = 0; i < text.length; i++) {
+    let char = text[i];
+    if (char.match(/[a-z]/i)) {
+      let code = text.charCodeAt(i);
+      if (code >= 65 && code <= 90) {
+        char = String.fromCharCode(((code - 65 + shift) % 26) + 65);
+      } else if (code >= 97 && code <= 122) {
+        char = String.fromCharCode(((code - 97 + shift) % 26) + 97);
+      }
+    }
+    encryptedText += char;
+  }
+  return encryptedText;
+}
+var a = caesarCipherEncrypt(text14,3)
+console.log(a)
+function Unravel(encryptedText, shift) {
+  return caesarCipherEncrypt(encryptedText, (26 - shift) % 26);
+}
+        function copyText(text) {
+            var shift = 3;
+            var decryptedText = Unravel(text, shift);
+            navigator.clipboard.writeText(decryptedText).then(function () {
 
                 document.getElementById('copiedMsg').innerHTML = "Text Copied"
 
@@ -812,15 +850,17 @@ print("Mean Squared Error:", mse)
         }
         const passwordInput = document.getElementById('password-input');
         const submitBtn = document.getElementById('submit-btn');
-        submitBtn.addEventListener('click', function() {
+
+        submitBtn.addEventListener('click', function () {
             const password = passwordInput.value.trim();
-            if (password === 'gaandmaara') {
-                document.getElementById('main').style.display = 'block';
-                document.getElementById('password-form').style.display = 'none';
-            } else {
-                alert('Incorrect password. Please try again.');
-                passwordInput.value = '';
-            }
+                var hashpwd = caesarCipherEncrypt(password,3)
+                if (hashpwd === 'qdklghqd') {
+                    document.getElementById('main').style.display = 'block';
+                    document.getElementById('password-form').style.display = 'none';
+                } else {
+                    alert('Incorrect password. Please try again.');
+                    passwordInput.value = '';
+                }
         });
     </script>
 
