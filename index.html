@@ -129,76 +129,59 @@
     <div id="main">
 
         <div class="container">
-                <a href="https://zoro1801.github.io/dante/Encryptor.html"></a><span>Encrypter</span>
+            <a href="https://zoro1801.github.io/dante/Encryptor.html"></a><span>Encrypter</span>
             <button class="button button-icon button-primary" onclick="copyText(text1)">
                 <i class="fas fa-chart-line"></i>
                 <span>P1(A) Linear Regression</span>
             </button>
             <button class="button button-icon button-secondary" onclick="copyText(text2)">
                 <i class="fas fa-chart-bar"></i>
-                <span>P1(B) KMeans</span>
+                <span>P1(B) Logistic Regression</span>
             </button>
 
             <button class="button button-icon button-warning" onclick="copyText(text3)">
                 <i class="fas fa-chart-pie"></i>
-                <span>P2 Naive Bayes(Gaussian)</span>
+                <span>P2(A) R Language</span>
             </button>
 
             <button class="button button-icon button-info" onclick="copyText(text4)">
                 <i class="fas fa-chart-area"></i>
-                <span>P3 OverFitting</span>
+                <span>P2(B) KNN</span>
             </button>
 
             <button class="button button-icon button-primary" onclick="copyText(text5)">
                 <i class="fas fa-line-chart"></i>
-                <span>P4 Linear Regression </span>
-                <img src="https://raw.githubusercontent.com/zoro1801/dante/main/Screenshot%202024-04-12%20210931.png"
-                    alt="">
+                <span>P3 Bayesian with Heartdisease </span>
             </button>
 
             <button class="button button-icon button-secondary" onclick="copyText(text6)">
                 <i class="fas fa-bar-chart"></i>
-                <span>P5 SVC/SVM</span>
+                <span>P4 KMeans</span>
             </button>
 
             <button class="button button-icon button-warning" onclick="copyText(text7)">
                 <i class="fas fa-pie-chart"></i>
-                <span>P6(A) Kmeans Random Sample Data</span>
+                <span>P5 Data Visualization using python</span>
             </button>
 
             <button class="button button-icon button-info" onclick="copyText(text8)">
                 <i class="fas fa-chart-line"></i>
-                <span>P6(B) Kmeans Income & Spending Data</span>
+                <span>P6 Pie Diagram, Bar Chart Diagram using Python.</span>
             </button>
 
             <button class="button button-icon button-primary" onclick="copyText(text9)">
                 <i class="fas fa-chart-bar"></i>
-                <span>P7 Decision Tree</span>
+                <span>P7 ETL Web Scrapping</span>
             </button>
 
             <button class="button button-icon button-secondary" onclick="copyText(text10)">
                 <i class="fas fa-chart-pie"></i>
-                <span>P8 Agglomerative Clustering/Hierarchical Clustering</span>
+                <span>P8 Data Visualization using python libraries</span>
             </button>
 
             <button class="button button-icon button-warning" onclick="copyText(text11)">
                 <i class="fas fa-chart-area"></i>
-                <span>Assignment 1 Confusion Matrix Multi Class Classification</span>
-            </button>
-
-            <button class="button button-icon button-info" onclick="copyText(text12)">
-                <i class="fas fa-line-chart"></i>
-                <span>Assignment 2 Multi Class Classification Using KNN</span>
-            </button>
-
-            <button class="button button-icon button-primary" onclick="copyText(text13)">
-                <i class="fas fa-bar-chart"></i>
-                <span>Assignment 3 Multi Label Classification</span>
-            </button>
-
-            <button class="button button-icon button-secondary" onclick="copyText(text14)">
-                <i class="fas fa-pie-chart"></i>
-                <span>Assignment 4 Income Happiness Linear Regression</span>
+                <span>P9 Decision Tree</span>
             </button>
         </div>
         <p id="copiedMsg" style="display: block;"></p>
@@ -207,592 +190,515 @@
 
         var text1 = `
 
+        #importing required libraries and modules
+import random
+from sklearn.linear_model import LinearRegression
+import warnings
+warnings.filterwarnings('ignore')
+print("Name : Dhanraj Chinta 007")
+
+#Declaring input and output features for trainin
+feature_set = []
+target_set = []
+
+rows = 100
+limit = 1
+
+# fetching random values & appending them in the feature and target set to training the model
+for i in range(0,rows):
+  x = random.randint(0,limit)
+  y = random.randint(0,limit)
+z = random.randint(0,limit)
+  g = 9*x + 2*y + 3*z
+  print("x=",x,"\ty=",y,"\tz=",z,"\tg=",g);
+
+  feature_set.append([x,y,z])
+  target_set.append(g)
+# Creating the object & Training the model
+model = LinearRegression()
+model.fit(feature_set,target_set)
+
+#Providing test data to model for prediction
+Test_Data = [[9,2,3]]
+prediction = model.predict(Test_Data)
+
+#converting the values from float to int to avoid decimal values
+inta = int(prediction)
+intb = model.coef_.astype(int)
+
+print('Prediction:'+str(inta)+'\t'+ 'Coefficient:'+str(intb))
+print("Name : Dhanraj Chinta 007")
 
 
+Linear regression is a statistical method used to model the relationship between a dependent variable (often denoted as "y") and one or more independent variables (often denoted as "x₁, x₂, ..., xn"). The relationship is assumed to be linear, meaning that changes in the independent variables are associated with changes in the dependent variable in a straight-line fashion.
 
-The k-Nearest Neighbors (KNN) algorithm is a simple and effective classification algorithm used in supervised learning. It's a non-parametric and lazy learning algorithm, meaning it doesn't make any assumptions about the underlying data distribution and it doesn't learn a model during training. Instead, it memorizes the entire training dataset and makes predictions based on the similarity of new data points to the training data.
+The basic form of a linear regression model with one independent variable is represented as:
+
+y = mx + b
+
 
 
 `;
 
         var text2 = `
-# Import necessary libraries
-import numpy as np
-from sklearn.datasets import load_iris
+# Importing necessary libraries
+import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.cluster import KMeans
-from sklearn.metrics import accuracy_score
-import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, accuracy_score
 
-# Load the Iris dataset
-iris = load_iris()
+# Load the dataset
+dataset = pd.read_csv(r"diabetes.csv")
 
-# Split the dataset into features and target
-X, Y = iris.data, iris.target
+# Display the first few rows of the dataset
+print(dataset.head())
 
-# Initialize KMeans clustering with 3 clusters
-Km = KMeans(n_clusters=3, random_state=40)
+# Splitting the dataset into features (x) and target variable (y)
+x = dataset.drop(columns=['Outcome']).values # Features
+y = dataset['Outcome'].values # Target variable
 
-# Fit KMeans to the data
-Km.fit(X)
+# Splitting the dataset into the training set and test set
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=100)
 
-# Get cluster labels
-cluster_labels = Km.labels_
+# Feature scaling for standardization
+sc = StandardScaler()
+x_train = sc.fit_transform(x_train)
+x_test = sc.transform(x_test)
 
-# Plot the clusters
-plt.scatter(X[:, 0], X[:, 1], c=cluster_labels, cmap='viridis')
-plt.title("Scatter Plot of Iris Dataset using K-Means Clustering\n")
-plt.show()
+# Create a logistic regression model
+model = LogisticRegression()
+
+# Train the logistic regression model
+model.fit(x_train, y_train)
+
+# Predicting the test set results
+y_pred = model.predict(x_test)
+
+# Confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+print("Confusion Matrix :\n ", cm)
+
+# Model accuracy
+print("Accuracy :", accuracy_score(y_test, y_pred) * 100)
+print('Dhanraj Chinta - 007')
 
 
-KMeans is a popular unsupervised machine learning algorithm used for clustering data into groups. The goal of KMeans is to partition a dataset into K distinct, non-overlapping subsets (clusters) where each data point belongs to the cluster with the nearest mean (centroid).
-
-The algorithm iteratively assigns each data point to the nearest centroid and then recalculates the centroids based on the mean of the points assigned to each cluster. This process continues until the centroids no longer change significantly or a specified number of iterations is reached.
-
-KMeans is commonly used in various applications such as customer segmentation, image compression, and anomaly detection. It is relatively fast and scalable, making it suitable for large datasets. However, it requires specifying the number of clusters (K) in advance, and its performance can be sensitive to the initialization of centroids.
+Logistic regression is another statistical method used for predicting the probability of a binary outcome based on one or more independent variables. Unlike linear regression, which predicts continuous outcomes, logistic regression predicts the probability of a categorical outcome.
 `;
 
         var text3 = `
+# Multiple Variables with same value
+print("Hello World!")
+Name <- "Dhanraj"
+Roll <- "KFMSCIT007"
+Dept <- var2 <- "Mscit Part 1 Sem 2" #Multiple Variables with same value
+cat(Name,Roll,Dept) # Concatenation
 
-        from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from sklearn.model_selection import train_test_split
-from sklearn.datasets import load_iris
+#plotting
+plot(c(1,3),c(3,10),main = "Dhanraj Chinta KFMSCIT007")
 
-# Load the Iris dataset
-df = load_iris()
-
-# Split the dataset into features (x) and target (y)
-x = df.data
-y = df.target
-
-# Split the data into training and testing sets
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
-
-# Initialize and train the Gaussian Naive Bayes classifier
-gnb = GaussianNB()
-gnb.fit(x_train, y_train)
-
-# Example user input
-user_input = [[5, 3, 5, 8]]
-
-# Predict the species with the user input
-predicted_index = gnb.predict(user_input)
-predicted_species = df.target_names[predicted_index][0]
-
-# Make predictions on the test set
-pred = gnb.predict(x_test)
-
-# Calculate accuracy score, confusion matrix, and classification report
-accuracy = accuracy_score(y_test, pred)
-conf_matrix = confusion_matrix(y_test, pred)
-class_report = classification_report(y_test, pred)
-
-# Print the results
-print(f'User Input Predicted Species: {predicted_species}')
-print(f'Accuracy Score: {accuracy:.2f}')
-print(f'Confusion Matrix:\n{conf_matrix}')
-print(f'Classification Report:\n{class_report}')
+#Line on a graph with plot()
+plot(1:10,type="c",col="red",main = "Dhanraj Chinta KFMSCIT007")
 
 
-Naive Bayes is a simple yet powerful algorithm used for classification tasks in machine learning. It's based on Bayes' theorem, which describes the probability of an event, based on prior knowledge of conditions that might be related to the event. Naive Bayes assumes that the features in the dataset are independent of each other, which is a naive assumption but often holds true in practice.
+#Line Width
+plot(1:10,type="c",col="red",lwd = "9",main = "Dhanraj Chinta KFMSCIT007")
 
-Gaussian Naive Bayes is a variant of the Naive Bayes algorithm that assumes that the features follow a Gaussian (normal) distribution. It's suitable for continuous data, where each feature is assumed to be normally distributed. In Gaussian Naive Bayes, the likelihood of the features is assumed to be Gaussian, and the parameters of the Gaussian distribution (mean and variance) are estimated from the training data.
 
-In summary, Gaussian Naive Bayes is specifically designed for datasets with continuous features, assuming that each class is associated with a Gaussian distribution of feature values. It's widely used in classification tasks, especially when dealing with real-valued features.
+#Multiple lines
+Line1 <- c(1,2,3,4,5,6,7,8,9,10)
+Line2 <- c(10,9,8,7,6,5,4,3,2,1)
+plot(Line1,type="b",col = "pink",lwd = "20",main = "Dhanraj Chinta KFMSCIT007")
+
+
+#Scatter Plot
+x <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+y <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+plot(x,y,main = "Observation of cars - Dhanraj Chinta",xlab = "Car Age",ylab = "Car Speed")
+
+
+#Barplot
+x <- c("A","B","C","D")
+y <- c(2,4,6,8)
+barplot(y,names.arg = x,,main = "Dhanraj Chinta KFMSCIT007")
+
+R is a programming language and software environment primarily used for statistical computing and graphics. It provides a wide variety of statistical and graphical techniques, including linear and nonlinear modeling, time-series analysis, classification, clustering, and more. R is open-source and has a large community of users and developers, which means there are many packages available for various statistical analyses and data visualization tasks.
 `;
 
         var text4 = `
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Generate synthetic data
-np.random.seed(0)
-X = np.linspace(0, 5, 20)  # 20 evenly spaced points between 0 and 5
-y = 2 * X + 1 + np.random.randn(20)  # Linear relationship with noise
-
-# Fit polynomial regression models of different degrees
-degrees = [1, 5, 10]  # degrees of the polynomial models
-colors = ['blue', 'red', 'green']  # colors for plotting
-
-plt.scatter(X, y, color='black', label='Data Points')
-
-for degree, color in zip(degrees, colors):
-    # Fit polynomial
-    coef = np.polyfit(X, y, degree)
-    poly = np.poly1d(coef)
-
-    # Generate points for plotting
-    x_values = np.linspace(0, 5, 100)
-    y_values = poly(x_values)
-
-    # Plotting
-    plt.plot(x_values, y_values, label=f'Degree {degree}', color=color)
-
-plt.xlabel('X')
-plt.ylabel('y')
-plt.title('Polynomial Regression Example')
-plt.legend()
-plt.grid(True)
+        import matplotlib.pyplot as plt
+from sklearn.neighbors import KNeighborsClassifier
+#Data Set
+x = [4, 5, 10, 4, 3, 11, 14 , 8, 10, 12]
+y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
+classes = [0, 0, 1, 0, 0, 1, 1, 0, 1, 1]
+print("Dhanraj Chinta - 007")
+#To plot data set
+plt.scatter(x, y, c=classes)
+plt.title("Graph 1 \n Dhanraj Chinta- 007")
 plt.show()
 
 
-Overfitting occurs when a machine learning model learns the training data too well, capturing noise or random fluctuations in the data rather than the underlying patterns or relationships. This leads to poor generalization performance on unseen data, as the model becomes too specific to the training set.
+#To merge x and y into single list
+data = list(zip(x, y))
+print(data)
+#model creation
+model = KNeighborsClassifier(n_neighbors=1)
+# Model is trained
+model.fit(data, classes)
+
+
+new_x = 8
+new_y = 21
+new_point = [(new_x, new_y)]
+prediction = model.predict(new_point)
+
+plt.scatter(x + [new_x], y + [new_y], c=classes + [prediction[0]])
+plt.text(x=new_x-1.7, y=new_y-0.7, s=f"new point, class: {prediction[0]}")
+plt.title("Graph 2 \n Dhanraj Chinta- 007")
+plt.show()
+
+
+model = KNeighborsClassifier(n_neighbors=5)
+model.fit(data, classes)
+prediction = model.predict(new_point)
+print(prediction)
+plt.scatter(x + [new_x], y + [new_y], c=classes + [prediction[0]])
+plt.text(x=new_x-1.7, y=new_y-0.7, s=f"new point, class: {prediction[0]}")
+plt.title("Graph 3 \n Dhanraj Chinta- 007")
+plt.show()
+
+
+K-Nearest Neighbors (KNN) is a simple and intuitive algorithm used for classification and regression tasks in machine learning. It's a type of instance-based learning, where the model memorizes the entire training dataset during training. When a prediction is needed for a new data point, KNN finds the k nearest data points in the training dataset and uses them to make a prediction.
 `;
 
         var text5 = `
 
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score
+        import pandas as pd
+from pgmpy.estimators import MaximumLikelihoodEstimator
+from pgmpy.models import BayesianModel
+from pgmpy.inference import VariableElimination
 
-# Load the dataset
-data = pd.read_csv("Salary_Data.csv")
-
-# Extract features (Years of Experience) and target (Salary)
-x = data['YearsExperience'].values.reshape(-1, 1)
-y = data["Salary"].values
-
-# Split the data into training and testing sets
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=99)
-
-# Initialize and train the Linear Regression model
-model = LinearRegression()
-model.fit(x_train, y_train)
-
-# Make predictions on the testing set
-predictions = model.predict(x_test)
-
-# Calculate R-squared score
-r2 = r2_score(y_test, predictions)
-print("R-squared Score:", r2)
-print("Dhanraj Chinta - KFMSCIT007")
-
-# Plot the actual vs. predicted values
-plt.scatter(x_test, y_test, color='blue', label='Actual')
-plt.scatter(x_test, predictions, color='red', label='Predicted')
-plt.xlabel('Years of Experience')
-plt.ylabel('Salary')
-plt.title('Linear Regression: Salary Prediction\n')
-plt.legend()
-plt.show()
+data = pd.read_csv(" HeartDisease.csv")
+heart_disease = pd.DataFrame(data)
+print(heart_disease)
 
 
-Linear regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables. It assumes a linear relationship between the independent variables (features) and the dependent variable (target). The goal of linear regression is to find the best-fitting straight line that describes the relationship between the variables. This line is represented by the equation:
+model = BayesianModel([
+    ('Age', 'Lifestyle'),
+    ('Gender', 'Lifestyle'),
+    ('Family', 'HeartDisease'),
+    ('Diet', 'Cholestrol'),
+    ('Lifestyle', 'Diet'),
+    ('Cholestrol', 'HeartDisease'),
+    ('Diet', 'Cholestrol')
+])
 
-\[ y = mx + b \]
+model.fit(heart_disease, estimator=MaximumLikelihoodEstimator)
 
-where:
-- \( y \) is the dependent variable (target),
-- \( x \) is the independent variable (feature),
-- \( m \) is the slope of the line, and
-- \( b \) is the y-intercept.
+HeartDisease_infer = VariableElimination(model)
 
-Mean squared error (MSE) is a common metric used to evaluate the performance of regression models, including linear regression. It measures the average squared difference between the actual values (observed) and the predicted values (estimated) by the model. The formula for MSE is:
+print('For Age enter SuperSeniorCitizen:0, SeniorCitizen:1, MiddleAged:2, Youth:3, Teen:4')
+print('For Gender enter Male:0, Female:1')
+print('For Family History enter Yes:1, No:0')
+print('For Diet enter High:0, Medium:1')
+print('for LifeStyle enter Athlete:0, Active:1, Moderate:2, Sedentary:3')
+print('for Cholesterol enter High:0, BorderLine:1, Normal:2')
 
+q = HeartDisease_infer.query(variables=['HeartDisease'],
+    evidence={
+    'Age': int(input('Enter Age: ')),
+    'Gender': int(input('Enter Gender: ')),
+    'Family': int(input('Enter Family History: ')),
+    'Diet': int(input('Enter Diet: ')),
+    'Lifestyle': int(input('Enter Lifestyle: ')),
+    'Cholestrol': int(input('Enter Cholestrol: '))
+})
 
+print("Dhanraj Chinta - 007")
+print(q)
 
-where:
-- \( n \) is the number of observations,
-- \( y_i \) is the actual value of the dependent variable for observation \( i \),
-- \( \hat{y}_i \) is the predicted value of the dependent variable for observation \( i \), and
-- \( \sum \) denotes summation over all observations.
-
+Bayesian statistics is a framework for probabilistic reasoning and inference based on Bayes' theorem, named after the Reverend Thomas Bayes. It provides a mathematical way to update beliefs or probabilities about hypotheses as new evidence or data becomes available.
 `;
 
         var text6 = `
-
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-from sklearn.svm import SVC
-
-# Load the iris dataset
-data = pd.read_csv('iris.csv')
-
-# Separate features (X) and target (Y)
-X = data.iloc[:, :-1].values
-Y = data.iloc[:, -1].values
-
-# Split the data into training and testing sets
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.4, random_state=10)
-
-# Initialize and train the Support Vector Classifier (SVC)
-model = SVC()
-model.fit(X_train, Y_train)
-
-# Predict the target labels for the test set
-Y_pred = model.predict(X_test)
-
-# Calculate evaluation metrics
-accuracy = accuracy_score(Y_test, Y_pred)
-precision = precision_score(Y_test, Y_pred, average='macro')
-recall = recall_score(Y_test, Y_pred, average='macro')
-f1 = f1_score(Y_test, Y_pred, average='macro')
-
-print("")
-print("---------------------------")
-# Print the evaluation metrics
-print("Accuracy:", accuracy)
-print("Precision:", precision)
-print("Recall:", recall)
-print("F1 Score:", f1)
-
-
-Support Vector Machine (SVM):
-
-SVM is a supervised learning algorithm used mainly for classification tasks but can also be used for regression tasks.
-It works by finding the hyperplane that best separates different classes in the feature space. The goal is to maximize the margin between the hyperplane and the nearest data points (support vectors).
-SVM can handle both linear and non-linear data by using different kernel functions such as linear, polynomial, radial basis function (RBF), etc.
-Support Vector Classifier (SVC):
-
-SVC is a specific implementation of SVM for classification tasks. It is essentially an SVM that is specifically used for classification.
-In scikit-learn, the SVC class is used for implementing SVM-based classification models.
-SVC aims to find the hyperplane that best separates different classes in the feature space.
-`;
-
-        var text7 = `
-import numpy as np
-import matplotlib.pyplot as plt
+        import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
-# Sample data
-data = np.array([[1, 2], [1.5, 1.8], [5, 8], [8, 8], [1, 0.5], [7, 9], [9, 10], [5.5, 8.5]])
+x = [4, 5, 10, 4, 3, 11, 14 , 6, 10, 12]
+y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
 
-# Number of clusters (k)
-k = 3
+plt.scatter(x, y)
+plt.title("Dhanraj Cinta - 007")
+plt.show()
 
-# Applying KMeans clustering
-kmeans = KMeans(n_clusters=k, random_state=0)
-clusters_labels = kmeans.fit_predict(data)
+data = list(zip(x, y))
+kmeans = KMeans(n_clusters=2)
+kmeans.fit(data)
 
-# Plotting clustered data
-plt.scatter(data[:, 0], data[:, 1], c=clusters_labels,label='Data Points')
-plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], marker='*', s=140, c='green', label='Cluster Centers')
-plt.xlabel('X Coordinate')
-plt.ylabel('Y Coordinate')
-plt.title('\nKMeans Clustering (k=' + str(k) + ')')
-plt.legend()
+plt.scatter(x, y, c=kmeans.labels_)
+plt.title("Dhanraj Cinta - 007")
 plt.show()
 
 
-K-Means is a popular unsupervised machine learning algorithm used for clustering data into groups or clusters based on similarities in the feature space. The algorithm aims to partition the data into a predefined number of clusters, where each data point belongs to the cluster with the nearest mean (centroid).
+K-means is a popular unsupervised machine learning algorithm used for clustering data into groups based on similarities among data points. The goal of K-means is to partition the data into K clusters, where each data point belongs to the cluster with the nearest mean (centroid).
+`;
+
+        var text7 = `
+import pandas as pd
+
+# reading the database
+data = pd.read_csv("tips.csv")
+print(data)
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# reading the database
+data = pd.read_csv(" tips.csv")
+
+# Scatter plot with day against tip
+plt.scatter(data['day'], data['tip'])
+# Adding Title to the Plot
+plt.title("Scatter Plot 1 \n Dhanraj Chinta - 007")
+# Setting the X and Y labels
+plt.xlabel('Day')
+plt.ylabel('Tip')
+
+plt.show()
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# reading the database
+data = pd.read_csv(" tips.csv")
+
+# Scatter plot with day against tip
+plt.scatter(data['day'], data['tip'], c=data['size'],s=data['total_bill'])
+# Adding Title to the Plot
+plt.title("Scatter Plot 2 \nDhanraj Chinta - 007")
+# Setting the X and Y labels
+plt.xlabel('Day')
+plt.ylabel('Tip')
+plt.colorbar()
+plt.show()
+
+
+Data visualization is the graphical representation of data and information to facilitate understanding and interpretation. It involves creating visual artifacts such as charts, graphs, maps, and dashboards to present data in a clear, concise, and meaningful way.
+
 `;
 
         var text8 = `
 
-import numpy as np
-import pandas as pd
+        import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
 
-# Sample data representing (Income and Spending)
-data = pd.DataFrame({'Income': [25000, 50000, 75000, 100000, 125000, 150000, 175000, 200000],
-                     'Spending': [15000, 25000, 35000, 45000, 55000, 65000, 75000, 85000]})
+# reading the database
+data = pd.read_csv("tips.csv")
 
-# Number of clusters (k)
-k = 3
+# Bar chart with day against tip
+plt.bar(data['day'], data['tip'])
+plt.title("Bar Chart\nDhanraj Chinta - 007")
+# Setting the X and Y labels
+plt.xlabel('Day')
+plt.ylabel('Tip')
+plt.show()
 
-# Applying KMeans clustering
-kmeans = KMeans(n_clusters=k, random_state=0)
-clusters_labels = kmeans.fit_predict(data)
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Plotting clustered data
-plt.scatter(data['Income'], data['Spending'], c=clusters_labels, cmap='viridis', label='Data Points')
-plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], marker='*', s=140, c='green', label='Cluster Centers')
-plt.xlabel('Income')
-plt.ylabel('Spending')
-plt.title('Dhanraj Chinta - KFMSCIT007\nKMeans Clustering (k=' + str(k) + ')')
-plt.legend()
+plt.title("Normal PieChart\nDhanraj Chinta - 007")
+y1 = np.array([35,25,25,15])
+
+plt.pie(y1)
 plt.show()
 
 
-K-Means is a popular unsupervised machine learning algorithm used for clustering data into groups or clusters based on similarities in the feature space. The algorithm aims to partition the data into a predefined number of clusters, where each data point belongs to the cluster with the nearest mean (centroid).
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.title("PieChart with Labels\nDhanraj Chinta - 007")
+y2 = np.array([35,25,25,15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+plt.pie(y2, labels=mylabels)
+plt.show()
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.title("PieChart with Labels and Colors\nDhanraj Chinta - 007")
+y3 = np.array([35,25,25,15])
+
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+mycolors = ["black","hotpink","b","#4CAF50"]
+
+plt.pie(y3, labels=mylabels, colors=mycolors)
+plt.show()
+
+
 `;
 
         var text9 = `
+        import requests
+from bs4 import BeautifulSoup
 
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.tree import DecisionTreeClassifier, plot_tree
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report
+def check_word_in_webpage(url, word):
+    response = requests.get(url)
 
-# Load the Iris dataset
-data = pd.read_csv('iris.csv')
-# Separate features (X) and target (y)
-X = data.drop('species', axis=1)
-y = data['species']
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    if response.status_code == 200:
 
-# Initialize and train the Decision Tree Classifier
-model = DecisionTreeClassifier()
-model.fit(X_train, y_train)
-# Make predictions on the testing set
-y_pred = model.predict(X_test)
+        soup = BeautifulSoup(response.content, 'html.parser')
 
-# Evaluate the model
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
+        text_content = soup.get_text()
 
-# Print classification report for more evaluation metrics
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
+        if word.lower() in text_content.lower():
+            print(f"The word '{word}' is present in the webpage.")
+        else:
+            print(f"The word '{word}' is not present in the webpage.")
+    else:
+        print("Failed to retrieve webpage.")
 
-# Visualize the decision tree
-plt.figure(figsize=(12, 8))
-plot_tree(model, filled=True, feature_names=X.columns, class_names=y.unique().astype(str))
-plt.title("Decision Tree Visualization \n")
-plt.show()
+print("Welcome Dhanraj Chinta - 007")
+url = input("Enter the url you want to Scrap :  ")
+word_to_check = input("Enter the text you want to know which is present or not :  ")
+check_word_in_webpage(url, word_to_check)
 
-A decision tree is a popular supervised machine learning algorithm used for both classification and regression tasks. It's a tree-like structure where each internal node represents a "decision" based on a feature attribute, each branch represents the outcome of that decision, and each leaf node represents the final prediction or classification.
-
-In a decision tree:
-
-Root Node: The top node of the tree, representing the entire dataset. It contains the feature that best splits the data into distinct classes or categories.
-
-Internal Nodes: These nodes represent a decision based on a feature attribute. They split the dataset into smaller subsets.
-
-Branches: Branches emanating from each internal node represent the outcome of the decision. Each branch leads to a child node based on the feature's value.
-
-Leaf Nodes: These are the terminal nodes of the tree. They represent the final outcome or prediction. For classification tasks, each leaf node corresponds to a class label. For regression tasks, leaf nodes contain continuous values.
+Web scraping is the process of extracting data from websites. It involves fetching the HTML content of web pages and then parsing that content to extract the desired information, such as text, images, tables, links, or any other structured data.
 
     `;
 
         var text10 = `
-import numpy as np
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.metrics import silhouette_score, completeness_score
+#Data Visualization using Matplotlib
+#STEP -1 : Import Libraries
+import pandas as pd
+import matplotlib. pyplot as plt
 
-# Sample dataset
-data = np.array([[1, 1], [5, 5], [8, 8], [1, 0], [5, 4], [8, 1]])
+#Uploading Dataset
+data = pd.read_csv("Nifty.csv")
 
-# Parameters
-n_clusters = 2
-linkage = 'ward'  # Method for calculating linkage
-# Perform agglomerative clustering
-model = AgglomerativeClustering(n_clusters=n_clusters, linkage=linkage)
-cluster_labels = model.fit_predict(data)
+print(data)
+print(" ")
 
-# Calculate silhouette score
-silhouette = silhouette_score(data, cluster_labels)
-print("Silhouette Score:", silhouette)
+#Plotting of x-axis & y-axis plot
+plt. plot(data['Open'],marker = "o",markeredgecolor="white", markerfacecolor="blue")
+plt. plot(data['Close'],marker = "o",markeredgecolor="white", markerfacecolor="orange")
 
-# Calculate completeness score if applicable
-g = None  # Ground truth labels, if available
-if linkage == 'ward' and g is not None:
-    completeness = completeness_score(g, cluster_labels)
-    print("Completeness Score:", completeness)
-else:
-    print("Completeness Score is not applicable for the selected linkage method.")
+plt.grid()
+plt. title("Line Plot of NIFTY-50 by using Matplotlib\nBy Dhanraj Chinta - 007")
+plt. xlabel('Open')
+plt. ylabel('Close')
+plt.legend(['Open', 'Close'])
+plt. show()
 
 
-
-Agglomerative clustering is a hierarchical clustering technique used in unsupervised machine learning to group similar data points into clusters. In this approach, each data point initially represents a single cluster, and the algorithm progressively merges clusters based on their similarity until all data points belong to a single cluster or a stopping criterion is met.
-
-The basic idea behind agglomerative clustering is to iteratively merge the two closest clusters into a single cluster until a desired number of clusters or a specified linkage criterion is achieved. The "linkage criterion" determines how the distance between clusters is measured and influences the merging process.
-    `;
-        var text11 = `
-import numpy as np
-from sklearn.metrics import confusion_matrix, classification_report
+#DATA VISUALIZATION USING SEABORN
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-actual = np.array(['Apple', 'Orange', 'Banana', 'Apple', 'Orange', 'Apple', 'Orange', 'Banana', 'Banana', 'Apple'])
-predicted = np.array(['Apple', 'Orange', 'Orange', 'Apple', 'Orange', 'Apple', 'Orange', 'Banana', 'Banana', 'Orange'])
+# Load dataset
+data = pd.read_csv("Nifty.csv")
 
-cm = confusion_matrix(actual,predicted)
-
-sns.heatmap(cm,annot=True,fmt='g',xticklabels=['Apple', 'Orange', 'Banana'],yticklabels=['Apple', 'Orange', 'Banana'])
-plt.ylabel('Prediction', fontsize=13)
-plt.xlabel('Actual', fontsize=13)
-plt.title('Confusion Matrix', fontsize=17)
+# Plotting
+plt.figure(figsize=(10, 6))
+sns.lineplot(data=data[['Open', 'Close']], markers=True, marker='o', markeredgecolor="white", palette=['green', 'red'])
+plt.title("Line Plot of NIFTY-50 by using Seaborn\nBy Dhanraj Chinta - 007")
+plt.xlabel('Index')
+plt.ylabel('Price')
+plt.grid(True)
 plt.show()
 
-print(classification_report(actual, predicted))
+#PLotly
+import pandas as pd
+import plotly.express as px
 
-A confusion matrix is a performance measurement tool used in classification problems to evaluate the accuracy of a machine learning model. It is a table that describes the performance of a classification model on a set of test data for which the true values are known.
+# Load dataset
+data = pd.read_csv("Nifty.csv")
 
-In a confusion matrix:
+# Plotting
+fig = px.line(data, x=data.index, y=['Open', 'Close'], markers=True,
+              title="Line Plot of NIFTY-50 using Plotly\nBy Dhanraj Chinta - 007", labels={'index': 'Index', 'value': 'Price'},
+              color_discrete_sequence=['green', 'red'])
 
-Each row represents the actual class labels.
-Each column represents the predicted class labels.
-The four main components of a confusion matrix are:
+fig.update_layout(legend_title='Price', legend=dict(x=0, y=1, traceorder='normal'),
+                  plot_bgcolor='rgba(0,0,0,0)')
 
-True Positives (TP): The cases where the model correctly predicted the positive class.
+fig.show()
 
-True Negatives (TN): The cases where the model correctly predicted the negative class.
-
-False Positives (FP): The cases where the model incorrectly predicted the positive class (it predicted positive when the actual class is negative).
-
-False Negatives (FN): The cases where the model incorrectly predicted the negative class (it predicted negative when the actual class is positive).
+Matplotlib: A Python library for creating diverse static, interactive, and animated visualizations with extensive customization options.
+Plotly: A versatile library for generating interactive and web-based visualizations, facilitating data exploration and interaction across platforms.
+Seaborn: A statistical data visualization library built on Matplotlib, providing a simple interface for creating visually appealing statistical graphics effortlessly.
     `;
-        var text12 = `
-# Import necessary libraries
-from sklearn.datasets import load_iris
+        var text11 = `
+        import numpy as np
+import pandas as pd # Import Pandas for data loading
+import matplotlib.pyplot as plt
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
-# Load the Iris dataset
-iris = load_iris()
-X = iris.data  # Features
-y = iris.target  # Target variable (labels)
-#Apply Standard Scaler on feature
-scaler = StandardScaler()
-x_scaled = scaler.fit_transform(x)
-
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(x_scaled, y, test_size=0.2, random_state=42)
-
-# Initialize the k-NN classifier (with k=3)
-knn_classifier = KNeighborsClassifier(n_neighbors=3)
-
-# Train the classifier on the training data
-knn_classifier.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_pred = knn_classifier.predict(X_test)
-
-#Evaluate the accuracy of the classifier
+data = pd.read_csv('iris.csv')
+print(data.head())
+# Assuming the target variable is in a column named 'target'
+X = data.drop('species', axis=1)
+y = data['species']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
-print(f'Accuracy: {accuracy:.2f}')
-
-Multi-class classification is a type of supervised learning task in machine learning where the goal is to classify input data points into one of multiple predefined classes or categories. In multi-class classification:
-
-Input Data: Each data point consists of a set of features or attributes. These features are used to make predictions about the class labels.
-
-Output Classes: There are more than two possible classes or categories that the input data can belong to. For example, in a multi-class classification problem for handwritten digit recognition, the classes would be the digits 0 through 9.
-
-Prediction: The model predicts the class label or category that best represents the input data point.
-
-Evaluation: The performance of the model is typically evaluated using metrics such as accuracy, precision, recall, and F1-score.
-
-Examples of multi-class classification tasks include handwritten digit recognition (predicting digits from 0 to 9), sentiment analysis with multiple sentiment categories, and classifying different types of animals.
+print(f"Accuracy: {accuracy:.2f}")
+# Visualize and interpret the generated decision tree
+plt.figure(figsize=(12, 8))
+plot_tree(model, filled=True, feature_names=X.columns, class_names=y.unique().astype(str))
+plt.title("Decision Tree Visualization \nDhanraj Chinta - 007")
+plt.show()
 
     `;
-        var text13 = `
-    from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.multioutput import MultiOutputClassifier
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import accuracy_score, classification_report
-
-documents = [
-    "This study investigates the impact of diet on health outcomes.",
-    "New advancements in medical technology revolutionize healthcare.",
-    "A review of recent breakthroughs in cancer treatment research.",
-    "The role of genetics in determining susceptibility to diseases.",
-    "Understanding the connection between mental health and physical well-being."
-]
-
-# Multi-label classification labels
-labels = {
-    'Healthcare': [1, 0],
-    'Medical Research': [0, 1]
-}
-
-# Repeat documents and labels to create 100 samples
-documents *= 20  # Repeat each document 20 times to get 100 documents
-
-# Repeat labels accordingly
-y = [labels['Healthcare'], labels['Healthcare'], labels['Medical Research'],labels ['Medical Research'], [1, 1]] * 20
-
-# Print length to verify (Optional)
-print("Number of documents:", len(documents))
-print("Number of labels:", len(y))
-
-# Splitting the dataset into training and testing sets
-x_train, x_test, y_train, y_test = train_test_split(documents, y, test_size=0.2, random_state=42)
-
-# Vectorizing the text data
-tfidf_vectorizer = TfidfVectorizer()nnnn
-x_train_tfidf = tfidf_vectorizer.fit_transform(x_train)
-x_test_tfidf = tfidf_vectorizer.transform(x_test)
-
-# Multi-output classifier with Naive Bayes
-classifier = MultiOutputClassifier(MultinomialNB())
-
-# Training the classifier
-classifier.fit(x_train_tfidf, y_train)
-
-# Predictions
-predictions = classifier.predict(x_test_tfidf)
 
 
+        function caesarCipherEncrypt(text, shift) {
+            let encryptedText = "";
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                if (char.match(/[a-z]/i)) {
+                    let code = text.charCodeAt(i);
+                    if (code >= 65 && code <= 90) {
+                        char = String.fromCharCode(((code - 65 + shift) % 26) + 65);
+                    } else if (code >= 97 && code <= 122) {
+                        char = String.fromCharCode(((code - 97 + shift) % 26) + 97);
+                    }
+                }
+                encryptedText += char;
+            }
+            return encryptedText;
+        }
 
-Multi-label classification is a supervised learning problem where each instance (or data point) can be assigned multiple labels or categories simultaneously. In contrast to multi-class classification, where each instance belongs to exactly one class, multi-label classification allows for more complex scenarios where instances may have multiple class labels associated with them.
 
-Key characteristics of multi-label classification:
+        // function Unravel(encryptedText, shift) {
+        //   return caesarCipherEncrypt(encryptedText, (26 - shift) % 26);
+        // }
+        // function copyText(text) {
+        //     var shift = 3;
+        //     var decryptedText = Unravel(text, shift);
+        //     navigator.clipboard.writeText(decryptedText).then(function () {
 
-Multiple Labels: Each instance can be associated with one or more labels from a set of predefined labels.
+        //         document.getElementById('copiedMsg').innerHTML = "Text Copied"
 
-Label Dependencies: There can be dependencies or correlations between different labels. For example, in a document classification task, a document may belong to multiple categories simultaneously, such as "sports", "politics", and "entertainment".
+        //     }).catch(function (err) {
 
-Output Representation: The output of a multi-label classification model is typically a binary vector where each element represents whether or not the corresponding label is present for a given instance.
-    `;
-        var text14 = `
-lpsruw sdqgdv dv sg
-iurp vnohduq.prgho_vhohfwlrq lpsruw wudlq_whvw_vsolw
-iurp vnohduq.olqhdu_prgho lpsruw OlqhduUhjuhvvlrq
-iurp vnohduq.phwulfv lpsruw phdq_vtxduhg_huuru,dffxudfb_vfruh
+        //         console.error('Unable to copy text', err);
 
-# Ordg wkh gdwd
-gdwd = sg.uhdg_fvy('Irup Uhvsrqvhv.fvy')  # Uhsodfh 'uhvsrqvhv.fvy' zlwk wkh sdwk wr brxu FVY iloh
-sulqw("Gdwd ordghg vxffhvvixoob.")
-gdwd.khdg()
+        //     });
 
-gdwd.gursqd(lqsodfh=Wuxh)
+        // }
 
-A = gdwd[['Vdodub']].ydoxhv
-b = gdwd['Vdwlvidfwlrq'].ydoxhv
-
-# Vsolw wkh gdwd lqwr wudlqlqj dqg whvwlqj vhwv
-A_wudlq, A_whvw, b_wudlq, b_whvw = wudlq_whvw_vsolw(A, b, whvw_vlch=0.2, udqgrp_vwdwh=42)
-
-# Wudlq wkh prgho
-prgho = OlqhduUhjuhvvlrq()
-prgho.ilw(A_wudlq, b_wudlq)
-
-# Pdnh suhglfwlrqv
-b_suhg = prgho.suhglfw(A_whvw)
-
-# Hydoxdwh wkh prgho
-pvh = phdq_vtxduhg_huuru(b_whvw, b_suhg)
-sulqw("Phdq Vtxduhg Huuru:", pvh)
-
-    
-    `;
-
-function caesarCipherEncrypt(text, shift) {
-  let encryptedText = "";
-  for (let i = 0; i < text.length; i++) {
-    let char = text[i];
-    if (char.match(/[a-z]/i)) {
-      let code = text.charCodeAt(i);
-      if (code >= 65 && code <= 90) {
-        char = String.fromCharCode(((code - 65 + shift) % 26) + 65);
-      } else if (code >= 97 && code <= 122) {
-        char = String.fromCharCode(((code - 97 + shift) % 26) + 97);
-      }
-    }
-    encryptedText += char;
-  }
-  return encryptedText;
-}
-var a = caesarCipherEncrypt(text14,3)
-console.log(a)
-function Unravel(encryptedText, shift) {
-  return caesarCipherEncrypt(encryptedText, (26 - shift) % 26);
-}
         function copyText(text) {
-            var shift = 3;
-            var decryptedText = Unravel(text, shift);
-            navigator.clipboard.writeText(decryptedText).then(function () {
+
+            navigator.clipboard.writeText(text).then(function () {
 
                 document.getElementById('copiedMsg').innerHTML = "Text Copied"
 
@@ -808,17 +714,17 @@ function Unravel(encryptedText, shift) {
 
         submitBtn.addEventListener('click', function () {
             const password = passwordInput.value.trim();
-                var hashpwd = caesarCipherEncrypt(password,3)
-                if (hashpwd === 'qdklghqd') {
-                    document.getElementById('main').style.display = 'block';
-                    document.getElementById('password-form').style.display = 'none';
-                } else {
-                    alert('Incorrect password. Please try again.');
-                    passwordInput.value = '';
-                }
+            var hashpwd = caesarCipherEncrypt(password, 3)
+            if (hashpwd === 'qdklghqd') {
+                document.getElementById('main').style.display = 'block';
+                document.getElementById('password-form').style.display = 'none';
+            } else {
+                alert('Incorrect password. Please try again.');
+                passwordInput.value = '';
+            }
         });
 
-        console.log(Unravel('qdklghqd',3))
+        console.log(Unravel('qdklghqd', 3))
     </script>
 
 

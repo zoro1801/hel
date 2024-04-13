@@ -11,6 +11,8 @@
         }
 
         .container {
+            min-width: -webkit-fill-available;
+            gap: 4pc;
             display: flex;
             padding: 20px;
             flex-direction: row;
@@ -19,13 +21,16 @@
 
         .textarea-container {
             width: 50%;
-            margin-right: 13pc;
+            /* margin-right: 13pc; */
         }
 
         .output-container {
             width: 50%;
+
             position: relative;
         }
+
+
 
         #copyButton {
             position: absolute;
@@ -66,9 +71,10 @@
             <textarea id="inputTextarea" class="half-page" rows="10"
                 placeholder="Enter your Python code here"></textarea><br>
             <button onclick="encryptText()">Encrypt</button>
+            <button onclick="decryptText()">Decrypt</button>
         </div>
         <div class="output-container">
-            <div id="outputTextarea" class="half-page"></div>
+            <code id="outputTextarea" class="half-page"></code>
             <button id="copyButton" onclick="copyText()">Copy</button>
         </div>
     </div>
@@ -85,6 +91,12 @@
             document.getElementById('copyButton').style.display = 'block';
         }
 
+        function decryptText() {
+            var inputText = document.getElementById('inputTextarea').value;
+            var decryptedText = Unravel(inputText, 3);
+            document.getElementById('outputTextarea').innerText = decryptedText;
+            document.getElementById('copyButton').style.display = 'block';
+        }
         // Function to copy text to clipboard
         function copyText() {
             var text = document.getElementById("outputTextarea").innerHTML;
@@ -110,6 +122,10 @@
                 encryptedText += char;
             }
             return encryptedText;
+        }
+
+        function Unravel(encryptedText, shift) {
+            return caesarEncryptor(encryptedText, (26 - shift) % 26);
         }
     </script>
 </body>
