@@ -45,11 +45,8 @@
 
         .half-page {
             width: 50vw;
-            /* Set width to 50% of the viewport width */
-            height: 100vh;
-            /* Set height to 100% of the viewport height */
+            height: 50vh;
             resize: none;
-            /* Prevent resizing */
         }
 
         #inputTextArea {
@@ -99,8 +96,11 @@
         }
         // Function to copy text to clipboard
         function copyText() {
-            var text = document.getElementById("outputTextarea").innerHTML;
-            navigator.clipboard.writeText(text).then(function () {
+            const outputArea = document.getElementById('outputTextarea');
+
+            // Extract the text content from the output area
+            const textContent = outputArea.innerText || outputArea.textContent;
+            navigator.clipboard.writeText(textContent).then(function () {
                 document.getElementById('copiedMsg').innerHTML = "Text Copied";
             }).catch(function (err) {
                 console.error('Unable to copy text', err);
