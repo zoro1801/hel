@@ -195,7 +195,7 @@ import random
 from sklearn.linear_model import LinearRegression
 import warnings
 warnings.filterwarnings('ignore')
-print("Name : Dhanraj Chinta 007")
+print("Name : ")
 
 #Declaring input and output features for trainin
 feature_set = []
@@ -227,7 +227,7 @@ inta = int(prediction)
 intb = model.coef_.astype(int)
 
 print('Prediction:'+str(inta)+'\t'+ 'Coefficient:'+str(intb))
-print("Name : Dhanraj Chinta 007")
+print("Name : ")
 
 
 Linear regression is a statistical method used to model the relationship between a dependent variable (often denoted as "y") and one or more independent variables (often denoted as "x₁, x₂, ..., xn"). The relationship is assumed to be linear, meaning that changes in the independent variables are associated with changes in the dependent variable in a straight-line fashion.
@@ -281,7 +281,7 @@ print("Confusion Matrix :\n ", cm)
 
 # Model accuracy
 print("Accuracy :", accuracy_score(y_test, y_pred) * 100)
-print('Dhanraj Chinta - 007')
+print('')
 
 
 Logistic regression is another statistical method used for predicting the probability of a binary outcome based on one or more independent variables. Unlike linear regression, which predicts continuous outcomes, logistic regression predicts the probability of a categorical outcome.
@@ -296,32 +296,32 @@ Dept <- var2 <- "Mscit Part 1 Sem 2" #Multiple Variables with same value
 cat(Name,Roll,Dept) # Concatenation
 
 #plotting
-plot(c(1,3),c(3,10),main = "Dhanraj Chinta KFMSCIT007")
+plot(c(1,3),c(3,10),main = "")
 
 #Line on a graph with plot()
-plot(1:10,type="c",col="red",main = "Dhanraj Chinta KFMSCIT007")
+plot(1:10,type="c",col="red",main = "")
 
 
 #Line Width
-plot(1:10,type="c",col="red",lwd = "9",main = "Dhanraj Chinta KFMSCIT007")
+plot(1:10,type="c",col="red",lwd = "9",main = "")
 
 
 #Multiple lines
 Line1 <- c(1,2,3,4,5,6,7,8,9,10)
 Line2 <- c(10,9,8,7,6,5,4,3,2,1)
-plot(Line1,type="b",col = "pink",lwd = "20",main = "Dhanraj Chinta KFMSCIT007")
+plot(Line1,type="b",col = "pink",lwd = "20",main = "")
 
 
 #Scatter Plot
 x <- c(5,7,8,7,2,2,9,4,11,12,9,6)
 y <- c(99,86,87,88,111,103,87,94,78,77,85,86)
-plot(x,y,main = "Observation of cars - Dhanraj Chinta",xlab = "Car Age",ylab = "Car Speed")
+plot(x,y,main = "Observation of cars - ",xlab = "Car Age",ylab = "Car Speed")
 
 
 #Barplot
 x <- c("A","B","C","D")
 y <- c(2,4,6,8)
-barplot(y,names.arg = x,,main = "Dhanraj Chinta KFMSCIT007")
+barplot(y,names.arg = x,,main = "")
 
 R is a programming language and software environment primarily used for statistical computing and graphics. It provides a wide variety of statistical and graphical techniques, including linear and nonlinear modeling, time-series analysis, classification, clustering, and more. R is open-source and has a large community of users and developers, which means there are many packages available for various statistical analyses and data visualization tasks.
 `;
@@ -333,10 +333,10 @@ from sklearn.neighbors import KNeighborsClassifier
 x = [4, 5, 10, 4, 3, 11, 14 , 8, 10, 12]
 y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
 classes = [0, 0, 1, 0, 0, 1, 1, 0, 1, 1]
-print("Dhanraj Chinta - 007")
+print("")
 #To plot data set
 plt.scatter(x, y, c=classes)
-plt.title("Graph 1 \n Dhanraj Chinta- 007")
+plt.title("Graph 1 \n - ")
 plt.show()
 
 
@@ -356,7 +356,7 @@ prediction = model.predict(new_point)
 
 plt.scatter(x + [new_x], y + [new_y], c=classes + [prediction[0]])
 plt.text(x=new_x-1.7, y=new_y-0.7, s=f"new point, class: {prediction[0]}")
-plt.title("Graph 2 \n Dhanraj Chinta- 007")
+plt.title("Graph 2 \n - ")
 plt.show()
 
 
@@ -366,7 +366,7 @@ prediction = model.predict(new_point)
 print(prediction)
 plt.scatter(x + [new_x], y + [new_y], c=classes + [prediction[0]])
 plt.text(x=new_x-1.7, y=new_y-0.7, s=f"new point, class: {prediction[0]}")
-plt.title("Graph 3 \n Dhanraj Chinta- 007")
+plt.title("Graph 3 \n - ")
 plt.show()
 
 
@@ -416,7 +416,7 @@ q = HeartDisease_infer.query(variables=['HeartDisease'],
     'Cholestrol': int(input('Enter Cholestrol: '))
 })
 
-print("Dhanraj Chinta - 007")
+print("")
 print(q)
 
 Bayesian statistics is a framework for probabilistic reasoning and inference based on Bayes' theorem, named after the Reverend Thomas Bayes. It provides a mathematical way to update beliefs or probabilities about hypotheses as new evidence or data becomes available.
@@ -430,7 +430,7 @@ x = [4, 5, 10, 4, 3, 11, 14 , 6, 10, 12]
 y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
 
 plt.scatter(x, y)
-plt.title("Dhanraj Cinta - 007")
+plt.title("")
 plt.show()
 
 data = list(zip(x, y))
@@ -438,7 +438,7 @@ kmeans = KMeans(n_clusters=2)
 kmeans.fit(data)
 
 plt.scatter(x, y, c=kmeans.labels_)
-plt.title("Dhanraj Cinta - 007")
+plt.title("")
 plt.show()
 
 
@@ -461,7 +461,7 @@ data = pd.read_csv(" tips.csv")
 # Scatter plot with day against tip
 plt.scatter(data['day'], data['tip'])
 # Adding Title to the Plot
-plt.title("Scatter Plot 1 \n Dhanraj Chinta - 007")
+plt.title("Scatter Plot 1 \n ")
 # Setting the X and Y labels
 plt.xlabel('Day')
 plt.ylabel('Tip')
@@ -478,7 +478,7 @@ data = pd.read_csv(" tips.csv")
 # Scatter plot with day against tip
 plt.scatter(data['day'], data['tip'], c=data['size'],s=data['total_bill'])
 # Adding Title to the Plot
-plt.title("Scatter Plot 2 \nDhanraj Chinta - 007")
+plt.title("Scatter Plot 2 \n")
 # Setting the X and Y labels
 plt.xlabel('Day')
 plt.ylabel('Tip')
@@ -500,7 +500,7 @@ data = pd.read_csv("tips.csv")
 
 # Bar chart with day against tip
 plt.bar(data['day'], data['tip'])
-plt.title("Bar Chart\nDhanraj Chinta - 007")
+plt.title("Bar Chart\n")
 # Setting the X and Y labels
 plt.xlabel('Day')
 plt.ylabel('Tip')
@@ -509,7 +509,7 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.title("Normal PieChart\nDhanraj Chinta - 007")
+plt.title("Normal PieChart\n")
 y1 = np.array([35,25,25,15])
 
 plt.pie(y1)
@@ -519,7 +519,7 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.title("PieChart with Labels\nDhanraj Chinta - 007")
+plt.title("PieChart with Labels\n")
 y2 = np.array([35,25,25,15])
 mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
 
@@ -530,7 +530,7 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.title("PieChart with Labels and Colors\nDhanraj Chinta - 007")
+plt.title("PieChart with Labels and Colors\n")
 y3 = np.array([35,25,25,15])
 
 mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
@@ -562,7 +562,7 @@ def check_word_in_webpage(url, word):
     else:
         print("Failed to retrieve webpage.")
 
-print("Welcome Dhanraj Chinta - 007")
+print("Welcome ")
 url = input("Enter the url you want to Scrap :  ")
 word_to_check = input("Enter the text you want to know which is present or not :  ")
 check_word_in_webpage(url, word_to_check)
@@ -588,7 +588,7 @@ plt. plot(data['Open'],marker = "o",markeredgecolor="white", markerfacecolor="bl
 plt. plot(data['Close'],marker = "o",markeredgecolor="white", markerfacecolor="orange")
 
 plt.grid()
-plt. title("Line Plot of NIFTY-50 by using Matplotlib\nBy Dhanraj Chinta - 007")
+plt. title("Line Plot of NIFTY-50 by using Matplotlib\nBy ")
 plt. xlabel('Open')
 plt. ylabel('Close')
 plt.legend(['Open', 'Close'])
@@ -606,7 +606,7 @@ data = pd.read_csv("Nifty.csv")
 # Plotting
 plt.figure(figsize=(10, 6))
 sns.lineplot(data=data[['Open', 'Close']], markers=True, marker='o', markeredgecolor="white", palette=['green', 'red'])
-plt.title("Line Plot of NIFTY-50 by using Seaborn\nBy Dhanraj Chinta - 007")
+plt.title("Line Plot of NIFTY-50 by using Seaborn\nBy ")
 plt.xlabel('Index')
 plt.ylabel('Price')
 plt.grid(True)
@@ -621,7 +621,7 @@ data = pd.read_csv("Nifty.csv")
 
 # Plotting
 fig = px.line(data, x=data.index, y=['Open', 'Close'], markers=True,
-              title="Line Plot of NIFTY-50 using Plotly\nBy Dhanraj Chinta - 007", labels={'index': 'Index', 'value': 'Price'},
+              title="Line Plot of NIFTY-50 using Plotly\nBy ", labels={'index': 'Index', 'value': 'Price'},
               color_discrete_sequence=['green', 'red'])
 
 fig.update_layout(legend_title='Price', legend=dict(x=0, y=1, traceorder='normal'),
@@ -654,7 +654,7 @@ print(f"Accuracy: {accuracy:.2f}")
 # Visualize and interpret the generated decision tree
 plt.figure(figsize=(12, 8))
 plot_tree(model, filled=True, feature_names=X.columns, class_names=y.unique().astype(str))
-plt.title("Decision Tree Visualization \nDhanraj Chinta - 007")
+plt.title("Decision Tree Visualization \n")
 plt.show()
 
     `;
