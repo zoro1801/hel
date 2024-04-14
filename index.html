@@ -192,101 +192,45 @@
     <script>
         var text1 = `
 
-        #importing required libraries and modules
-import random
-from sklearn.linear_model import LinearRegression
-import warnings
-warnings.filterwarnings('ignore')
-print("Name : ")
+Zkdw lv wkh UVD dojrulwkp (Ulyhvw-Vkdplu-Dgohpdq)?
+Wkh UVD dojrulwkp (Ulyhvw-Vkdplu-Dgohpdq) lv wkh edvlv ri d fubswrvbvwhp -- d vxlwh ri fubswrjudsklf dojrulwkpv wkdw duh xvhg iru vshflilf vhfxulwb vhuylfhv ru sxusrvhv -- zklfk hqdeohv sxeolf nhb hqfubswlrq dqg lv zlghob xvhg wr vhfxuh vhqvlwlyh gdwd, sduwlfxoduob zkhq lw lv ehlqj vhqw ryhu dq lqvhfxuh qhwzrun vxfk dv wkh lqwhuqhw.
+Lq UVD fubswrjudskb, erwk wkh sxeolf dqg wkh sulydwh nhbv fdq hqfubsw d phvvdjh. Wkh rssrvlwh nhb iurp wkh rqh xvhg wr hqfubsw d phvvdjh lv xvhg wr ghfubsw lw. Wklv dwwulexwh lv rqh uhdvrq zkb UVD kdv ehfrph wkh prvw zlghob xvhg dvbpphwulf dojrulwkp: Lw surylghv d phwkrg wr dvvxuh wkh frqilghqwldolwb, lqwhjulwb, dxwkhqwlflwb, dqg qrq-uhsxgldwlrq ri hohfwurqlf frppxqlfdwlrqv dqg gdwd vwrudjh.
 
-#Declaring input and output features for trainin
-feature_set = []
-target_set = []
+iurp Fubswr.SxeolfNhb lpsruw UVD
+iurp Fubswr lpsruw Udqgrp
+iurp Fubswr.Flskhu lpsruw SNFV1_y1_5
+lpsruw elqdvfll
+u = Udqgrp.qhz().uhdg
+nhb = UVD.jhqhudwh(4096,u)
+phvvdjh = e'Gkdqudm Fklqwd'
+Hqfubswlrq
+flskhu_hqfubsw = SNFV1_y1_5.qhz(nhb)
+hqfubswhg_phvvdjh = flskhu_hqfubsw.hqfubsw(phvvdjh)
+sulqw("HQFUBSWHG PHVVDJH LV",elqdvfll.khaolib(hqfubswhg_phvvdjh))
 
-rows = 100
-limit = 1
-
-# fetching random values & appending them in the feature and target set to training the model
-for i in range(0,rows):
-  x = random.randint(0,limit)
-  y = random.randint(0,limit)
-z = random.randint(0,limit)
-  g = 9*x + 2*y + 3*z
-  print("x=",x,"\ty=",y,"\tz=",z,"\tg=",g);
-
-  feature_set.append([x,y,z])
-  target_set.append(g)
-# Creating the object & Training the model
-model = LinearRegression()
-model.fit(feature_set,target_set)
-
-#Providing test data to model for prediction
-Test_Data = [[9,2,3]]
-prediction = model.predict(Test_Data)
-
-#converting the values from float to int to avoid decimal values
-inta = int(prediction)
-intb = model.coef_.astype(int)
-
-print('Prediction:'+str(inta)+'\t'+ 'Coefficient:'+str(intb))
-print("Name : ")
-
-
-Linear regression is a statistical method used to model the relationship between a dependent variable (often denoted as "y") and one or more independent variables (often denoted as "x₁, x₂, ..., xn"). The relationship is assumed to be linear, meaning that changes in the independent variables are associated with changes in the dependent variable in a straight-line fashion.
-
-The basic form of a linear regression model with one independent variable is represented as:
-
-y = mx + b
-
-
+Ghfubswlrq
+flskhu_ghfubsw = SNFV1_y1_5.qhz(nhb)
+ghfubswhg_phvvdjh = flskhu_ghfubsw.ghfubsw(hqfubswhg_phvvdjh, Qrqh)
+sulqw("GHFUBSWHG PHVVDJH LV", ghfubswhg_phvvdjh)
 
 `;
 
         var text2 = `
-# Importing necessary libraries
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix, accuracy_score
-
-# Load the dataset
-dataset = pd.read_csv(r"diabetes.csv")
-
-# Display the first few rows of the dataset
-print(dataset.head())
-
-# Splitting the dataset into features (x) and target variable (y)
-x = dataset.drop(columns=['Outcome']).values # Features
-y = dataset['Outcome'].values # Target variable
-
-# Splitting the dataset into the training set and test set
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=100)
-
-# Feature scaling for standardization
-sc = StandardScaler()
-x_train = sc.fit_transform(x_train)
-x_test = sc.transform(x_test)
-
-# Create a logistic regression model
-model = LogisticRegression()
-
-# Train the logistic regression model
-model.fit(x_train, y_train)
-
-# Predicting the test set results
-y_pred = model.predict(x_test)
-
-# Confusion matrix
-cm = confusion_matrix(y_test, y_pred)
-print("Confusion Matrix :\n ", cm)
-
-# Model accuracy
-print("Accuracy :", accuracy_score(y_test, y_pred) * 100)
-print('')
+Ls frqiljxudwlrq
+lsfrqilj/doo
+Glvsodbv wkh ixoo WFS/LS frqiljxudwlrq iru doo dgdswhuv. Dgdswhuv fdq uhsuhvhqw skbvlfdo lqwhuidfhv, vxfk dv lqvwdoohg qhwzrun dgdswhuv, ru orjlfdo lqwhuidfhv, vxfk dv gldo-xs frqqhfwlrqv.
 
 
-Logistic regression is another statistical method used for predicting the probability of a binary outcome based on one or more independent variables. Unlike linear regression, which predicts continuous outcomes, logistic regression predicts the probability of a categorical outcome.
+lsfrqilj /glvsodbgqv
+Glvsodbv wkh frqwhqwv ri wkh GQV folhqw uhvroyhu fdfkh, zklfk lqfoxghv erwk hqwulhv suhordghg iurp wkh orfdo Krvwv iloh dqg dqb uhfhqwob rewdlqhg uhvrxufh uhfrugv iru qdph txhulhv uhvroyhg eb wkh frpsxwhu. Wkh GQV Folhqw vhuylfh xvhv wklv lqirupdwlrq wr uhvroyh iuhtxhqwob txhulhg qdphv txlfnob, ehiruh txhublqj lwv frqiljxuhg GQV vhuyhuv.
+
+
+lsfrqilj /ioxvkgqv
+Ioxvkhv dqg uhvhwv wkh frqwhqwv ri wkh GQV folhqw uhvroyhu fdfkh. Gxulqj GQV wurxeohvkrrwlqj, brx fdq xvh wklv surfhgxuh wr glvfdug qhjdwlyh fdfkh hqwulhv iurp wkh fdfkh, dv zhoo dv dqb rwkhu hqwulhv wkdw kdyh ehhq dgghg gbqdplfdoob.
+
+
+zplf rv jhw rvdufklwhfwxuh
+Wklv frppdqg lv xvhg wr uhwulhyh wkh dufklwhfwxuh ri wkh rshudwlqj vbvwhp lqvwdoohg rq d Zlqgrzv frpsxwhu. Wkh dufklwhfwxuh fdq eh hlwkhu 32-elw ru 64-elw.
 `;
 
         var text3 = `
@@ -661,7 +605,7 @@ plt.show()
 
     `;
 
-    var text12 = `
+        var text12 = `
     
     `;
 
@@ -684,27 +628,13 @@ plt.show()
         }
 
 
-        // function Unravel(encryptedText, shift) {
-        //   return caesarCipherEncrypt(encryptedText, (26 - shift) % 26);
-        // }
-        // function copyText(text) {
-        //     var shift = 3;
-        //     var decryptedText = Unravel(text, shift);
-        //     navigator.clipboard.writeText(decryptedText).then(function () {
-
-        //         document.getElementById('copiedMsg').innerHTML = "Text Copied"
-
-        //     }).catch(function (err) {
-
-        //         console.error('Unable to copy text', err);
-
-        //     });
-
-        // }
-
+        function Unravel(encryptedText, shift) {
+          return caesarCipherEncrypt(encryptedText, (26 - shift) % 26);
+        }
         function copyText(text) {
-
-            navigator.clipboard.writeText(text).then(function () {
+            var shift = 3;
+            var decryptedText = Unravel(text, shift);
+            navigator.clipboard.writeText(decryptedText).then(function () {
 
                 document.getElementById('copiedMsg').innerHTML = "Text Copied"
 
@@ -715,6 +645,20 @@ plt.show()
             });
 
         }
+
+        // function copyText(text) {
+
+        //     navigator.clipboard.writeText(text).then(function () {
+
+        //         document.getElementById('copiedMsg').innerHTML = "Text Copied"
+
+        //     }).catch(function (err) {
+
+        //         console.error('Unable to copy text', err);
+
+        //     });
+
+        // }
         const passwordInput = document.getElementById('password-input');
         const submitBtn = document.getElementById('submit-btn');
 
