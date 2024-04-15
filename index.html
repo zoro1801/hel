@@ -131,7 +131,7 @@
             <a href="https://zoro1801.github.io/dante/Encryptor.html" id="link" style="display: none;"><span>Encrypter</span></a>
             <button class="button button-icon button-primary" onclick="copyText(text1)">
                 <i class="fas fa-chart-line"></i>
-                <span>P1 RSA</span>
+                <span>P1 MVC</span>
             </button>
             <button class="button button-icon button-secondary" onclick="copyText(text2)">
                 <i class="fas fa-chart-bar"></i>
@@ -195,26 +195,68 @@
     </div>
     <script>
         var text1 = `
-Zkdw lv wkh UVD dojrulwkp (Ulyhvw-Vkdplu-Dgohpdq)?
-Wkh UVD dojrulwkp (Ulyhvw-Vkdplu-Dgohpdq) lv wkh edvlv ri d fubswrvbvwhp -- d vxlwh ri fubswrjudsklf dojrulwkpv wkdw duh xvhg iru vshflilf vhfxulwb vhuylfhv ru sxusrvhv -- zklfk hqdeohv sxeolf nhb hqfubswlrq dqg lv zlghob xvhg wr vhfxuh vhqvlwlyh gdwd, sduwlfxoduob zkhq lw lv ehlqj vhqw ryhu dq lqvhfxuh qhwzrun vxfk dv wkh lqwhuqhw.
-Lq UVD fubswrjudskb, erwk wkh sxeolf dqg wkh sulydwh nhbv fdq hqfubsw d phvvdjh. Wkh rssrvlwh nhb iurp wkh rqh xvhg wr hqfubsw d phvvdjh lv xvhg wr ghfubsw lw. Wklv dwwulexwh lv rqh uhdvrq zkb UVD kdv ehfrph wkh prvw zlghob xvhg dvbpphwulf dojrulwkp: Lw surylghv d phwkrg wr dvvxuh wkh frqilghqwldolwb, lqwhjulwb, dxwkhqwlflwb, dqg qrq-uhsxgldwlrq ri hohfwurqlf frppxqlfdwlrqv dqg gdwd vwrudjh.
+Exloglqj DSW.QHW Fruh PYF Dssolfdwlrq.
+Vwhs 1: lq fpg surpsw: grwqhw qhz pyf --dxwk qrqh
 
-iurp Fubswr.SxeolfNhb lpsruw UVD
-iurp Fubswr lpsruw Udqgrp
-iurp Fubswr.Flskhu lpsruw SNFV1_y1_5
-lpsruw elqdvfll
-u = Udqgrp.qhz().uhdg
-nhb = UVD.jhqhudwh(4096,u)
-phvvdjh = e'Gkdqudm Fklqwd'
-Hqfubswlrq
-flskhu_hqfubsw = SNFV1_y1_5.qhz(nhb)
-hqfubswhg_phvvdjh = flskhu_hqfubsw.hqfubsw(phvvdjh)
-sulqw("HQFUBSWHG PHVVDJH LV",elqdvfll.khaolib(hqfubswhg_phvvdjh))
+Vwhs 2: Fuhdwh d Prgho lq Prghov iroghu zlwk Surshuwlhv/Hqwlwlhv Brx zloo eh xvlqj lq brxu Surmhfw.
 
-Ghfubswlrq
-flskhu_ghfubsw = SNFV1_y1_5.qhz(nhb)
-ghfubswhg_phvvdjh = flskhu_ghfubsw.ghfubsw(hqfubswhg_phvvdjh, Qrqh)
-sulqw("GHFUBSWHG PHVVDJH LV", ghfubswhg_phvvdjh)
+VwrfnTxrwh.fv Frgh –
+xvlqj Vbvwhp;
+
+qdphvsdfh Sudf1_PYF.Prghov
+{
+sxeolf fodvv VwrfnTxrwh
+{
+sxeolf vwulqj Vbpero { jhw; vhw; }
+
+sxeolf lqw Sulfh { jhw; vhw; }
+
+sxeolf vwulqj Qdph { jhw; vhw; }
+}
+}
+
+Vwhsr 3: Lq Frqwuroohu Iroghu Zulwh wkh iroorzlqj frgh lq KrphFrqwuroohu.fv.
+
+KrphFrqwuroohu.fv Frgh –
+xvlqj Vbvwhp;
+xvlqj Plfurvriw.DvsQhwFruh.Pyf;
+xvlqj Sudf1_PYF.Prghov;
+
+qdphvsdfh Sudf1_PYF.Frqwuroohuv
+{
+sxeolf fodvv KrphFrqwuroohu : Frqwuroohu
+{
+sxeolf LDfwlrqUhvxow Lqgha(){
+VwrfnTxrwh vt = qhz VwrfnTxrwh { Vbpero = "PD", Sulfh = 3000, Qdph =
+"Hadp" };
+uhwxuq Ylhz(vt);
+}
+}
+}
+
+
+Vwhs 4: - Lq Ylhzv iroghu zulwh wkh frgh iru brxu zhesdjh.
+
+Lqgha.fvkwpo Frgh –
+
+@{
+YlhzGdwd["Wlwoh"] = "Krph Sdjh";
+}
+<vwboh>
+s{
+irqw-vlch:odujh;
+}
+</vwboh>
+<gly fodvv="whaw-fhqwhu">
+<s>Vbpero - @Prgho.Vbpero - @Prgho.Qdph</s>
+<s>Sulfh - @Prgho.Sulfh</s>
+</gly>
+
+Vwhs 5: - Qrz uxq brxu surmhfw xvlqj ‘grwqhw uxq’ Frppdqg.
+
+grwqhw uxq
+
+Vwhs 6: Qrz rshq wkh olqn d eurzvhu.
 
 `;
 
