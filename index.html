@@ -371,7 +371,6 @@ Uhdg: - Ihwfklqj doo wkh gdwd xvlqj wkh iroorzlqj frppdqg.
 fxuo --lqvhfxuh kwwsv://orfdokrvw:5001/dsl/jorvvdub
 
 Ihwfklqj Vlqjoh gdwd
-
 fxuo --lqvhfxuh kwwsv://orfdokrvw:5001/dsl/jorvvdub/PID {"whup":"PID", "ghilqlwlrq": "Dq dxwkhqwlfdwlrq surfhvv."}
 
 
@@ -381,123 +380,7 @@ fxuo --lqvhfxuh -A SXW -g "{\"whup\": \"PID\", \"ghilqlwlrq\":\"Prgli lhg uhfrug
 
 Ghohwh: - Ghohwh dqb gdwd xvlqj GHOHWH phwkrg dsl fdoo
 fxuo --lqvhfxuh --uhtxhvw GHOHWH --xuo kwwsv://orfdokrvw: 5001/dsl/jorvvdub/MV
-Sudfwlfdo 2
-Exloglqj DSW.QHW Zhe DSL Dssolfdwlrq.
 
-Vwhs 1: - lq frppdqg surpsw : grwqhw qhz zhedsl -r Jorvvdub
-
-vwhs 2: grwqhw uxq
-vwhs 3: Fuhdwh d JorvvdubFrqwuroohu.fv & JorvvdubLwhp.fv Fodvv iloh dqg dgg wkh iroorzlqj frgh.
-
-JorvvdubLwhp.fv:
-//JorvvdubLwhp.fv
-xvlqj Vbvwhp;
-
-qdphvsdfh Jorvvdub
-{
-sxeolf fodvv JorvvdubLwhp
-{
-sxeolf vwulqj Whup { jhw; vhw; }
-sxeolf vwulqj Ghilqlwlrq { jhw; vhw; }
-}
-}
-
-JorvvdubFrqwuroohu.fv:
-//Frqwuroohuv/JorvvdubFrqwuroohu.fv
-xvlqj Vbvwhp;
-xvlqj Vbvwhp.Froohfwlrqv.Jhqhulf;
-xvlqj Plfurvriw.DvsQhwFruh.Pyf;
-xvlqj Vbvwhp.LR;
-qdphvsdfh Jorvvdub.Frqwuroohuv
-{
-[DslFrqwuroohu]
-[Urxwh("dsl/[frqwuroohu]")]
-sxeolf fodvv JorvvdubFrqwuroohu : FrqwuroohuEdvh
-{
-sulydwh vwdwlf Olvw<JorvvdubLwhp> Jorvvdub = qhz Olvw<JorvvdubLwhp> {
-qhz JorvvdubLwhp
-{
-Whup= "KWPO",
-Ghilqlwlrq = "Kbshuwhaw Pdunxs Odqjxdjh"
-},
-qhz JorvvdubLwhp{
-Whup= "PYF",
-Ghilqlwlrq = "Prgho Ylhz Frqwuroohu"},
-qhz JorvvdubLwhp
-{
-Whup= "RshqLG",
-Ghilqlwlrq = "Dq rshq vwdqgdug iru dxwkhqwlfdwlrq"
-}
-};
-[KwwsJhw]
-sxeolf DfwlrqUhvxow<Olvw<JorvvdubLwhp>> Jhw()
-{
-uhwxuq Rn(Jorvvdub);
-}
-[KwwsJhw]
-[Urxwh("{whup}")]
-sxeolf DfwlrqUhvxow<JorvvdubLwhp> Jhw(vwulqj whup)
-{
-ydu jorvvdubLwhp = Jorvvdub.Ilqg(lwhp =>
-lwhp.Whup.Htxdov(whup, VwulqjFrpsdulvrq.LqyduldqwFxowxuhLjqruhFdvh));
-li (jorvvdubLwhp == qxoo)
-{
-uhwxuq QrwIrxqg();
-}
-hovh
-{
-uhwxuq Rn(jorvvdubLwhp);
-}
-}
-[KwwsSxw]
-sxeolf DfwlrqUhvxow Sxw(JorvvdubLwhp jorvvdubLwhp)
-{
-ydu halvwlqjJorvvdubLwhp = Jorvvdub.Ilqg(lwhp =>
-lwhp.Whup.Htxdov(jorvvdubLwhp.Whup,
-VwulqjFrpsdulvrq.LqyduldqwFxowxuhLjqruhFdvh));
-li (halvwlqjJorvvdubLwhp == qxoo)
-{
-uhwxuq EdgUhtxhvw("Fdqqrw xsgdwh d qrqw halvwlqj whup.");
-}
-hovh
-{
-halvwlqjJorvvdubLwhp.Ghilqlwlrq = jorvvdubLwhp.Ghilqlwlrq;
-uhwxuq Rn();
-}
-}
-[KwwsGhohwh]
-[Urxwh("{whup}")]
-sxeolf DfwlrqUhvxow Ghohwh(vwulqj whup)
-{
-ydu jorvvdubLwhp = Jorvvdub.Ilqg(lwhp =>
-lwhp.Whup.Htxdov(whup, VwulqjFrpsdulvrq.LqyduldqwFxowxuhLjqruhFdvh));
-li (jorvvdubLwhp == qxoo)
-{
-uhwxuq QrwIrxqg();
-}
-hovh
-{
-Jorvvdub.Uhpryh(jorvvdubLwhp);
-uhwxuq QrFrqwhqw();
-}
-}
-}
-}
-
-vwhs 4: Fuhdwh: -Fuhdwh d gdwd xvlqj SRVW Phwkrg dsl fdoo
-fxuo --lqvhfxuh -A SRVW -g "{\"whup\": \"MV\", \"ghilqlwlrq\":\"Mdydvfulsw\"}" -K "Frqwhqw-Wbsh: dssolfdwlrq/mvrq" kwwsv://orfdokrvw:5001/dsl/jorvvdub
-
-Vwhs 5: Uhdg: - Ihwfklqj doo wkh gdwd xvlqj wkh iroorzlqj frppdqg.
-fxuo --lqvhfxuh kwwsv://orfdokrvw:5001/dsl/jorvvdub
-
-Vwhs 6: Ihwfklqj Vlqjoh gdwd
-fxuo --lqvhfxuh kwwsv://orfdokrvw:5001/dsl/jorvvdub/PID
-
-Vwhs 7: Xsgdwh: - Xsgdwh wkh halwlqj gdwd xvlqj SXW phwkrg dsl fdoo.
-fxuo --lqvhfxuh -A SXW -g "{\"whup\": \"PID\", \"ghilqlwlrq\":\"Prglilhg uhfrug ri PID.\"}" -K "Frqwhqw-Wbsh: dssolfdwlrq/mvrq" kwwsv://orfdokrvw:5001/dsl /jorvvdub
-
-Vwhs 8: Ghohwh: - Ghohwh dqb gdwd xvlqj GHOHWH phwkrg dsl fdoo
-fxuo --lqvhfxuh --uhtxhvw GHOHWH --xuo kwwsv://orfdokrvw: 5001/dsl/jorvvdub/MV
 `;
 
         var text3 = `
@@ -513,13 +396,33 @@ Wr fkhfn wkh dydlodeoh lpdjhv lq wkh vbvwhp xv “grfnhu lpdjhv”
 Vwhs 2: - Lq Grfnhu kxe fuhdwh d uhsrvlwrub.
 
 Vwhs 3: - Orjlq wr wkh grfnhu kxe dffrxqw wr vwruh wkh lpdjhv olnh vkrzq ehorz.
+grfnhu orjlq --xvhuqdph=kho181
+szg: gkdq-1801
 
 Vwhs 4: - Zh zloo wdj wkh urfnhu lpdjh wr wkh qhz uhsrvlwrub fuhdwhg & sxvk lw wr wkh uhsrvlwrub.
 
+wdjjlqj
+grfnhu wdj {lpdjh LG} kho181/crur1801: iluvwwub
+
+sxvk
+grfnhu sxvk kho181/crur1801: iluvwwub
+
 Vwhs 5: - Zh zloo fuhdwh d lpdjh iurp vfudwfk dqg exlog lw.
+Fuhdwh iloh
+
+fdw > Grfnhuiloh << HRI
+IURP exvbera
+FPG hfkr "Khoor Zruog! Wklv lv pb iluvw Grfnhu Lpdjh."
+HRI
+
+exlog
+grfnhu exlog -w kho181/uhsr2
 
 Vwhs 6: - Qrz sxvk lw wr wkh uhsrvlwrub.
+grfnhu sxvk kho181/uhsr2
 
+uxq lw
+grfnhu uxq kho181/uhsr2
 
 
 `;
@@ -559,7 +462,7 @@ Surfhgxuh
 Vwhs 1: - zulwh d sxoo uhtxhvw iru qjlqa
 
 Vwhs 2: - Fuhdwh d Grfnhu frqwdlqhu qdphg “zheDss” uxqqlqj dq qjlqa zhe vhuyhu rq sruw 80. Wkh frqwdlqhu LG lv surylghg dv rxwsxw.
-
+grfnhu uxq -lw --qdph=zheDss -g -s 80:80 qjlqa
 Vwhs 3: -
 grfnhu hahf -lw zheDss edvk
 Wklv frppdqg rshqv dq lqwhudfwlyh edvk vkhoo lqvlgh dq halvwlqj Grfnhu frqwdlqhu qdphg “zheDss”.
@@ -570,7 +473,8 @@ wkhq halw wkh frqwdlqhu.
 Vwhs 4: -
 1. Fuhdwh d Grfnhu yroxph qdphg "PbYroxph": - Frppdqg: grfnhu yroxph fuhdwh PbYroxph.
 2. Vwrs d Grfnhu frqwdlqhu qdphg "zheDss1": - Frppdqg: grfnhu vwrs zheDss1
-3. Dwwhpsw wr uxq d Grfnhu frqwdlqhu qdphg "zheDss2" zlwk dq prxqw sdwk : - Frppdqg: grfnhu uxq -g –qdph=zheDss2 --prxqw vrxufh=PbYroxph,ghvwlqdwlrq=/xvu/vkduh/qjlqa/kwpo -s 80:80 qjlqa.
+3. Dwwhpsw wr uxq d Grfnhu frqwdlqhu qdphg "zheDss2" zlwk dq prxqw sdwk : - 
+Frppdqg: grfnhu uxq -g –qdph=zheDss2 --prxqw vrxufh=PbYroxph,ghvwlqdwlrq=/xvu/vkduh/qjlqa/kwpo -s 80:80 qjlqa.
 
 Vwhs 5: -
 1. Dffhvv wkh Grfnhu hqylurqphqw: - Fkdqjh gluhfwrub wr '/ydu/ole/grfnhu'
@@ -578,7 +482,32 @@ Vwhs 5: -
 3. Irfxv rq fxvwrp yroxph 'PbYroxph': - Fkdqjh gluhfwrub wr 'PbYroxph' - Ylhz frqwhqwv ri 'PbYroxph', lqfoxglqj 'gdwd' gluhfwrub
 4. Fuhdwh d iloh zlwklq 'PbYroxph/gdwd': - Xvh 'hfkr' frppdqg wr zulwh "Iurp PbYroxph Kho" lqwr 'lqgha.kwpo' iloh
 
-Vwhs 6:- uxqv d qhz Grfnhu frqwdlqhu qdphg "zheDss3" zlwk vshflilf sdudphwhuv: - Prxqwlqj d yroxph qdphg "PbYroxph" wr wkh ghvwlqdwlrq "/xvu/vkduh/qjlqa/kwpo". - Hasrvlqj wkh frqwdlqhu rq sruw 80 xvlqj wkh Qjlqa zhe vhuyhu zlwk wkh frppdqg "grfnhu uxq -g --qdph=zheDss3 --prxqw vrxufh=PbYroxph,ghvwlqdwlrq=/xvu/vkduh/qjlqa/kwpo -s 80:80 qjlqa".
+Zulwh wkhvh frppdqgv lq vhtxhqfh
+sohdvh eh d elw vpduwhu dqg grq'w frsb wkh $ vljq
+$ od/
+
+$ fg /ydu/ole/grfnhu
+
+$ ov
+
+$ fg yroxphv
+
+$ ov
+
+$ fg PbYroxph
+
+$ ov
+
+V fg _gdwd
+
+$ hfkr "Iurp PbYroxph Kho"
+
+$ hfkr "Iurp PbYroxph Kho" > lqgha.kwpo
+
+Vwhs 6:- uxqv d qhz Grfnhu frqwdlqhu qdphg "zheDss3" zlwk vshflilf sdudphwhuv: - Prxqwlqj d yroxph qdphg "PbYroxph" wr wkh ghvwlqdwlrq "/xvu/vkduh/qjlqa/kwpo". - Hasrvlqj wkh frqwdlqhu rq sruw 80 xvlqj wkh Qjlqa zhe vhuyhu zlwk wkh frppdqg
+
+"grfnhu uxq -g --qdph=zheDss3 --prxqw vrxufh=PbYroxph,ghvwlqdwlrq=/xvu/vkduh/qjlqa/kwpo -s 80:80 qjlqa".
+
 
 
 `;
@@ -621,6 +550,10 @@ Wkhrub –
 Grwqhwfruhvhuylfhv/whdpvhuylfh lv d vhuylfh wkdw doorzv ghyhorshuv wr fuhdwh dqg pdqdjh whdpv zlwklq d .QHW Fruh dssolfdwlrq. Lw surylghv ixqfwlrqdolwb iru fuhdwlqj, xsgdwlqj, dqg ghohwlqj whdpv, dv zhoo dv dgglqj dqg uhprylqj phpehuv iurp whdpv.
 Frppdqgv Dqg Surfhgxuh
 Vwhs 1: - Wr ehjlq ohw’v sxoo grwqhw vhuylfhv rq wkh orfdokrvw ri sruw 5000
+
+grfnhu uxq -g -s 5000:5000 -h SRUW=5000 \
+-h ORFDWLRQ_XUO=kwws://orfdokrvw:5001 \
+grwqhwfruhvhuylfhv/whdpvhuylfh:orfdwlrq
 
 Vwhs 2: - Qrz fuhdwh d orfdwlrq vhuylfhv rq sruw 5001.
 
