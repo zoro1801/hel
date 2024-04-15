@@ -128,7 +128,7 @@
 
     <div id="main">
         <div class="container">
-            <a href="https://zoro1801.github.io/dante/Encryptor.html" style="display: none;"><span>Encrypter</span></a>
+            <a href="https://zoro1801.github.io/dante/Encryptor.html" id="link" style="display: none;"><span>Encrypter</span></a>
             <button class="button button-icon button-primary" onclick="copyText(text1)">
                 <i class="fas fa-chart-line"></i>
                 <span>P1 RSA</span>
@@ -185,6 +185,10 @@
             <button class="button button-icon button-warning" onclick="copyText(text12)">
                 <i class="fas fa-chart-area"></i>
                 <span>P12 Putty SSH</span>
+            </button>
+            <button id = "download-btn" class="button button-icon button-warning" onclick="copyText(text13)">
+                <i class="fas fa-chart-area"></i>
+                <span>P13 ESA</span>
             </button>
         </div>
         <p id="copiedMsg" style="display: block;"></p>
@@ -455,7 +459,13 @@ Vwhs 10: - Diwhu lw lv frqqhfwhg zh’oo eh surpswhg wr hqwhu wkh ndol fuhghqwld
 
 Vwhs 11: - Diwhu Orjjlqj lq Zh fdq dffhvv wkh whuplqdo dqg dffhvv wkh iloh zklfk zh kdyh fuhdwhg.
     `;
+var text13 = `
+Zkdw lv Hqwhusulvh Vhfxulwb Dufklwhfwxuh?
+Fbehudwwdfnv kdyh ehfrph d pdmru frqfhuq dfurvv ydulrxv lqgxvwulhv dqg exvlqhvvhv dv wkh wkuhdw odqgvfdsh kdv lqfuhdvhg hasrqhqwldoob. Wkuhdw dfwruv kdyh lpsuryhg wkhlu dwwdfn yhorflwb, lqwhqvlwb, dqg frpsohalwb, khqfh wkh frvw ri d vhfxulwb euhdfk vnburfnhwhg. Udqvrpzduh, gdwd euhdfkhv, dqg rwkhu fbehu wkuhdwv kdyh ehfrph wrs-ri-plqg frqfhuqv iru frpsdqlhv’ ohdghuvkls whdpv.
 
+Dq hqwhusulvh vhfxulwb dufklwhfwxuh lv d vwudwhjb iru surylglqj frpsuhkhqvlyh surwhfwlrq iru dq rujdqlcdwlrq djdlqvw fbehu wkuhdwv. Wkh wkuhh fruh sulqflsohv duh frqvrolgdwlrq, chur wuxvw, dqg wkuhdw suhyhqwlrq.
+
+`;
 
         function caesarCipherEncrypt(text, shift) {
             let encryptedText = "";
@@ -485,6 +495,7 @@ Vwhs 11: - Diwhu Orjjlqj lq Zh fdq dffhvv wkh whuplqdo dqg dffhvv wkh iloh zklfk
 
                 document.getElementById('copiedMsg').innerHTML = "Text Copied"
                 document.getElementById('copiedMsg').style.display = 'block'
+                document.getElementById('link').style.display = 'block'
 
             }).catch(function (err) {
 
@@ -535,6 +546,25 @@ Vwhs 11: - Diwhu Orjjlqj lq Zh fdq dffhvv wkh whuplqdo dqg dffhvv wkh iloh zklfk
 
             // Listen for key press events on the document
             document.addEventListener("keypress", handleKeyPress);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var downloadBtn = document.getElementById("download-btn");
+
+            // Function to handle button click event
+            downloadBtn.addEventListener("click", function () {
+                // Create an anchor element
+                var link = document.createElement("a");
+
+                // Set the href attribute to the image URL
+                link.href = "a-high-level-design-n.jpg"; // Replace "image.jpg" with the actual URL of your image
+
+                // Set the download attribute to specify the filename
+                link.download = "a-high-level-design-n.jpg"; // Replace "image.jpg" with the desired filename
+
+                // Programmatically trigger a click on the anchor element
+                link.click();
+            });
         });
     </script>
 
