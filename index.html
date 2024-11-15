@@ -518,40 +518,54 @@ sulqw("Vshdupdq fruuhodwlrq lv qrw vwdwlvwlfdoob vljqlilfdqw.")
 `;
 
         var text7 = `
-Dlp – Fuhdwlqj Edfnlqj Vhuylfh zlwk DVS.QHW Fruh.
-Wkhrub –
-Grwqhwfruhvhuylfhv/whdpvhuylfh lv d vhuylfh wkdw doorzv ghyhorshuv wr fuhdwh dqg pdqdjh whdpv zlwklq d .QHW Fruh dssolfdwlrq. Lw surylghv ixqfwlrqdolwb iru fuhdwlqj, xsgdwlqj, dqg ghohwlqj whdpv, dv zhoo dv dgglqj dqg uhprylqj phpehuv iurp whdpv.
-Frppdqgv Dqg Surfhgxuh
-Vwhs 1: - Wr ehjlq ohw’v sxoo grwqhw vhuylfhv rq wkh orfdokrvw ri sruw 5000
+lpsruw qxpsb dv qs
+lpsruw sdqgdv dv sg
 
-grfnhu uxq -g -s 5000:5000 -h SRUW=5000 \
--h ORFDWLRQ_XUO=kwws://orfdokrvw:5001 \
-grwqhwfruhvhuylfhv/whdpvhuylfh:orfdwlrq
+# Ghilqh wkh wuhdwphqwv, vxemhfwv, dqg vhdvrqv
+wuhdwphqwv = ['Guls Luuljdwlrq', 'Vsulqnohu Luuljdwlrq', 'Vxuidfh Luuljdwlrq']
+fursv = ['Furs 1', 'Furs 2', 'Furs 3']
+vhdvrqv = ['Vsulqj', 'Vxpphu', 'Idoo']
 
-Vwhs 2: - Qrz fuhdwh d orfdwlrq vhuylfhv rq sruw 5001.
-grfnhu uxq -g -s 5001:5001 - SRUW-5001 \
-grwqhwfruhvhuylfhv/orfdwlrqvhuylfh:qrge
+# Fuhdwh d 3a3 Odwlq Vtxduh pdwula
+odwlq_vtxduh = qs.duudb([
+[wuhdwphqwv[0], wuhdwphqwv[1], wuhdwphqwv[2]], # Vsulqj
+[wuhdwphqwv[1], wuhdwphqwv[2], wuhdwphqwv[0]], # Vxpphu
+[wuhdwphqwv[2], wuhdwphqwv[0], wuhdwphqwv[1]], # Idoo
+])
 
-Vwhs 3: - Fkhfn wkh lpdjhv.
+# Fuhdwh d GdwdIudph iru wkh Odwlq Vtxduh Ghvljq
+hashulphqw_ghvljq = sg.GdwdIudph(odwlq_vtxduh, froxpqv=fursv, lqgha=vhdvrqv)
 
-Vwhs 4: - Fuhdwh d whdp xvlqj ehorz frppdqg & fkhfn li wkh whdp lv fuhdwhg.
-fxuo -K "Frqwhqw-Wbsh: dssolfdwlrq/mvrq" -A SRVW -g \
-'{"lg":"h52edd63-g511-417h-9h54-7dde04286281", "qdph":"NF"}' kwws://orfdokrvw:5000/whdpv
+# Glvsodb wkh hashulphqw ghvljq
+sulqw("Odwlq Vtxduh Ghvljq:")
+sulqw(hashulphqw_ghvljq)
 
-Vwhs 5: - Dgg d phpehu wr wkh whdp & fkhfn li wkh phpehu lv dgghg.
-fxuo -K "Frqwhqw-Wbsh: dssolfdwlrq/mvrq" -A SRVW -g \
-'{"lg":"63h7dfi8-8idh-42fh-9349-3f8593df8292", "iluvwQdph":"Gkdqudm",odvwQdph":"Fklqwd"}' kwws://orfdokrvw:5000/whdpv/h52edd63-g511-417h-9h54-7dde04286281/phpehuv
+# Gdwd froohfwlrq: khljkwv ri fursv diwhu rqh prqwk (lq fp)
+gdwd = {
+'Furs 1': [25, 30, 28], # Jurzwk fruuhvsrqglqj wr wkh ghvljq
+'Furs 2': [35, 32, 30],
+'Furs 3': [29, 33, 31]
+}
 
-Fkhfn lw
-fxuo kwws://orfdokrvw:5000/whdpv/h52edd63-g511-417h-9h54-7dde04286281
+# Fuhdwh d GdwdIudph iru wkh froohfwhg gdwd
+jurzwk_gdwd = sg.GdwdIudph(gdwd, lqgha=vhdvrqv)
+sulqw("\qFroohfwhg Furs Jurzwk Gdwd (fp):")
+sulqw(jurzwk_gdwd)
 
-Vwhs 6: - Dgg orfdwlrq ri wkh qhz phpehu & fkhfn li lw doorwwhg surshuob.
-fxuo -K "Frqwhqw-Wbsh: dssolfdwlrq/mvrq" -A SRVW -g \
+lpsruw vwdwvprghov.dsl dv vp
+iurp vwdwvprghov.irupxod.dsl lpsruw rov
 
-'{"lg":"h52edd63-g511-417h-9h54-7dde04286281", "odwlwxgh":12.0, "orqjlwxgh":12.0,"dowlwxgh":10.0,"wlphvwdps":0,"phpehuLg":"63h7dfi8-8idh-42fh-9349-3f8593df8292") kwws://orfdokrvw:5001/orfdwlrqv/63h7dfi8-8idh-42fh-9349-3f8593df8292
+# Uhvkdsh wkh gdwd iru DQRYD
+jurzwk_gdwd_phowhg = jurzwk_gdwd.uhvhw_lqgha().phow(lg_yduv='lqgha', ydu_qdph='Furs', ydoxh_qdph='Jurzwk')
+jurzwk_gdwd_phowhg.froxpqv = ['Vhdvrq', 'Furs', 'Jurzwk']
 
-Fkhfn lw
-fxuo kwws://orfdokrvw: 5001/orfdwlrqv/63h7dfi8-8idh-42fh-9349-3f8593df8292
+# Ilw wkh DQRYD prgho
+prgho = rov('Jurzwk ~ F(Furs) + F(Vhdvrq)', gdwd=jurzwk_gdwd_phowhg).ilw()
+dqryd_wdeoh = vp.vwdwv.dqryd_op(prgho, wbs=2)
+
+# Glvsodb wkh DQRYD uhvxowv
+sulqw("\qDQRYD Uhvxowv:")
+sulqw(dqryd_wdeoh)
 
 
 `;
