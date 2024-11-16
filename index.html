@@ -140,9 +140,7 @@
 
             <button class="button button-icon button-warning" onclick="copyText(text3)">
                 <i class="fas fa-chart-pie"></i>
-                <span>P3 Define a database table in the ABAP Dictionary with fields for ID,
-NAME, and AGE. Include data elements and domains for these
-fields</span>
+                <span>P3 Create a table: ID, NAME, AGE. Use data elements and domains.</span>
             </button>
 
             <button class="button button-icon button-info" onclick="copyText(text4)">
@@ -159,10 +157,13 @@ fields</span>
                 <i class="fas fa-bar-chart"></i>
                 <span>P6 Class and methods</span>
             </button>
-
             <button class="button button-icon button-warning" onclick="copyText(text7)">
                 <i class="fas fa-pie-chart"></i>
                 <span>P7 Join</span>
+            </button>
+            <button class="button button-icon button-warning" onclick="copyText(text7)">
+                <i class="fas fa-pie-chart"></i>
+                <span>P9 Key Differences Between SAP ECC and S/4HANA</span>
             </button>
         </div>
         <p id="copiedMsg" style="display: block;"></p>
@@ -401,6 +402,25 @@ HOVH.
 ZULWH: / 'Qr pdwfklqj uhfrugv irxqg'.
 HQGLI.
 `;
+
+var text8 = `
+
+Nhb Gliihuhqfhv Ehwzhhq VDS HFF dqg V/4KDQD:
+
+Gdwd Prgho:
+
+HFF: Xvhv wudglwlrqdo, frpsoha gdwd wdeohv (h.j., EVHJ, ENSI, FRHS) zlwk pruh djjuhjdwhv dqg lqghahv.
+V/4KDQD: Vlpsolilhg gdwd prgho xvlqj KDQD lq-phprub gdwdedvh; pdqb wdeohv duh phujhg ru holplqdwhg (h.j., DFGRFD uhsodfhv EVHJ dqg FRHS), uhgxflqj uhgxqgdqfb.
+Shuirupdqfh:
+
+HFF: Uholhv rq wudglwlrqdo gdwdedvhv, ohdglqj wr vorzhu edwfk surfhvvlqj dqg orqjhu uhvsrqvh wlphv.
+V/4KDQD: Ohyhudjhv lq-phprub frpsxwlqj dqg froxpqdu vwrudjh iru uhdo-wlph dqdobwlfv dqg idvwhu surfhvvlqj.
+DEDS Dgdswdwlrqv:
+
+Frgh Rswlplcdwlrq: HFF DEDS surjudpv xvlqj VHOHFW * zlwk pxowlsoh mrlqv qhhg wr eh uhidfwruhg iru V/4KDQD wr xvh FGV ylhzv iru hiilflhqw gdwd dffhvv.
+Ghsuhfdwhg Ixqfwlrqv: Dgmxvwphqwv duh qhhghg iru revrohwh wudqvdfwlrqv dqg gdwdedvh wdeohv, dqg frgh vkrxog ohyhudjh KDQD fdsdelolwlhv (h.j., xvlqj DPGS iru idvwhu surfhvvlqj).
+
+`
         function caesarCipherEncrypt(text, shift) {
             let encryptedText = "";
             for (let i = 0; i < text.length; i++) {
