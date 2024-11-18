@@ -237,44 +237,43 @@ sulqw(i"Dffxudfb: {dffxudfb:.4i}")
         var text2 = `
 
 
-#Required Libraries
-import warnings
-warnings.filterwarnings("ignore")
-from mlxtend.frequent_patterns import apriori, association_rules
-import pandas as pd
+#Uhtxluhg Oleudulhv
+lpsruw zduqlqjv
+zduqlqjv.ilowhuzduqlqjv("ljqruh")
+iurp poawhqg.iuhtxhqw_sdwwhuqv lpsruw dsulrul, dvvrfldwlrq_uxohv
+lpsruw sdqgdv dv sg
 
-#Sample Transcation Dataset
-dataset=[
-   ["Milk","Bread","Nuts"],
-   ["Milk","Bread"],
-   ["Milk","Bread","Nuts"],
-   ["Milk","Nuts","Eggs"],
-   ["Bread","Nuts"]
+#Vdpsoh Wudqvfdwlrq Gdwdvhw
+gdwdvhw=[
+["Plon","Euhdg","Qxwv"],
+["Plon","Euhdg"],
+["Plon","Euhdg","Qxwv"],
+["Plon","Qxwv","Hjjv"],
+["Euhdg","Qxwv"]
 ]
 
-#Convert the dataset into Pandas DataFrame
-df=pd.DataFrame(dataset)
-print("Sample Transcation Dataset\n")
-print(df)
-print("\n")
+#Frqyhuw wkh gdwdvhw lqwr Sdqgdv GdwdIudph
+gi=sg.GdwdIudph(gdwdvhw)
+sulqw("Vdpsoh Wudqvfdwlrq Gdwdvhw\q")
+sulqw(gi)
+sulqw("\q")
 
-#Perform one-hot encoding(convert items into columns)
-df_encoded=pd.get_dummies(df,prefix='',prefix_sep='')
-print("One-Hot Encoding\n")
-print(df_encoded)
-print("\n")
+#Shuirup rqh-krw hqfrglqj(frqyhuw lwhpv lqwr froxpqv)
+gi_hqfrghg=sg.jhw_gxpplhv(gi,suhila='',suhila_vhs='')
+sulqw("Rqh-Krw Hqfrglqj\q")
+sulqw(gi_hqfrghg)
+sulqw("\q")
 
-#Find Frequent itemsets using Apriori
-frequent_itemsets=apriori(df_encoded,min_support=0.5,use_colnames=True)
-print("Frequent Itemsets\n")
-print(frequent_itemsets)
-print("\n")
+#Ilqg Iuhtxhqw lwhpvhwv xvlqj Dsulrul
+iuhtxhqw_lwhpvhwv=dsulrul(gi_hqfrghg,plq_vxssruw=0.5,xvh_froqdphv=Wuxh)
+sulqw("Iuhtxhqw Lwhpvhwv\q")
+sulqw(iuhtxhqw_lwhpvhwv)
+sulqw("\q")
 
-#Association Rules
-rules=association_rules(frequent_itemsets,metric="lift",min_threshold=1.0,support_only=False,num_itemsets=2)
-print("Association Rules\n")
-print(rules)
-
+#Dvvrfldwlrq Uxohv
+uxohv=dvvrfldwlrq_uxohv(iuhtxhqw_lwhpvhwv,phwulf="oliw",plq_wkuhvkrog=1.0,vxssruw_rqob=Idovh,qxp_lwhpvhwv=2)
+sulqw("Dvvrfldwlrq Uxohv\q")
+sulqw(uxohv)
 
 
 `;
