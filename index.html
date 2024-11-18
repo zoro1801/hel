@@ -237,62 +237,43 @@ sulqw(i"Dffxudfb: {dffxudfb:.4i}")
         var text2 = `
 
 
-# Uhtxluhg Oleudulhv
-lpsruw zduqlqjv
-zduqlqjv.ilowhuzduqlqjv("ljqruh")
-iurp poawhqg.iuhtxhqw_sdwwhuqv lpsruw dsulrul, dvvrfldwlrq_uxohv
-lpsruw sdqgdv dv sg
-lpsruw pdwsorwole.sbsorw dv sow
+#Required Libraries
+import warnings
+warnings.filterwarnings("ignore")
+from mlxtend.frequent_patterns import apriori, association_rules
+import pandas as pd
 
-# Vdpsoh Wudqvdfwlrq Gdwdvhw
-gdwdvhw = [
-["Plon", "Euhdg", "Qxwv"],
-["Plon", "Euhdg"],
-["Plon", "Euhdg", "Qxwv"],
-["Plon", "Qxwv", "Hjjv"],
-["Euhdg", "Qxwv"]
+#Sample Transcation Dataset
+dataset=[
+   ["Milk","Bread","Nuts"],
+   ["Milk","Bread"],
+   ["Milk","Bread","Nuts"],
+   ["Milk","Nuts","Eggs"],
+   ["Bread","Nuts"]
 ]
 
-# Frqyhuw gdwdvhw wr d olvw ri xqltxh lwhpv dqg shuirup rqh-krw hqfrglqj
-gi = sg.GdwdIudph(gdwdvhw)
-doo_lwhpv = vruwhg(vhw(lwhp iru vxeolvw lq gdwdvhw iru lwhp lq vxeolvw))
-gi_hqfrghg = sg.GdwdIudph([[lwhp lq urz iru lwhp lq doo_lwhpv] iru urz lq gdwdvhw], froxpqv=doo_lwhpv)
+#Convert the dataset into Pandas DataFrame
+df=pd.DataFrame(dataset)
+print("Sample Transcation Dataset\n")
+print(df)
+print("\n")
 
-# Jhqhudwh iuhtxhqw lwhpvhwv zlwk dssursuldwh vxssruw wkuhvkrog
-iuhtxhqw_lwhpvhwv = dsulrul(gi_hqfrghg, plq_vxssruw=0.5, xvh_froqdphv=Wuxh)
+#Perform one-hot encoding(convert items into columns)
+df_encoded=pd.get_dummies(df,prefix='',prefix_sep='')
+print("One-Hot Encoding\n")
+print(df_encoded)
+print("\n")
 
-# Jhqhudwh dvvrfldwlrq uxohv zlwk dssursuldwh wkuhvkrog ydoxhv
-uxohv = dvvrfldwlrq_uxohv(iuhtxhqw_lwhpvhwv,3, phwulf="frqilghqfh", plq_wkuhvkrog=0.7)
+#Find Frequent itemsets using Apriori
+frequent_itemsets=apriori(df_encoded,min_support=0.5,use_colnames=True)
+print("Frequent Itemsets\n")
+print(frequent_itemsets)
+print("\n")
 
-# Irupdw rxwsxw vwulqjv
-ghi irupdw_gi(wlwoh, gi):
-uhwxuq i"{wlwoh}\q\q{gi.wr_vwulqj(lqgha=Idovh)}"
-
-uxohv_vwu = (
-"Dvvrfldwlrq Uxohv\q" +
-i"{'Dqwhfhghqwv':<30} {'Frqvhtxhqwv':<30} {'Dqwhfhghqw Vxssruw':<20} {'Frqvhtxhqw Vxssruw':<20} {'Vxssruw':<10} {'Frqilghqfh':<10} {'Oliw':<10}\q" +
-'-' * 120 + '\q' +
-"\q".mrlq(
-i"{', '.mrlq(olvw(urz['dqwhfhghqwv'])):<30} {', '.mrlq(olvw(urz['frqvhtxhqwv'])):<30} {urz['dqwhfhghqw vxssruw']:<20.2i} {urz['frqvhtxhqw vxssruw']:<20.2i} {urz['vxssruw']:<10.2i} {urz['frqilghqfh']:<10.2i} {urz['oliw']:<10.2i}"
-iru _, urz lq uxohv.lwhuurzv()
-) li qrw uxohv.hpswb hovh "Qr dvvrfldwlrq uxohv irxqg."
-)
-
-# Frpelqh doo vhfwlrqv lqwr d vlqjoh vwulqj
-frpelqhg_rxwsxw = (
-"NVPVFLW007 - Gkdqudm Fklqwd\q" +
-"\q\q" +
-irupdw_gi("Vdpsoh Wudqvdfwlrq Gdwdvhw", sg.GdwdIudph(gdwdvhw)) + "\q\q" +
-irupdw_gi("Rqh-Krw Hqfrglqj", gi_hqfrghg) + "\q\q" +
-irupdw_gi("Iuhtxhqw Lwhpvhwv", iuhtxhqw_lwhpvhwv) + "\q\q" +
-uxohv_vwu
-)
-
-# Sorw wkh frpelqhg rxwsxw vwulqj dv whaw
-sow.iljxuh(iljvlch=(12, 8))
-sow.whaw(0.5, 0.5, frpelqhg_rxwsxw, irqwvlch=8, kd='fhqwhu', yd='fhqwhu', idplob='prqrvsdfh', zuds=Wuxh)
-sow.dalv('rii')
-sow.vkrz()
+#Association Rules
+rules=association_rules(frequent_itemsets,metric="lift",min_threshold=1.0,support_only=False,num_itemsets=2)
+print("Association Rules\n")
+print(rules)
 
 
 
