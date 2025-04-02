@@ -1,0 +1,114 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Wrapper to center content */
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Card Container */
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  /* Hide the main card by default */
+  #main {
+    display: none;
+  }
+  
+  /* Titles & Subtitles */
+  .title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #b0b0b0;
+  }
+  
+  /* Input Field */
+  input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    background: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  input[type="password"]:focus {
+    background: #2a2a2a;
+    outline: none;
+  }
+  
+  /* Buttons */
+  .btn {
+    background: #1e88e5;
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .btn:hover {
+    background: #1565c0;
+    transform: translateY(-3px);
+  }
+  
+  /* Grid Layout for Buttons */
+  .btn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  /* Copy Message */
+  .copy-msg {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #66ff66;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Fade in Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
