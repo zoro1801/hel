@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hel's Domain</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Google Font: Montserrat -->
@@ -13,6 +14,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
   <div class="wrapper">
     <!-- Password Form -->
@@ -28,20 +30,39 @@
       <h1 class="title">Encryption Topics</h1>
       <p class="subtitle">Select a topic to reveal its text</p>
       <div class="btn-grid encryption-buttons">
-        <button class="btn" data-index="0"><i class="fas fa-lock"></i> P1 Hadoop Installation</button>
-        <button class="btn" data-index="1"><i class="fas fa-lock"></i> P2 PySpark Data Reading</button>
-        <button class="btn" data-index="2"><i class="fas fa-lock"></i> P3 Combining Data Frames with PySpark.</button>
-        <button class="btn" data-index="3"><i class="fas fa-lock"></i> P4 Collect, filter, map, MapReduce example using PySpark.</button>
-        <button class="btn" data-index="4"><i class="fas fa-lock"></i> P5 Creating Spark Sessions using the configuration and Data frame creation.</button>
-        <button class="btn" data-index="5"><i class="fas fa-lock"></i> P6 Temporary View</button>
-        <button class="btn" data-index="6"><i class="fas fa-lock"></i> P7 User Defined Functions in Spark</button>
-        <button class="btn" data-index="7"><i class="fas fa-lock"></i> P8 MLlib Linear Regression</button>
-        <button class="btn" data-index="8"><i class="fas fa-lock"></i> P9 MLlib KMeans</button>
-        <button class="btn" data-index="9"><i class="fas fa-lock"></i> P10 MLlib Logistic Regression</button>
-        <button class="btn" data-index="10"><i class="fas fa-lock"></i> P11 MLlib Naive Bayes</button>
-        <button class="btn" data-index="11"><i class="fas fa-lock"></i> P12 Real-Time Word Count with PySpark Streaming.<span style="color:red;">Need to correct the code</span></button>
-        <button class="btn" data-index="12"><i class="fas fa-lock"></i> P13 PySpark Word Count and Data Manipulation Example.</button>
-        <button class="btn" data-index="13"><i class="fas fa-lock"></i> Employee and Depatment CSVs</button>
+        <button class="btn" data-index="0"><i class="fas fa-lock"></i> P01A: DATA PREPROCESSING AND EXPLORATION</button>
+        <button class="btn" data-index="1"><i class="fas fa-lock"></i> P01B: Load a Dataset, Calculate Descriptive Summary Statistics, Create Visualizations</button>
+        <button class="btn" data-index="2"><i class="fas fa-lock"></i> P01C: Data Pre-Processing Routines – Label Encoding, Scaling, and Binarization</button>
+        <button class="btn" data-index="3"><i class="fas fa-lock"></i> P02A: Implementation of Decision Tree using Information Gain</button>
+        <button class="btn" data-index="4"><i class="fas fa-lock"></i> P02B: Implementation of Decision Tree Learning using Gini Index</button>
+        <button class="btn" data-index="5"><i class="fas fa-lock"></i> P02C: Implementing of Gini Index in Python</button>
+        <button class="btn" data-index="6"><i class="fas fa-lock"></i> P02D: Implementation of Decision Tree using Information gain</button>
+        <button class="btn" data-index="7"><i class="fas fa-lock"></i> P02E: Implementation of Information gain</button>
+        <button class="btn" data-index="8"><i class="fas fa-lock"></i> P03A: Classification of email as Spam or Ham</button>
+        <button class="btn" data-index="9"><i class="fas fa-lock"></i> P03B: Implementation of Naïve Bayes Classifier [Iris Dataset]</button>
+        <button class="btn" data-index="10"><i class="fas fa-lock"></i> P04A: Reading Data from Different Files Using [R Studio]</button>
+        <button class="btn" data-index="11"><i class="fas fa-lock"></i> P04B: Implementing Classification in R [Decision Tree Classifier]</button>
+        <button class="btn" data-index="12"><i class="fas fa-lock"></i> P04C: Implementing Classification in R [Naïve Bayes]</button>
+        <button class="btn" data-index="13"><i class="fas fa-lock"></i> P05A: Implementing Classifier in Python [SVM]</button>
+        <button class="btn" data-index="14"><i class="fas fa-lock"></i> P05B: Implementing Classifier in R Studio [SVM]</button>
+        <button class="btn" data-index="15"><i class="fas fa-lock"></i> P06A: Implementation of K-Means in Python</button>
+        <button class="btn" data-index="16"><i class="fas fa-lock"></i> P06B: Implementation of K-Means in R</button>
+        <!-- PDF download buttons -->
+        <a href="P07 Understating Weka.pdf" download class="btn">
+          <i class="fas fa-file-pdf"></i> P07 Understating Weka
+        </a>
+        <a href="P08 Implementing Classification in Weka [Decision Tree] .pdf" download class="btn">
+          <i class="fas fa-file-pdf"></i> P08 Implementing Classification in Weka [Decision Tree]
+        </a>
+        <a href="P09 Implementing Classification in Weka [Naïve Bayes].pdf" download class="btn">
+          <i class="fas fa-file-pdf"></i> P09 Implementing Classification in Weka [Naïve Bayes]
+        </a>
+        <a href="P10 Implementing Clustering with Weka.pdf" download class="btn">
+          <i class="fas fa-file-pdf"></i> P10 Implementing Clustering with Weka
+        </a>
+        <a href="CSV.zip" download class="btn">
+          <i class="fas fa-file-pdf"></i> Csv Files
+        </a>
       </div>
       <p id="copiedMsg" class="copy-msg"></p>
     </div>
@@ -50,4 +71,5 @@
   <!-- JS -->
   <script src="index.js"></script>
 </body>
+
 </html>
