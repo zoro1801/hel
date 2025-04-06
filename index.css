@@ -92,9 +92,11 @@
   
   /* Grid Layout for Buttons */
   .btn-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    display: flex;
+    gap: 18px;
+    justify-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
   
   /* Copy Message */
