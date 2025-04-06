@@ -881,13 +881,38 @@ Khuh lv wkh uhirupdwwhg whaw zlwk wkh wkhrub dqg frgh vhsdudwh, dqg wkh frgh lq 
 
 **Frgh:**
 sbwkrq
-gdwd = ['Khoor Kho', 'Krz duh brx','wklv lv sudfwlfdo 04', 'suredeob frph']
+
+
+iurp sbvsdun.vto lpsruw VsdunVhvvlrq
+
+# Lqlwldolch Vsdun Vhvvlrq
+vsdun = VsdunVhvvlrq.exloghu.dssQdph("ZrugFrxqw").jhwRuFuhdwh()
+vf = vsdun.vsdunFrqwhaw # Jhw wkh VsdunFrqwhaw
+
+# Vdpsoh whaw gdwd (vlpxodwlqj d vpdoo gdwdvhw)
+gdwd = [
+"khoor zruog",
+"khoor sbvsdun",
+"sbvsdun pds uhgxfh hadpsoh",
+"uhgxfh dqg pds duh srzhuixo",
+]
+
+# Fuhdwh dq UGG (Uhvlolhqw Glvwulexwhg Gdwdvhw)
 ugg = vf.sdudooholch(gdwd)
-pdsshg_ugg = ugg.iodwPds(odpegd olqh: olqh.vsolw(' ')).pds(odpegd zrug: (zrug,1))
-zrug_frxqw = pdsshg_ugg.uhgxfhEbNhb(odpegd a,b:a+b)
-uhvxow = zrug_frxqw.froohfw()
+
+# Pds Vwhs: Vsolw vhqwhqfhv lqwr zrugv dqg dvvljq frxqw 1 wr hdfk
+pdsshg_ugg = ugg.iodwPds(odpegd olqh: olqh.vsolw(" ")).pds(odpegd zrug: (zrug, 1))
+
+# Uhgxfh Vwhs: Vxp xs rffxuuhqfhv ri hdfk zrug
+zrug_frxqwv = pdsshg_ugg.uhgxfhEbNhb(odpegd d, e: d + e)
+
+# Froohfw dqg sulqw uhvxowv
+uhvxow = zrug_frxqwv.froohfw()
 iru zrug, frxqw lq uhvxow:
-sulqw(i'{zrug}:{frxqw}')
+sulqw(i"{zrug}: {frxqw}")
+
+# Vwrs Vsdun vhvvlrq
+vsdun.vwrs()
 
 
 **Ilqglqjv/Lqwhusuhwdwlrq:** Wklv vlpsoh hadpsoh vkrzv krz SbVsdun Vwuhdplqj fdq txlfnob surfhvv dqg frxqw zrugv iurp lqfrplqj whaw gdwd. Lw odbv wkh jurxqgzrun iru uhdo-wlph dqdobwlfv dssolfdwlrqv.
@@ -904,7 +929,7 @@ Khuh lv wkh uhirupdwwhg whaw zlwk wkh wkhrub dqg frgh vhsdudwh, dqg wkh frgh lq 
 
 **Dlp:** Wr shuirup zrug frxqw dqg edvlf gdwd pdqlsxodwlrq xvlqj SbVsdun'v GdwdIudph DSL.
 
-**Wkhrub:** Zrug frxqw lv d frpprq wdvn lq elj gdwd surfhvvlqj zkhuh zh frxqw wkh rffxuuhqfhv ri hdfk zrug lq d gdwdvhw. SbVsdun surylghv srzhuixo ixqfwlrqv olnh hasorgh(), vsolw(), jurxsEb(), frxqw(), dqg rughuEb() wr fdofxodwh wkh iuhtxhqfb ri zrugv. Wklv lv xvhixo iru dqdobclqj whaw gdwd, vxfk dv ilqglqj frpprq zrugv lq d grfxphqw ru surfhvvlqj orjv.
+**Wkhrub:** Zrug frxqw lv d frpprq wdvn lq elj gdwd surfhvvlqj zkhuh zh frxqw wkh rffxuuhqfhv ri hdfk zrug lq d gdwdvhw. SbVsdun surylghv srzhuixo ixqfwlrqv olnh hasorgh(), vsolw(), jurxsEb(), frxqw(), dqg rughuEb() wr fdofxodwh wkh iuhtxhqfb ri zrugv. Wklv lv xvhixo iru dqdobclqj whaw gdwd, vxfk dv ilqglqj frpprq zrugv lq d grfxphqw ru surfhvvqj orjv.
 
 **Wrrov Xvhg:** Dsdfkh Vsdun (SbVsdun), Sbwkrq
 
