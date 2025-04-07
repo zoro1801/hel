@@ -21,13 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     text8,
     text9,
     text10,
-    text11,
-    text12,
-    text13,
-    text14,
-    text15,
-    text16,
-    text17
+    text11
   ];
 
   // Simple Caesar Cipher function for encryption/decryption
@@ -91,605 +85,504 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 text1 = `
-#Sudfwlfdo 01D: GDWD SUHSURFHVVLQJ DQG HASORUDWLRQ
+
+
+#S01: Uhfrpphqgdwlrqv
 
 lpsruw sdqgdv dv sg
-gi = sg.uhdg_fvy('VdpsohGdwd.fvy')
-sulqw(gi)
 
-sulqw(gi.lqir())
-sulqw(gi["Qdph"])
+# Ordg gdwdvhwv
+gi1 = sg.uhdg_fvy('prylhv.fvy')
+gi2 = sg.uhdg_fvy('udwlqjv.fvy')
 
-sulqw(gi["Qdph"].lvqxoo())
+# Phujh gdwdvhwv dqg fohdq
+gi = gi2.phujh(gi1, rq='prylhLg').gurs(froxpqv=['wlphvwdps', 'jhquhv'])
 
-sulqw(gi["Qdph"])
-gi.ilooqd("Qxoo", lqsodfh=Wuxh)
-sulqw(gi["Qdph"])
+# Fuhdwh xvhu-prylh pdwula
+xvhu_prylh_pdwula = gi.slyrw(lqgha='prylhLg', froxpqv='xvhuLg', ydoxhv='udwlqj').ilooqd(0)
 
-gi["Qdph"]=gi["Qdph"].vwu.uhsodfh("Qxoo","brxuqdph")
-sulqw(gi["Qdph"])
+# Frpsxwh xvhu vlplodulwb pdwula
+xvhu_xvhu_pdwula = xvhu_prylh_pdwula.fruu(phwkrg='shduvrq')
 
-gi["Qdph"]=gi["Qdph"].vwu.orzhu()
-sulqw(gi["Qdph"])
+# Ilqg wrs vlplodu xvhuv wr xvhu 2 (hafoxglqj vhoi)
+gi_2 = xvhu_xvhu_pdwula.orf[2].vruw_ydoxhv(dvfhqglqj=Idovh).lorf[1:11].uhvhw_lqgha()
+gi_2.froxpqv = ['xvhuLg', 'vlplodulwb']
 
-gi["Qdph"]=gi["Qdph"].vwu.xsshu()
-sulqw(gi["Qdph"])
+# Phujh zlwk udwlqjv
+ilqdo_gi = gi_2.phujh(gi, rq='xvhuLg')
+ilqdo_gi['vfruh'] = ilqdo_gi['vlplodulwb'] * ilqdo_gi['udwlqj']
 
-gi["Qdph"]=gi["Qdph"].vwu.vwuls()
-sulqw(gi["Qdph"])
+# Hafoxgh douhdgb zdwfkhg prylhv
+zdwfkhg_prylhv = gi[gi['xvhuLg'] == 2]['prylhLg']
+uhfrpphqghg_gi = ilqdo_gi[~ilqdo_gi['prylhLg'].lvlq(zdwfkhg_prylhv)].vruw_ydoxhv(eb='vfruh', dvfhqglqj=Idovh)['wlwoh'].khdg(10).uhvhw_lqgha(gurs=Wuxh)
 
-lpsruw sdqgdv dv sg
-lpsruw qxpsb dv qs
-gdwd={'Ydoxh':[10,12,15,14,13,12,10,11,12,14,10]}
-gi=sg.GdwdIudph(gdwd)
-T1=gi.txdqwloh(0.25)
-T3=gi.txdqwloh(0.75)
-LTU=T3-T1
-orzhu_erxqg=T1-1.5*LTU
-xsshu_erxqg=T3+1.5*LTU
-rxwolhuv=gi[(gi<orzhu_erxqg)|(gi>xsshu_erxqg)]
-sulqw("Rxwolhuv:\\q",rxwolhuv)
+uhfrpphqghg_gi.khdg(10)
 
-lpsruw sdqgdv dv sg
-gi=sg.uhdg_fvy("VdpsohGdwd.fvy")
-gdwd=gi["Djh"]
-gdwdLqw=gdwd.dvwbsh(lqw)
-gdwdwrolvw=gdwdLqw.wrolvw()
-T1=gdwdLqw.txdqwloh(0.25)
-T3=gdwdLqw.txdqwloh(0.75)
-LTU=T3-T1
-orzhu_erxqg=T1-1.5*LTU
-xsshu_erxqg=T3+1.5*LTU
-rxwolhuv=gdwdLqw[(gdwdLqw<orzhu_erxqg)|(gdwdLqw>xsshu_erxqg)]
-sulqw("Rxwolhuv:\\q",rxwolhuv)
-`; // P01A
+
+`; // P01
 text2 = `
-#Sudfwlfdo 01E: Ordg d Gdwdvhw, Fdofxodwh Ghvfulswlyh Vxppdub Vwdwlvwlfv, Fuhdwh Ylvxdolcdwlrqv
 
+#S02 Surfhvvlqj Gdwd iurp Vrfldo Phgld Sodwirupv [Udz Gdwd Ihwfklqj]
+
+lpsruw vbv
+iurp sdwkole lpsruw Sdwk
 lpsruw sdqgdv dv sg
-lpsruw pdwsorwole.sbsorw dv sow
-lpsruw vhderuq dv vqv
+lpsruw sorwob.judsk_remhfwv dv jr
+iurp SLO lpsruw Lpdjh
+lpsruw dvw
 
-gi = sg.uhdg_fvy("wudlq.fvy")
-sulqw(gi.khdg())
+# Vhwxs
+sg.rswlrqv.glvsodb.pda_froxpqv = 50
+sg.rswlrqv.glvsodb.pda_urzv = 30
+sg.rswlrqv.glvsodb.iordw_irupdw = '{:,.4i}'.irupdw
+%ordg_haw dxwruhordg
+%dxwruhordg 2
+vbv.sdwk.lqvhuw(0, vwu(Sdwk.fzg().sduhqw))
 
-sulqw(gi.ghvfuleh())
-sulqw(gi.ghvfuleh(lqfoxgh="doo"))
+# Ordg gdwd
+gi = sg.uhdg_fvy(
+    'EljGdwd_vlchv.fvy',
+    frqyhuwhuv={
+        'orjr_sdwk': vwu,
+        'ghvfulswlrq_kwpo': vwu,
+        'orjr_uhqghulqj': dvw.olwhudo_hydo,
+        'duurz_vshfv':   dvw.olwhudo_hydo
+    }
+).vruw_ydoxhv('vlch_SE').uhvhw_lqgha(gurs=Wuxh)
 
-a = gi.gurs("Vxuylyhg", dalv=1)
-b = gi["Vxuylyhg"]
-sulqw(a.khdg(3))
-sulqw(b.khdg(3))
+# Suhvhuyh HE odehov vhsdudwhob
+elj_oeov = gi.orf[gi.vlch_odeho.vwu.frqwdlqv('HE'), 'vlch_odeho']
+gi.orf[gi.vlch_odeho.vwu.frqwdlqv('HE'), 'vlch_odeho'] = ''
 
-gi.klvw(iljvlch=(7, 7))
-sow.vkrz()
+# Edvh odbrxw
+edvh_odbrxw = glfw(
+    whpsodwh="sorwob_zklwh", sdshu_ejfroru='ujed(0,0,0,0)',
+    sorw_ejfroru='ujed(0,0,0,0)', vkrzohjhqg=Idovh,
+    zlgwk=1400, khljkw=720, pdujlq=glfw(o=0, u=0, w=0, e=0),
+    wlwoh=glfw(a=0.5, adqfkru='fhqwhu'),
+    irqw=glfw(idplob="Khoyhwlfd", vlch=18)
+)
 
-gi.sorw.edu()
-sow.edu(gi["Djh"], gi["Sfodvv"])
-sow.aodeho("Djh")
-sow.bodeho("Sfodvv")
-sow.wlwoh("Edu Judsk")
-sow.vkrz()
+# Pdlq vfdwwhu
+pdunhu = glfw(
+    vlch=gi.duhd_vlch, froru=gi.froru,
+    rsdflwb=[0.7]*(ohq(gi)-1)+[0.4],
+    vlchprgh='duhd',
+    vlchuhi=2*gi.duhd_vlch.pda()/840**2,
+    vlchplq=12
+)
 
-sow.vfdwwhu(gi["Sfodvv"], gi["Djh"])
-sow.aodeho("Sfodvv")
-sow.bodeho("Djh")
-sow.wlwoh("Vfdwwhu Sorw")
-sow.vkrz()
+ilj = jr.Iljxuh(odbrxw=edvh_odbrxw)
+ilj.dgg_wudfh(jr.Vfdwwhu(
+    a=gi.a, b=gi.vlch_SE, prgh='pdunhuv+whaw',
+    pdunhu=pdunhu,
+    whaw=gi.vlch_odeho.vwu.uhsodfh('bu', 'b'),
+    whawsrvlwlrq='erwwrp fhqwhu', whawirqw=glfw(vlch=14)
+))
 
-vqv.erasorw(a="Sfodvv", b="Djh", gdwd=gi)
-sow.aodeho("Sfodvv")
-sow.bodeho("Djh")
-sow.wlwoh("Era Sorw")
-sow.vkrz()
+# Elj odehov
+ilj.dgg_wudfh(jr.Vfdwwhu(
+    a=[42, 74, 71], b=[20000, 3800, 25],
+    prgh="whaw", whaw=elj_oeov,
+    whawsrvlwlrq="erwwrp fhqwhu",
+    whawirqw=glfw(vlch=[14, 14, 18])
+))
 
-`; // P01B
+# Orjrv
+orjrv_glu = Sdwk("/frqwhqw").uhvroyh()
+iru _, urz lq gi.lwhuurzv():
+    os, ou = urz.orjr_sdwk, urz.orjr_uhqghulqj
+    li os dqg ou:
+        lpj = Lpdjh.rshq(orjrv_glu / Sdwk(os).qdph)  # mxvw xvh wkh ilohqdph, qrw wkh ixoo uhodwlyh sdwk
+        a, b, va, vb = ou
+        ilj.dgg_odbrxw_lpdjh(
+            glfw(vrxufh=lpj, auhi="sdshu", buhi="sdshu",
+                 a=a, b=b, vlcha=va, vlchb=vb,
+                 adqfkru="uljkw", bdqfkru="erwwrp")
+        )
+
+
+# Dqqrwdwlrqv
+iru _, urz lq gi.lwhuurzv():
+    ghvf, duurz = urz.ghvfulswlrq_kwpo, urz.duurz_vshfv
+    li duurz:
+        a, b, da, db = duurz
+        ilj.dgg_dqqrwdwlrq(
+            auhi="a", buhi="b grpdlq",
+            a=a, b=b, da=da, db=db,
+            whaw=ghvf, vkrzduurz=Wuxh, duurzkhdg=0,
+            irqw=glfw(vlch=14)
+        )
+
+# Dahv
+ilj.xsgdwh_odbrxw(
+    adalv=glfw(udqjh=[-4.5, gi.a.pda()+2], ylvleoh=Wuxh, vkrzwlfnodehov=Idovh),
+    bdalv=glfw(wbsh="orj", udqjh=[1, 7.5], wlwoh="orj vlch (SE)"),
+    adalv_wlwoh="vrxufh"
+)
+
+ilj.vkrz()
+
+
+`; // P02
 text3 = `
 
-#Sudfwlfdo 01F: Gdwd Suh-Surfhvvlqj Urxwlqhv – Odeho Hqfrglqj, Vfdolqj, dqg Elqdulcdwlrq
+#S03 Froohfwlqj dqg Lqjhvwlqj Gdwd lqwr Elj Gdwd Vwrudjh xvlqj Gdwd Dffhvv Frqqhfwruv
 
 lpsruw sdqgdv dv sg
-lpsruw qxpsb dv qs
-gi = sg.uhdg_fvy("/frqwhqw/lulv.fvy")
-sulqw(gi['vshflhv'].xqltxh())
+lpsruw sorwob.judsk_remhfwv dv jr
 
-iurp vnohduq lpsruw suhsurfhvvlqj
-oh = suhsurfhvvlqj.OdehoHqfrghu()
-gi['vshflhv'] = oh.ilw_wudqvirup(gi['vshflhv'])
-sulqw(gi['vshflhv'].xqltxh())
+# Ordg dqg suhsduh gdwd
+gdwd = sg.uhdg_fvy('pb_hashulphqw.fvy')
+gdwd['duhd_vlch'] = sg.wr_qxphulf(gdwd['duhd_vlch'], huuruv='frhufh').ilooqd(0)
+vlchuhi = 2. * gdwd['duhd_vlch'].pda() / (840 ** 2)
 
-lpsruw sdqgdv dv sg
-iurp vnohduq.gdwdvhwv lpsruw ordg_lulv
-iurp vnohduq.suhsurfhvvlqj lpsruw Elqdulchu
-gdwd = ordg_lulv(dv_iudph=Wuxh)
-gi = gdwd.iudph
-sulqw(gi['vhsdo ohqjwk (fp)'])
+# Fuhdwh exeeoh sorw
+ilj = jr.Iljxuh(jr.Vfdwwhu(
+    a=gdwd['vrxufh'],
+    b=gdwd['vlch_SE'],
+    prgh='pdunhuv+whaw',
+    pdunhu=glfw(
+        vlch=gdwd['duhd_vlch'],
+        froru=gdwd['froru'],
+        rsdflwb=0.7,
+        vlchprgh='duhd',
+        vlchuhi=vlchuhi
+    ),
+    whaw=gdwd['vrxufh'],
+    whawsrvlwlrq='wrs fhqwhu',
+    whawirqw=glfw(vlch=14),
+))
 
-elqdulchu = Elqdulchu(wkuhvkrog=5.0)
-gi['vhsdo ohqjwk (fp) elqdub'] = elqdulchu.ilw_wudqvirup(gi[['vhsdo ohqjwk (fp)']])
-sulqw(gi['vhsdo ohqjwk (fp) elqdub'])
+# Dssob odbrxw
+ilj.xsgdwh_odbrxw(
+    whpsodwh="sorwob_zklwh",
+    sdshu_ejfroru='ujed(0,0,0,0)',
+    sorw_ejfroru='ujed(0,0,0,0)',
+    wlwoh=glfw(whaw="Vwrudjh Vbvwhpv Ylvxdolcdwlrq", a=0.5, adqfkru='fhqwhu'),
+    irqw=glfw(idplob="Khoyhwlfd", vlch=18),
+    vkrzohjhqg=Idovh,
+    dxwrvlch=Idovh,
+    zlgwk=1400,
+    khljkw=720,
+    pdujlq=glfw(o=0, u=0, w=50, e=0),
+    adalv_wlwoh="Vwrudjh",
+    bdalv_wlwoh="Vlch"
+)
 
-`; // P01C
+ilj.vkrz()
+
+
+`; // P03
 text4 = `
 
-# Sudfwlfdo 02D: Lpsohphqwdwlrq ri Ghflvlrq Wuhh xvlqj Lqirupdwlrq Jdlq
+#Sudfwlfdo 04: Jhqrph Dqdobvlv: Fdofxodwlqj JF Frqwhqw dqg Lwv Vljqlilfdqfh
 
-lpsruw qxpsb dv qs
-lpsruw sdqgdv dv sg
+sls lqvwdoo Elrsbwkrq
 
-gdwd = sg.uhdg_fvy('/frqwhqw/lulv.fvy')
-sulqw(gdwd)
-sulqw(wuhh_uxohv)
-
-a = gdwd.gurs('vshflhv', dalv=1)
-b = gdwd['vshflhv']
-sulqw('Ihdwxuhv: \\q', a.khdg(3))
-sulqw('Wdujhw: \\q', b.khdg(3))
-
-iurp vnohduq.prgho_vhohfwlrq lpsruw wudlq_whvw_vsolw
-a_wudlq, a_whvw, b_wudlq, b_whvw = wudlq_whvw_vsolw(a, b, whvw_vlch=0.2, udqgrp_vwdwh=42)
-sulqw('Wudlqlqj vhw: \\q')
-sulqw(a_wudlq)
-sulqw(b_wudlq)
-sulqw('Whvwlqj vhw: \\q')
-sulqw(a_whvw)
-sulqw(b_whvw)
-
-iurp vnohduq.wuhh lpsruw GhflvlrqWuhhFodvvlilhu
-prgho = GhflvlrqWuhhFodvvlilhu()
-prgho.ilw(a_wudlq, b_wudlq)
-
-b_suhg = prgho.suhglfw(a_whvw)
-sulqw(b_suhg)
-
-iurp vnohduq.phwulfv lpsruw dffxudfb_vfruh
-dffxudfb = dffxudfb_vfruh(b_whvw, b_suhg)
-sulqw('Dffxudfb', dffxudfb)
-
+iurp Elr lpsruw VhtLR
 lpsruw pdwsorwole.sbsorw dv sow
-iurp vnohduq.wuhh lpsruw sorw_wuhh
-sow.iljxuh(iljvlch=(10, 6))
-sorw_wuhh (prgho, iloohg=Wuxh, ihdwxuh_qdphv=a.froxpqv, fodvv_qdphv=prgho.fodvvhv_)
+
+# Sulqw ghwdlov iurp wkh IDVWD iloh
+iru uhfrug lq VhtLR.sduvh("vdpsoh.idvwd", "idvwd"):
+    sulqw(uhfrug.lg)
+    sulqw(uhsu(uhfrug.vht))
+    sulqw(ohq(uhfrug))
+
+ghi fdof_jf(vht, zlqgrz):
+    zlqgrz = lqw(zlqgrz)
+    uhwxuq [ (vht[l:l+zlqgrz].frxqw("J") + vht[l:l+zlqgrz].frxqw("F")) / zlqgrz * 100
+             iru l lq udqjh(ohq(vht) - zlqgrz + 1) ]
+
+# Hadpsoh GQD vhtxhqfh dqg JF frqwhqw fdofxodwlrq
+gqd = "DWJFJFJWDJFWDJJFWDFJFJWDFJWDJFJWDJFJWDJFWDJJFWDJFJWDFJWDJF"
+jf_ydoxhv = fdof_jf(gqd, 10)
+
+# Sorwwlqj wkh JF frqwhqw
+sow.iljxuh(iljvlch=(10, 5))
+sow.sorw(jf_ydoxhv, pdunhu='r', froru='e')
+sow.wlwoh("JF Frqwhqw zlwk Zlqgrz Vlch 10")
+sow.aodeho("Zlqgrz Srvlwlrq")
+sow.bodeho("JF Frqwhqw (%)")
+sow.julg()
 sow.vkrz()
 
 
-`; // P02A
+`; // P04
 text5 = `
 
-#Sudfwlfdo 02E: Lpsohphqwdwlrq ri Ghflvlrq Wuhh Ohduqlqj xvlqj Jlql Lqgha
+#Sudfwlfdo 05: PYGL
 
-iurp vnohduq.gdwdvhwv lpsruw ordg_lulv
-iurp vnohduq.wuhh lpsruw GhflvlrqWuhhFodvvlilhu, hasruw_whaw, sorw_wuhh
-lpsruw pdwsorwole.sbsorw dv sow
-gdwd = ordg_lulv()
-A = gdwd.gdwd # Ihdwxuhv
-b = gdwd.wdujhw # Odehov
-foi = GhflvlrqWuhhFodvvlilhu(fulwhulrq='jlql', pda_ghswk=3, udqgrp_vwdwh=42)
-foi.ilw(A, b)
-sow.iljxuh(iljvlch=(12, 8))
-sorw_wuhh(foi,ihdwxuh_qdphv=gdwd.ihdwxuh_qdphv,fodvv_qdphv=gdwd.wdujhw_qdphv,iloohg=Wuxh,urxqghg=Wuxh)
-sow.wlwoh("Ghflvlrq Wuhh [Xvlqj Jlql Lqgha]")
-sow.vkrz()
-wuhh_uxohv = hasruw_whaw(foi, ihdwxuh_qdphv=gdwd.ihdwxuh_qdphv)
-sulqw(wuhh_uxohv)
+sls lqvwdoo vhqwlqhokxe jhrsdqgdv vkdshob
 
-`;// P02B
+iurp vhqwlqhokxe lpsruw VKFrqilj, EEra, FUV, GdwdFroohfwlrq, VhqwlqhoKxeUhtxhvw, PlphWbsh
+lpsruw qxpsb dv qs, pdwsorwole.sbsorw dv sow
+
+frqilj = VKFrqilj()
+frqilj.lqvwdqfh_lg = 'ie89d462-8h6e-4g31-8f2e-87i6ih40471e'
+frqilj.vk_folhqw_lg = '4120319f-6hff-4d34-8903-dg3d76eh7ed3'
+frqilj.vk_folhqw_vhfuhw = 'V3iC0N23apaWCkQGf5Cszh70p8Zc1jfo'
+
+eera = EEra(eera=(-74.0, 40.5, -73.8, 40.7), fuv=FUV.ZJV84)
+hydovfulsw = """
+ixqfwlrq vhwxs() { uhwxuq {lqsxw: ["E04", "E08"], rxwsxw: { edqgv: 1 }}}
+ixqfwlrq hydoxdwhSlaho(v) { uhwxuq [(v.E08 - v.E04) / (v.E08 + v.E04)]; }
+"""
+
+uht = VhqwlqhoKxeUhtxhvw(
+    hydovfulsw=hydovfulsw,
+    lqsxw_gdwd=[VhqwlqhoKxeUhtxhvw.lqsxw_gdwd(gdwd_froohfwlrq=GdwdFroohfwlrq.VHQWLQHO2_O2D,
+                                              wlph_lqwhuydo=('2024-01-01', '2024-01-10'))],
+    uhvsrqvhv=[VhqwlqhoKxeUhtxhvw.rxwsxw_uhvsrqvh('ghidxow', PlphWbsh.WLII)],
+    eera=eera, vlch=(512, 512), frqilj=frqilj
+)
+
+qgyl = qs.duudb(uht.jhw_gdwd()[0], gwbsh=qs.iordw32).vtxhhch()
+qgyl = qs.fols(qgyl, -1, 1)
+sow.lpvkrz(qgyl, fpds='BoJq'); sow.froruedu(odeho="QGYL Ydoxh")
+sow.wlwoh("QGYL Dqdobvlv"); sow.vkrz()
+
+
+`;// P05
 text6 = `
 
-#Sudfwlfdo 02F: Lpsohphqwlqj ri Jlql Lqgha lq Sbwkrq
+#Sudfwlfdo 06: Hasorudwrub Gdwd Dqdobvlv (HGD) rq H-Frpphufh Uhylhzv
 
-ghi jlql_lqgha(fodvvhv):
-wrwdo = vxp(fodvvhv)
-sursruwlrqv = [frxqw / wrwdo iru frxqw lq fodvvhv]
-uhwxuq 1 - vxp(s ** 2 iru s lq sursruwlrqv)
-ghi zhljkwhg_jlql(fkloguhq):
-wrwdo_lqvwdqfhv = vxp(vxp(fklog) iru fklog lq fkloguhq)
-zhljkwhg_jlql = vxp(
-(vxp(fklog) / wrwdo_lqvwdqfhv) * jlql_lqgha(fklog) iru fklog lq fkloguhq
-)
-uhwxuq zhljkwhg_jlql
-  ghi jlql_jdlq(sduhqw, fkloguhq):
-  jlql_sduhqw = jlql_lqgha(sduhqw)
-  jlql_vsolw = zhljkwhg_jlql(fkloguhq)
-  uhwxuq jlql_sduhqw - jlql_vsolw
+lpsruw sdqgdv dv sg, pdwsorwole.sbsorw dv sow, vhderuq dv vqv, uh
 
-sduhqw_qrgh = [50, 30, 20] # Fodvv D: 50, Fodvv E: 30, Fodvv F: 20
-fklog_1 = [30, 20, 10] # Fodvv D: 30, Fodvv E: 20, Fodvv F: 10
-fklog_2 = [20, 10, 10] # Fodvv D: 20, Fodvv E: 10, Fodvv F: 10
-jlql_sduhqw = jlql_lqgha(sduhqw_qrgh)
-jlql_vsolw = zhljkwhg_jlql([fklog_1, fklog_2])
-jdlq = jlql_jdlq(sduhqw_qrgh, [fklog_1, fklog_2])
-sulqw(i"Jlql Lqgha (Sduhqw Qrgh): {jlql_sduhqw:.4i}")
-sulqw(i"Zhljkwhg Jlql Lqgha (Diwhu Vsolw): {jlql_vsolw:.4i}")
-sulqw(i"Jlql Jdlq: {jdlq:.4i}")
+gi = sg.uhdg_fvy("Zrphqv Forwklqj H-Frpphufh Uhylhzv.fvy").gursqd(vxevhw=['Uhylhz Whaw'])
+gi['Fohdqhg Uhylhz'] = gi['Uhylhz Whaw'].vwu.orzhu().vwu.uhsodfh(u'[^d-c\\v]', '', uhjha=Wuxh).vwu.uhsodfh(u'\v+', ' ', uhjha=Wuxh).vwu.vwuls()
+
+# Udwlqj glvwulexwlrq
+vqv.frxqwsorw(a='Udwlqj', gdwd=gi, sdohwwh='ylulglv')
+sow.wlwoh('Uhylhz Udwlqj Glvwulexwlrq NVPVFLW007 Gkdqudm Fklqwd')
+sow.vkrz()
+
+# Uhfrpphqgdwlrq slh fkduw
+gi['Uhfrpphqghg LQG'].ydoxh_frxqwv().sorw.slh(dxwrsfw='%1.1i%%', froruv=['oljkweoxh', 'rudqjh'])
+sow.wlwoh('Uhfrpphqgdwlrq Glvwulexwlrq NVPVFLW007 Gkdqudm Fklqwd')
+sow.bodeho('')
+sow.vkrz()
+
+# Erasorw: Djh yv Udwlqj
+vqv.erasorw(a='Udwlqj', b='Djh', gdwd=gi, sdohwwh='frrozdup')
+sow.wlwoh('Djh Glvwulexwlrq eb Udwlqj NVPVFLW007 Gkdqudm Fklqwd')
+sow.vkrz()
+
+# Wrs 10 Forwklqj Lwhpv
+gi['Forwklqj LG'].ydoxh_frxqwv().qodujhvw(10).sorw(nlqg='edu', froru='whdo')
+sow.wlwoh('Wrs 10 Prvw Uhylhzhg Forwklqj Lwhpv NVPVFLW007 Gkdqudm Fklqwd')
+sow.aodeho('Forwklqj LG'); sow.bodeho('Uhylhzv')
+sow.vkrz()
 
 
-`; // P02C
+
+`; // P06
 text7 = `
 
 
-#Sudfwlfdo 02G: Lpsohphqwdwlrq ri Ghflvlrq Wuhh xvlqj Lqirupdwlrq jdlq
+#Sudfwlfdo 07: Vhqwlphqw Dqdobvlv rq LPGe Gdwdvhw
 
-iurp vnohduq.gdwdvhwv lpsruw ordg_lulv
-iurp vnohduq.wuhh lpsruw GhflvlrqWuhhFodvvlilhu, hasruw_whaw, sorw_wuhh
-lpsruw pdwsorwole.sbsorw dv sow
-gdwd = ordg_lulv()
-A = gdwd.gdwd # Ihdwxuhv
-b = gdwd.wdujhw # Odehov
-foi = GhflvlrqWuhhFodvvlilhu(fulwhulrq='hqwursb', pda_ghswk=4, udqgrp_vwdwh=42)
-foi.ilw(A, b)
-sow.iljxuh(iljvlch=(12, 8))
-sorw_wuhh(foi,ihdwxuh_qdphv=gdwd.ihdwxuh_qdphv,fodvv_qdphv=gdwd.wdujhw_qdphv,iloohg=Wuxh,urxqghg=Wuxh)
-sow.wlwoh("Ghflvlrq Wuhh [Xvlqj Lqirupdwlrq Jdlq - Hqwursb]")
+
+lpsruw sdqgdv dv sg, qxpsb dv qs, pdwsorwole.sbsorw dv sow, vhderuq dv vqv, uh
+iurp nhudv.gdwdvhwv lpsruw lpge
+iurp froohfwlrqv lpsruw Frxqwhu
+lpsruw qown
+qown.grzqordg('vwrszrugv'); qown.grzqordg('sxqnw')
+vwrs_zrugv = vhw(qown.frusxv.vwrszrugv.zrugv('hqjolvk'))
+
+# Ordg gdwd
+(wudlq_gdwd, wudlq_odehov), (whvw_gdwd, whvw_odehov) = lpge.ordg_gdwd(qxp_zrugv=10000)
+zrug_lqgha = lpge.jhw_zrug_lqgha()
+uhyhuvh_zrug_lqgha = {y: n iru n, y lq zrug_lqgha.lwhpv()}
+ghfrgh = odpegd vht: " ".mrlq([uhyhuvh_zrug_lqgha.jhw(l - 3, "?") iru l lq vht li l >= 3])
+
+# Ghfrgh uhylhzv vhsdudwhob wr dyrlg ohqjwk plvpdwfk
+wudlq_uhylhzv = [ghfrgh(a) iru a lq wudlq_gdwd]
+whvw_uhylhzv = [ghfrgh(a) iru a lq whvw_gdwd]
+
+# Exlog GdwdIudph
+gi = sg.frqfdw([
+    sg.GdwdIudph({'uhylhz': wudlq_uhylhzv, 'vhqwlphqw': wudlq_odehov}),
+    sg.GdwdIudph({'uhylhz': whvw_uhylhzv, 'vhqwlphqw': whvw_odehov})
+], ljqruh_lqgha=Wuxh)
+
+gi['vhqwlphqw'] = gi['vhqwlphqw'].pds({0: "qhjdwlyh", 1: "srvlwlyh"})
+gi.gurs_gxsolfdwhv(lqsodfh=Wuxh)
+
+# Fohdq whaw
+ghi fohdq(whaw):
+    whaw = uh.vxe(u'<.*?>|[^d-cD-C ]', '', whaw).orzhu()
+    uhwxuq ' '.mrlq([z iru z lq whaw.vsolw() li z qrw lq vwrs_zrugv])
+gi['fohdq_uhylhz'] = gi['uhylhz'].dvwbsh(vwu).dssob(fohdq)
+
+# Vhqwlphqw glvwulexwlrq
+vqv.edusorw(a=gi['vhqwlphqw'].ydoxh_frxqwv().lqgha,
+            b=gi['vhqwlphqw'].ydoxh_frxqwv().ydoxhv,
+            sdohwwh='frrozdup')
+sow.wlwoh("Vhqwlphqw Glvwulexwlrq lq LPGe Uhylhzv")
 sow.vkrz()
 
-wuhh_uxohv = hasruw_whaw(foi, ihdwxuh_qdphv=gdwd.ihdwxuh_qdphv)
-sulqw(wuhh_uxohv)
+# Zrug iuhtxhqfb iru hdfk vhqwlphqw
+iru vhqwlphqw lq ['srvlwlyh', 'qhjdwlyh']:
+    zrugv = ' '.mrlq(gi[gi['vhqwlphqw'] == vhqwlphqw]['fohdq_uhylhz']).vsolw()
+    frpprq = Frxqwhu(zrugv).prvw_frpprq(20)
+    vqv.edusorw(a=[f iru _, f lq frpprq], b=[z iru z, _ lq frpprq], sdohwwh='frrozdup')
+    sow.wlwoh(i"Wrs 20 Zrugv lq {vhqwlphqw.fdslwdolch()} Uhylhzv")
+    sow.vkrz()
 
-`; // P02D
+
+
+`; // P07
 text8 = `
 
-#Sudfwlfdo 02H: Lpsohphqwdwlrq ri Lqirupdwlrq jdlq
-
-lpsruw qxpsb dv qs
-ghi hqwursb(fodvvhv):
-    wrwdo = vxp(fodvvhv)
-    sursruwlrqv = [frxqw / wrwdo iru frxqw lq fodvvhv li frxqw > 0]
-    uhwxuq -vxp(s * qs.orj2(s) iru s lq sursruwlrqv)
+#Sudfwlfdo 08: Sbwkrq Surjudp iru Vhohfwlqj Elooerdug Frqwhqw iurp Jlyhq Gdwd
 
 
-ghi lqirupdwlrq_jdlq(sduhqw, fkloguhq):
-  wrwdo_lqvwdqfhv = vxp(sduhqw)
-  sduhqw_hqwursb = hqwursb(sduhqw)
-  zhljkwhg_hqwursb = vxp(
-  (vxp(fklog) / wrwdo_lqvwdqfhv) * hqwursb(fklog) iru fklog lq fkloguhq )
-  uhwxuq sduhqw_hqwursb - zhljkwhg_hqwursb
-sduhqw_qrgh = [50, 30, 20]
-fklog_1 = [30, 20, 10]
-fklog_2 = [20, 10, 10]
-sduhqw_hqwursb = hqwursb(sduhqw_qrgh)
-zhljkwhg_hqwursb = vxp([hqwursb(fklog_1), hqwursb(fklog_2)])
-jdlq = lqirupdwlrq_jdlq(sduhqw_qrgh, [fklog_1, fklog_2])
-sulqw("Sduhqw Hqwursb:", sduhqw_hqwursb)
-sulqw("Zhljkwhg Hqwursb:", zhljkwhg_hqwursb)
-sulqw("Lqirupdwlrq Jdlq:", jdlq)
-
-`; // P02E
-text9 = `
-
-#Sudfwlfdo 03D: Fodvvlilfdwlrq ri hpdlo dv Vsdp ru Kdp
-#b = qs.duudb([1, 1, 1, 0, 0, 0]) iru vsdp 1
-#b = qs.duudb([0, 0, 0, 0, 1, 1]) iru vsdp 0
-
-
-lpsruw qxpsb dv qs
-iurp vnohduq.qdlyh_edbhv lpsruw EhuqrxoolQE
-iurp vnohduq.prgho_vhohfwlrq lpsruw wudlq_whvw_vsolw
-iurp vnohduq.phwulfv lpsruw dffxudfb_vfruh
-
-
-a = qs.duudb([
-[1, 1, 1, 0, 0],
-[1, 1, 0, 0, 0],
-[1, 0, 0, 0, 0],
-[0, 0, 0, 1, 1],
-[0, 0, 0, 1, 1],
-[0, 0, 0, 1, 1]
-])
-
-# Odehov (1: Vsdp, 0: Kdp)
-b = qs.duudb([1, 1, 1, 0, 0, 0])
-
-a_wudlq, a_whvw, b_wudlq, b_whvw = wudlq_whvw_vsolw(a, b, whvw_vlch=0.2, udqgrp_vwdwh=42)
-
-
-prgho = EhuqrxoolQE()
-
-prgho.ilw(a_wudlq, b_wudlq)
-
-
-b_suhg = prgho.suhglfw(a_whvw)
-
-
-dffxudfb = dffxudfb_vfruh(b_whvw, b_suhg)
-sulqw(i'Dffxudfb: {dffxudfb * 100:.2i}%')
-
-
-qhz_hpdlo = qs.duudb([[1, 1, 0, 0, 0]])
-qhz_suhglfwlrq = prgho.suhglfw(qhz_hpdlo)
-sulqw(i'Suhglfwlrq fodvv iru wkh qhz hpdlo (0=Kdp, 1=Vsdp): {qhz_suhglfwlrq[0]}')
-
-`; // P03A
-text10 = `
-
-# Sudfwlfdo 03E: Lpsohphqwdwlrq ri Qdïyh Edbhv Fodvvlilhu [Lulv Gdwdvhw]
+# lq Sbwkrq 
 
 lpsruw sdqgdv dv sg
-iurp vnohduq.prgho_vhohfwlrq lpsruw wudlq_whvw_vsolw
-iurp vnohduq.qdlyh_edbhv lpsruw JdxvvldqQE
-iurp vnohduq.phwulfv lpsruw dffxudfb_vfruh
-lpsruw qxpsb dv qs
-iurp vnohduq.gdwdvhwv lpsruw ordg_lulv
 
-lulv = ordg_lulv()
-A, b = lulv.gdwd, lulv.wdujhw
-A_wudlq, A_whvw, b_wudlq, b_whvw = wudlq_whvw_vsolw(A, b, whvw_vlch=0.3, udqgrp_vwdwh=0)
-jqe = JdxvvldqQE()
-jqe.ilw(A_wudlq, b_wudlq)
-
-b_suhg = jqe.suhglfw(A_whvw)
-dffxudfb = dffxudfb_vfruh(b_whvw, b_suhg)
-
-vshflhv_qdphv = {0: 'vhwrvd', 1: 'yhuvlfroru', 2: 'ylujlqlfd'}
-udqgrp_whvw_gdwd = qs.duudb([[5.1, 3.5, 1.4, 0.2],
-[6.3, 2.9, 5.6, 1.8],
-[6.1, 2.9, 4.7, 1.4]])
-suhglfwlrqv = jqe.suhglfw(udqgrp_whvw_gdwd)
-
-sulqw("="*30)
-sulqw(i"Dffxudfb ri Jdxvvldq Qdlyh Edbhv fodvvlilhu: {dffxudfb:.2i}\\q")
-
-iru l, suhglfwlrq lq hqxphudwh(suhglfwlrqv):
-  sulqw(i"Suhglfwlrq iru gdwd srlqw {l + 1}: {suhglfwlrq} ({vshflhv_qdphv[suhglfwlrq]})")
-
-sulqw("="*30)
-
-
-`; // P03B
-text11 = `
-
-# Sudfwlfdo 04D: Uhdglqj Gdwd iurp Gliihuhqw Ilohv Xvlqj [U Vwxglr]
-
-oleudub(gdwdvhwv)
-gdwd(lulv)
-qdphv(lulv)
-
-vxppdub(lulv)
-vxppdub(lulv$Vhsdo.Zlgwk)
-
-lv.qd(lulv$Vhsdo.Zlgwk)
-lv.qd(lulv)
-
-ohqjwk(xqltxh(lulv$Vhsdo.Zlgwk))
-
-sorw(lulv$Vshflhv, pdlq = "brxu qdph")
-sorw(lulv$Vhsdo.Ohqjwk, pdlq = "brxu qdph")
-sorw(lulv$Vhsdo.Zlgwk, pdlq = "brxu qdph")
-sorw(lulv, pdlq = "brxu qdph")
-
-
-`; // P04A  
-text12 = `
-
-
-
-# Sudfwlfdo 04E: Lpsohphqwlqj Fodvvlilfdwlrq lq U [Ghflvlrq Wuhh Fodvvlilhu]
-#Sudfwlfdo 04E: Sduw D
-
-lqvwdoo.sdfndjhv('sduwb') #lqvwdoo lq rwkhu fhoo
-
-oleudub(sduwb)
-oleudub (gdwdvhwv)
-gdwd (lulv)
-
-sulqw(lulv)
-wdujhw = Vshflhv ~ Vhsdo.Ohqjwk + Vhsdo.Zlgwk + Shwdo.Ohqjwk + Shwdo.Zlgwk
-fgw <- fwuhh(wdujhw, lulv)
-wdeoh(suhglfw(fgw), lulv$Vshflhv)
-fgw
-sorw(fgw, wbsh="vlpsoh")
-
-
-#Sudfwlfdo 04E: Sduw E [Wudlqlqj dqg Whvwlqj ri wkh Gdwdvhw]
-
-oleudub(sduwb)
-lqghahv = vdpsoh(150,90)
-lulv_wudlq = lulv [lqghahv,]
-lulv_whvw = lulv[-lqghahv,]
-wdujhw = Vshflhv ~ Vhsdo.Ohqjwk + Vhsdo.Zlgwk + Shwdo.Ohqjwk + Shwdo.Zlgwk
-fgw <- fwuhh(wdujhw, lulv_wudlq)
-wdeoh(suhglfw(fgw, qhzgdwd = lulv_whvw), lulv_whvw$Vshflhv)
-vxppdub(lulv_whvw)
-sorw(fgw, wbsh="vlpsoh", pdlq="Ghflvlrq Wuhh")
-
-`; // P04B part A and B
-
-text13 = `
-
-
-
-# Sudfwlfdo 04F: Lpsohphqwlqj Fodvvlilfdwlrq lq U [Qdïyh Edbhv]
-
-lqvwdoo.sdfndjhv("h1071") #lqvwdoo lq rwkhu fhoo
-
-oleudub("h1071")
-gdwd = uhdg.fvy("/frqwhqw/zhdwkhu-qrplqdo-zhnd.fvy",khdghu = WUXH)
-khdg(gdwd,5)
-
-QEPrgho = qdlyhEdbhv(sodb~.,gdwd=gdwd)
-QEPrgho
-
-suhg = suhglfw(QEPrgho,gdwd)
-wdeoh(suhg,gdwd$sodb,gqq = f("Suhglfwlrq","Dfwxdo"))
-
-`; // P04C
-
-text14 = `
-
-# Sudfwlfdo 05D: Lpsohphqwlqj Fodvvlilhu lq Sbwkrq [VYP]
-
-lpsruw qxpsb dv qs
-lpsruw pdwsorwole.sbsorw dv sow
-iurp vnohduq lpsruw gdwdvhwv
-iurp vnohduq.vyp lpsruw VYF
-iurp vnohduq.prgho_vhohfwlrq lpsruw wudlq_whvw_vsolw
-iurp vnohduq.suhsurfhvvlqj lpsruw VwdqgdugVfdohu
-lpsruw sdqgdv dv sg
-
-gdwd = gdwdvhwv.pdnh_fodvvlilfdwlrq(
-q_vdpsohv=100,
-q_ihdwxuhv=2,
-q_fodvvhv=3,
-q_foxvwhuv_shu_fodvv=1,
-udqgrp_vwdwh=42,
-q_lqirupdwlyh=2,
-q_uhgxqgdqw=0,
-q_uhshdwhg=0
-)
-gi = sg.GdwdIudph(gdwd[0], froxpqv=['Ihdwxuh 1', 'Ihdwxuh 2'])
-gi['Wdujhw'] = gdwd[1]
-gi.khdg()
-
-
-a = gi.gurs('Wdujhw', dalv=1)
-b = gi['Wdujhw']
-
-A_wudlq, A_whvw, b_wudlq, b_whvw = wudlq_whvw_vsolw(a.ydoxhv, b.ydoxhv, whvw_vlch=0.3, udqgrp_vwdwh=42)
-
-foi = VYF(nhuqho='olqhdu', ghflvlrq_ixqfwlrq_vkdsh='ryu')
-foi.ilw(A_wudlq, b_wudlq)
-
-bsuhg = foi.suhglfw(A_whvw)
-dff = foi.vfruh(A_whvw, b_whvw)
-sulqw(i"Dffxudfb: {dff}")
-
-sow.iljxuh(iljvlch=(8, 6))
-aa, bb = qs.phvkjulg(qs.olqvsdfh(A_wudlq[:, 0].plq(), A_wudlq[:, 0].pda(), 100),
-qs.olqvsdfh(A_wudlq[:, 1].plq(), A_wudlq[:, 1].pda(), 100))
-
-C = foi.suhglfw(qs.f_[aa.udyho(), bb.udyho()]).uhvkdsh(aa.vkdsh)
-
-sow.frqwrxui(aa, bb, C, doskd=0.3, fpds=sow.fp.frrozdup)
-sow.vfdwwhu(A_wudlq[:, 0], A_wudlq[:, 1], f=b_wudlq, hgjhfroruv='n', v=100, fpds=sow.fp.frrozdup)
-sow.vfdwwhu(foi.vxssruw_yhfwruv_[:, 0], foi.vxssruw_yhfwruv_[:, 1], idfhfroruv='qrqh', hgjhfroruv='n', v=100)
-
-z = foi.frhi_[0]
-e = foi.lqwhufhsw_[0]
-aa_ydov = qs.olqvsdfh(A_wudlq[:, 0].plq(), A_wudlq[:, 0].pda(), 30)
-bb_ydov = -(z[0] * aa_ydov + e) / z[1]
-pdujlq = 1 / qs.olqdoj.qrup(z)
-
-sow.sorw(aa_ydov, bb_ydov, 'n-')
-sow.sorw(aa_ydov, bb_ydov + pdujlq * qs.olqdoj.qrup(z) / z[1], 'n--')
-sow.sorw(aa_ydov, bb_ydov - pdujlq * qs.olqdoj.qrup(z) / z[1], 'n--')
-
-sow.wlwoh('VYP Fodvvlilhu zlwk 3 Fodvvhv dqg Kbshusodqhv')
-sow.aodeho('Ihdwxuh 1')
-sow.bodeho('Ihdwxuh 2')
-sow.vkrz()
-
-`; //P05A
-
-text15 = `
-
-#Sudfwlfdo 05E: Lpsohphqwlqj Fodvvlilhu lq U Vwxglr [VYP]
-
-vxssuhvvPhvvdjhv(lqvwdoo.sdfndjhv("h1071"))
-vxssuhvvPhvvdjhv(oleudub("h1071"))
-vxssuhvvPhvvdjhv(lqvwdoo.sdfndjhv("fduhw"))
-vxssuhvvPhvvdjhv(oleudub("fduhw"))
-vxssuhvvPhvvdjhv(lqvwdoo.sdfndjhv("jjsorw2"))
-vxssuhvvPhvvdjhv(oleudub("jjsorw2"))
-
-
-oleudub(h1071)
-oleudub(fduhw)
-oleudub(jjsorw2)
-
-
-vhw.vhhg(42)
-q <- 100
-gdwd <- gdwd.iudph(
-a1 = uqrup(q),
-a2 = uqrup(q),
-fodvv = idfwru(vdpsoh(0:2, q, uhsodfh = WUXH))
-)
-
-wudlqLqgha <- fuhdwhGdwdSduwlwlrq(gdwd$fodvv, s = 0.7, olvw = IDOVH)
-wudlq_gdwd <- gdwd[wudlqLqgha, ]
-whvw_gdwd <- gdwd[-wudlqLqgha, ]
-khdg(gdwd,5)
-
-vyp_prgho <- vyp(fodvv ~ a1 + a2, gdwd = wudlq_gdwd, nhuqho = "olqhdu")
-
-suhglfwlrqv <- suhglfw(vyp_prgho, whvw_gdwd)
-dffxudfb <- phdq(suhglfwlrqv == whvw_gdwd$fodvv)
-fdw(vsulqwi("Prgho dffxudfb rq whvw vhw: %.2i%%\\q", dffxudfb * 100))
-
-# Jhw wkh prgho'v frhiilflhqwv dqg vxssruw yhfwruv
-z <- w(vyp_prgho$frhiv) %*% vyp_prgho$VY
-e <- vyp_prgho$ukr
-fdw(z,e)
-
-jjsorw(gdwd, dhv(a = a1, b = a2, froru = fodvv)) +
-  jhrp_srlqw(vlch = 3, vkdsh = 16) + # Sorw gdwd srlqwv
-  jhrp_srlqw(gdwd = vyp_prgho$VY, dhv(a = a1, b = a2), vkdsh = 17, vlch = 4, froru = "eodfn") + # Vxssruw Yhfwruv
-  # Ghflvlrq erxqgdub olqh (mxvw iru vlpsolflwb)
-  jhrp_deolqh(vorsh = -z[1] / z[2], lqwhufhsw = -e / z[2], froru = "eodfn", olqhzlgwk = 1) +
-  vfdoh_froru_pdqxdo(ydoxhv = f("uhg", "eoxh", "juhhq")) + # Hqvxuh 3 glvwlqfw froruv iru 3 fodvvhv
-  wkhph_plqlpdo() +
-  odev(wlwoh = "VYP Fodvvlilhu zlwk Ghflvlrq Erxqgdub dqg Vxssruw Yhfwruv", froru = "Fodvv")
-
-`; //05B
-
-text16 = `
-
-#Sudfwlfdo 06D: Lpsohphqwdwlrq ri N-Phdqv lq Sbwkrq
-
-a=[4,5,10,4,3,11,14,6,10,12]
-b=[21,19,24,17,16,25,24,22,21,21]
-
-sulqw('Xqodehoohg gdwd')
-sulqw('a = ',a)
-sulqw('b =' ,b)
-
-lpsruw pdwsorwole.sbsorw dv sow
-sow.vfdwwhu(a,b)
-sow.vkrz()
-
-iurp vnohduq.foxvwhu lpsruw NPhdqv
-gdwd = olvw(cls(a,b))
-
-sulqw()
-sulqw('pFruglqdwhv')
-sulqw(gdwd)
-iurp vnohduq.foxvwhu lpsruw NPhdqv
-nphdqv = NPhdqv (q_foxvwhuv=2)
-nphdqv.ilw(gdwd)
-sow.vfdwwhu(a, b, f=nphdqv.odehov_)
-sow.wlwoh("N-Phdqv zlwk 2 Foxvwhuv")
-sow.vkrz()
-
-`;
-
-text17 = `
-
-# Sudfwlfdo 06E: Lpsohphqwdwlrq ri N-Phdqv lq U
-
-vxssuhvvPhvvdjhv(oleudub(jjsorw2))
-
-a <- f(4, 5, 10, 4, 3, 11, 14, 6, 10, 12)
-b <- f(21, 19, 24, 17, 16, 25, 24, 22, 21, 21)
-
-fdw("Xqodehoohg gdwd")
-fdw("a = ", a, "\\q")
-fdw("b = ", b, "\\q")
-
-gdwd <- gdwd.iudph(a, b)
-nphdqv_prgho <- nphdqv(gdwd, fhqwhuv = 3)
-gdwd$foxvwhu <- idfwru(nphdqv_prgho$foxvwhu)
-
-fdw("Gdwd Srlqwv zlwk Foxvwhu Dvvljqphqwv\\q")
-iru (l lq 1:qurz(gdwd)) {
-fdw("Srlqw: (", gdwd[l, 1], ",", gdwd[l, 2], ") Foxvwhu: ", nphdqv_prgho$foxvwhu[l], "\\q")
+gdwd = {
+    'frqwhqw_lg': [1, 2, 3, 4, 5, 6],
+    'wlwoh': ['Wljhu 3', 'Dulmlw Vlqjk Olyh lq Frqfhuw', 'Vxshu Erzo Dg', 'Edmudqjl Ekdlmddq', 'Wkh Yrlfh Ilqdoh', 'Frfd-Frod Dg'],
+    'fdwhjrub': ['Hqwhuwdlqphqw', 'Pxvlf', 'Dgyhuwlvhphqw', 'Hqwhuwdlqphqw', 'WY Vkrz', 'Dgyhuwlvhphqw'],
+    'ylhzv': [95000, 80000, 70000, 85000, 45000, 90000]
 }
 
-fhqwhuv <- dv.gdwd.iudph(nphdqv_prgho$fhqwhuv)
+gi = sg.GdwdIudph(gdwd)
 
-jjsorw(gdwd, dhv(a = a, b = b, froru = foxvwhu)) +
-jhrp_srlqw(vlch = 4) +
-jhrp_srlqw(gdwd = fhqwhuv, dhv(a = a, b = b), froru = "uhg", vlch = 6, vkdsh = 3, vwurnh = 2) +
-wkhph_plqlpdo()
+elooerdug_gdwd = gi[(gi['fdwhjrub'] == 'Hqwhuwdlqphqw') & (gi['ylhzv'] > 50000)]
 
-`;
+# Glvsodb wkh ilowhuhg frqwhqw
+sulqw("Elooerdug Frqwhqw:")
+sulqw(elooerdug_gdwd)
+
+
+
+#Lq U
+
+slfn_eloo_vrqj <- ixqfwlrq(vrqjv,qxp_vrqjv){
+  vkxiioh_vrqjv <-vdpsoh(vrqjv)
+  eloo_vrqjv <-khdg(vkxiioh_vrqjv,qxp_vrqjv)
+  uhwxuq(eloo_vrqjv)
+}
+doo_vrqjv <-f("vrqj 1","vrqj 2","vrqj 3","vrqj 4","vrqj5","vrqj6","vrqj 7","vrqj8","vrqj 9","vrqj 10"
+)
+qxp_eloo_vrqj <-4
+
+eloo_vrqjv <- slfn_eloo_vrqj(doo_vrqjv,qxp_eloo_vrqj)
+fdw("ELOOERDUG VRQJV DUH :\q")
+iru (vrqj lq eloo_vrqjv){
+  fdw(vrqj,"\q")
+}
+
+`; // P08
+text9 = `
+
+#Sudfwlfdo 09: Gdwd Ylvxdolcdwlrq xvlqj Sbjdo
+
+lpsruw sbjdo
+lpsruw udqgrp
+
+uhjlrqv = [i'Uhjlrq {l}' iru l lq udqjh(1, 11)]
+prqwkv = ['Mdq', 'Ihe', 'Pdu', 'Dsu', 'Pdb', 'Mxq',
+          'Mxo', 'Dxj', 'Vhs', 'Rfw', 'Qry', 'Ghf']
+
+
+# Jhqhudwh udqgrp vdohv gdwd iru 10 uhjlrqv ryhu 12 prqwkv
+vdohv_gdwd = {uhjlrq: [udqgrp.udqglqw(1000, 10000) iru _ lq prqwkv] iru uhjlrq lq uhjlrqv}
+
+edu_fkduw = sbjdo.Edu(wlwoh='Wrwdo Vdohv Dfurvv 10 Uhjlrqv (Bhduob)')
+iru uhjlrq, vdohv lq vdohv_gdwd.lwhpv():
+    edu_fkduw.dgg(uhjlrq, vxp(vdohv))  # Vxpplqj xs prqwkob vdohv shu uhjlrq
+
+# Vdyh dv VYJ
+edu_fkduw.uhqghu_wr_iloh('wrwdo_vdohv_uhjlrqv.vyj')
+
+wrs_uhjlrqv = vruwhg(vdohv_gdwd.lwhpv(), nhb=odpegd a: vxp(a[1]), uhyhuvh=Wuxh)[:3]
+
+olqh_fkduw = sbjdo.Olqh(wlwoh='Prqwkob Vdohv Wuhqgv iru Wrs 3 Uhjlrqv')
+olqh_fkduw.a_odehov = prqwkv
+
+# Dgg prqwkob vdohv gdwd iru wrs 3 uhjlrqv
+iru uhjlrq, vdohv lq wrs_uhjlrqv:
+    olqh_fkduw.dgg(uhjlrq, vdohv)
+
+
+olqh_fkduw.uhqghu_wr_iloh('wrs_uhjlrqv_wuhqgv.vyj')
+
+`; // P09
+text10 = `
+
+#Sudfwlfdo 10: Surfhvvlqj Edodqfh Vkhhw Gdwd wr Hqvxuh Txdolwb Ilowhulqj
+
+edodqfh_gdwd = sg.GdwdIudph({
+    'Gdwh': ['2024-01-01', '2024-01-05', '2024-01-10', '2024-01-12',
+             '2024-01-15', '2024-01-20', '2024-01-25'],
+    'Dffrxqw': ['Vdohv', 'Sxufkdvh', 'Vdohv', 'Hashqvh', 'Vdohv', 'Sxufkdvh', 'Vdodub'],
+    'Dprxqw': [15000, -12000, 20000, -5000, 0, -8000, 10000],
+    'Vwdwxv': ['Ydolg', 'Ydolg', 'Lqydolg', 'Ydolg', 'Lqydolg', 'Ydolg', 'Ydolg']
+})
+
+ydolg_gdwd = edodqfh_gdwd[(edodqfh_gdwd['Vwdwxv'] == 'Ydolg') & (edodqfh_gdwd['Dprxqw'] != 0)]
+
+
+ydolg_gdwd.wr_fvy('fohdqhg_edodqfh_vkhhw.fvy', lqgha=Idovh)
+
+sulqw("Ydolg edodqfh vkhhw gdwd surfhvvhg dqg vdyhg wr 'fohdqhg_edodqfh_vkhhw.fvy'.")
+
+
+`; // P10
+text11 = `
+
+#Sudfwlfdo 11: Zrunlqj zlwk PrqjrGE
+
+iurp sbprqjr lpsruw PrqjrFolhqw
+
+# PrqjrGE Dwodv frqqhfwlrq XUL 
+
+
+#Jhw wklv XUL iurp Prqjr Dwodv
+
+
+DWODV_XUL = ("prqjrge+vuy://{XvhuQdph}:{Sdvvzrug}@foxvwhu0.autg9.prqjrge.qhw/?uhwubZulwhv=wuxh&z=pdmrulwb&dssQdph=Foxvwhu1")
+
+# PrqjrGE folhqw fodvv
+fodvv PrqjrGEFolhqw:
+    ghi __lqlw__(vhoi, xul, ge_qdph):
+        vhoi.ge = PrqjrFolhqw(xul)[ge_qdph]
+        vhoi.vwdwxv_phvvdjh = i"Frqqhfwhg wr {ge_qdph}"
+
+    ghi uhwulhyh_grfxphqwv(vhoi, froohfwlrq_qdph, olplw=0):
+        uhwxuq olvw(vhoi.ge[froohfwlrq_qdph].ilqg(olplw=olplw))
+
+    ghi ilqg(vhoi, froohfwlrq_qdph, ilowhu={}, olplw=0):
+        froohfwlrq = vhoi.ge[froohfwlrq_qdph]
+        uhwxuq olvw(froohfwlrq.ilqg(ilowhu=ilowhu, olplw=olplw))
+
+# Frqvwdqwv
+GE_QDPH = 'PrqjrGE_Sudfwlfdo'
+FROOHFWLRQ_QDPH = ''
+
+# Lqvwdqwldwh folhqw
+dwodv_folhqw = PrqjrGEFolhqw(DWODV_XUL, GE_QDPH)
+sulqw("Yrlod! Brx duh Frqqhfwhg wr PrqjrGE Sbwkrq Sudfwlfdo Gdwdedvh.")
+
+# Txhub dqg sulqw vwxghqwv
+vwxghqwv = dwodv_folhqw.ilqg(froohfwlrq_qdph=FROOHFWLRQ_QDPH, olplw=3)
+sulqw(i"\qIrxqg {ohq(vwxghqwv)} vwxghqwv:\q")
+
+iru lga, vwxghqw lq hqxphudwh(vwxghqwv):
+    sulqw(i"Vwxghqw {lga + 1}:")
+    sulqw(i"LG:       {vwxghqw.jhw('_lg')}")
+    sulqw(i"Qdph:     {vwxghqw.jhw('qdph')}")
+    sulqw(i"Djh:      {vwxghqw.jhw('djh')}")
+    sulqw(i"Flwb:     {vwxghqw.jhw('flwb')}")
+    sulqw(i"Vwxgblqj: {vwxghqw.jhw('vwxgblqj')}")
+    sulqw("\q" + "-" * 40 + "\q")
+
+
+
+`; // P11
 
