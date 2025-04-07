@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const copiedMsg = document.getElementById("copiedMsg");
 
   // Encrypted password ("link" shifted by 3 => "ornl")
-  const encryptedPassword = "ornl";
+  const encryptedPassword = "mljjoh";
 
   // Encrypted texts (each encrypted with Caesar cipher shift = 3)
   const encryptedTexts = [
