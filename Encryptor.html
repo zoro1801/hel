@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Encryptor</title>
+    <title>Encryptor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -83,15 +83,15 @@
     <script>
         function encryptText() {
             var inputText = document.getElementById('inputTextarea').value;
-            var encryptedText = caesarEncryptor(inputText, 3); // Example shift of 3, you can change it
-            document.getElementById('outputTextarea').innerText = encryptedText;
+            var encryptedText = caesarEncryptor(inputText, 3);
+            document.getElementById('outputTextarea').value = encryptedText;
             document.getElementById('copyButton').style.display = 'block';
         }
 
         function decryptText() {
             var inputText = document.getElementById('inputTextarea').value;
             var decryptedText = Unravel(inputText, 3);
-            document.getElementById('outputTextarea').innerText = decryptedText;
+            document.getElementById('outputTextarea').value = decryptedText;
             document.getElementById('copyButton').style.display = 'block';
         }
         // Function to copy text to clipboard
