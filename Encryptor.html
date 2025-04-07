@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encryptor</title>
+    <title>Caesar Encryptor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,9 +54,14 @@
             /* Align input area to the left */
         }
 
-        #outputTextArea {
-            float: right;
-            /* Align output area to the right */
+        #outputTextarea {
+            white-space: pre-wrap;
+            font-family: monospace;
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: block;
+            overflow-y: auto;
         }
     </style>
 
@@ -84,22 +89,20 @@
         function encryptText() {
             var inputText = document.getElementById('inputTextarea').value;
             var encryptedText = caesarEncryptor(inputText, 3);
-            document.getElementById('outputTextarea').value = encryptedText;
+            document.getElementById('outputTextarea').innerText = encryptedText;
             document.getElementById('copyButton').style.display = 'block';
         }
 
         function decryptText() {
             var inputText = document.getElementById('inputTextarea').value;
             var decryptedText = Unravel(inputText, 3);
-            document.getElementById('outputTextarea').value = decryptedText;
+            document.getElementById('outputTextarea').innerText = decryptedText;
             document.getElementById('copyButton').style.display = 'block';
         }
-        // Function to copy text to clipboard
+
         function copyText() {
             const outputArea = document.getElementById('outputTextarea');
-
-            // Extract the text content from the output area
-            const textContent = outputArea.innerText || outputArea.textContent;
+            const textContent = outputArea.innerText;
             navigator.clipboard.writeText(textContent).then(function () {
                 document.getElementById('copiedMsg').innerHTML = "Text Copied";
             }).catch(function (err) {
@@ -128,6 +131,7 @@
             return caesarEncryptor(encryptedText, (26 - shift) % 26);
         }
     </script>
+
 </body>
 
 </html>
